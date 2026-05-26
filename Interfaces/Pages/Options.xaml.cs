@@ -27,8 +27,7 @@ namespace Interfaces.Pages
         {
             _manager.AppliquerTailleTexte(SliderTailleTexte.Value);
 
-            var brushContraste = _manager.AppliquerContraste(SliderContraste.Value);
-            this.Background = brushContraste;
+            _manager.AppliquerContraste(SliderContraste.Value);
 
             string? nomCouleur = GetCouleurCochee();
             if (nomCouleur != null)

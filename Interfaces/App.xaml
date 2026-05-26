@@ -6,5 +6,9 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <system:Double x:Key="GlobalFontSize">30</system:Double>
+        <SolidColorBrush x:Key="TextColor" Color="White"/>
+        <SolidColorBrush x:Key="BackgroundColor" Color="#20114a"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#8176a8"/>
+        <SolidColorBrush x:Key="ButtonTextColor" Color="Black"/>
     </Application.Resources>
 </Application>

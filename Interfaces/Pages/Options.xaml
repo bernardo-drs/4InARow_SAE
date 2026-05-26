@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="996"
       Title="Options"
-      Background="#20114a"
+      Background="{DynamicResource BackgroundColor}"
       FontFamily="Agency FB">
 
     <Page.Resources>
@@ -120,7 +120,7 @@
             <RowDefinition Height="1.2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="47" FontFamily="Agency FB">Options</TextBlock>
+        <TextBlock Grid.Row="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="47" FontFamily="Agency FB">Options</TextBlock>
 
         <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15"
                 Width="50" Height="50" CornerRadius="10"
@@ -145,8 +145,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Taille des textes</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Contraste</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Taille des textes</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Contraste</TextBlock>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -180,8 +180,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Couleur de fond d'écran</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Forme des jetons</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Couleur de fond d'écran</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Forme des jetons</TextBlock>
         </Grid>
 
         <Grid Grid.Row="4">
@@ -266,13 +266,13 @@
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="#8176a8" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
+            <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="{DynamicResource AccentColor}" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
                 <Button x:Name="BtnAppliquer" Click="BtnAppliquerOptions_Click"
                         BorderThickness="0" OverridesDefaultStyle="True"
                         Background="Transparent" Tag="Appliquer">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}" Foreground="Black">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}" Foreground="{DynamicResource ButtonTextColor}">
                                     Appliquer les options
                             </TextBlock>
                         </ControlTemplate>
