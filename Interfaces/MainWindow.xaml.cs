@@ -21,7 +21,19 @@ namespace Interfaces
         {
             InitializeComponent();
 
-            mainFrame.Content = new Accueil();
+            Accueil AccueilPage = new Accueil(this);
+
+            mainFrame.Content = AccueilPage;
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Quitter pageQuitter = new Quitter(this);
+            this.closeFrame.Content = pageQuitter;
+
+
+            e.Cancel = true;
         }
     }
 }

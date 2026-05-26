@@ -109,7 +109,7 @@
             <!--Bouton Quitter-->
 
             <Border x:Name="QuitterButtonHolder" Background="#5170FF" CornerRadius="10" Tag="#5170FF" Grid.Row="8" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button  BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter">
+                <Button x:Name="QuitterButton" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="QuitterButton_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Viewbox Margin="8">

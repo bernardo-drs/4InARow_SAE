@@ -19,9 +19,13 @@ namespace Interfaces.Pages
     /// </summary>
     public partial class Accueil : Page
     {
-        public Accueil()
+
+        private MainWindow window;
+        public Accueil(MainWindow w)
         {
             InitializeComponent();
+
+            window = w;
         }
 
         public static void FadeButtonColor(object sender, string mode)
@@ -53,7 +57,11 @@ namespace Interfaces.Pages
         private void OnMouseLeaveButton(object sender, MouseEventArgs e)
         {
             FadeButtonColor(sender, "Out");
+        }
 
+        private void QuitterButton_Click(object sender, RoutedEventArgs e)
+        {
+            window.Close();
         }
     }
 }

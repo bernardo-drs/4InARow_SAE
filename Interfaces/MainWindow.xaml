@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interfaces"
         mc:Ignorable="d"
-        Title="MainWindow" Height="560" Width="996" MinHeight="600" MinWidth="600">
+        Title="MainWindow" Height="560" Width="996" MinHeight="600" MinWidth="600" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
@@ -17,7 +17,7 @@
             <ColumnDefinition Width="522*"/>
             <ColumnDefinition Width="250*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="mainFrame" Grid.ColumnSpan="3" Grid.RowSpan="3"></Frame>
-        <Frame x:Name="closeFrame" Grid.Column="1" Grid.Row="1"></Frame>
+        <Frame x:Name="mainFrame" Grid.ColumnSpan="3" Grid.RowSpan="3" NavigationUIVisibility="Hidden"></Frame>
+        <Frame x:Name="closeFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

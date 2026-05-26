@@ -18,9 +18,23 @@ namespace Interfaces.Pages
     /// </summary>
     public partial class Quitter : Page
     {
-        public Quitter()
+
+        MainWindow window;
+        public Quitter(MainWindow w)
         {
             InitializeComponent();
+
+            window = w;
+        }
+
+        private void NonQuitterButton_Click(object sender, RoutedEventArgs e)
+        {
+            window.closeFrame.Content = null;
+        }
+
+        private void OuiQuitterButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

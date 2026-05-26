@@ -53,26 +53,31 @@
                     <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
-                <Border Background ="#201A43" Grid.Column="1" CornerRadius="5">
-                    <Viewbox Margin="5">
-                        <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            Oui
-                        </TextBlock>
-                    </Viewbox>
+                <Border x:Name="OuiQuitterButtonHolder" Background="#201A43" CornerRadius="5" Tag="#5170FF" Grid.Column="1">
+                    <Button x:Name="OuiQuitter" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="OuiQuitterButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Viewbox Margin="8">
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#FAFAFA" FontStretch="Expanded">
+                                    Oui
+                                    </TextBlock>
+                                </Viewbox>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Border>
-                <Border Background ="#201A43" Grid.Column="1" CornerRadius="5">
-                    <Viewbox Margin="5">
-                        <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            Oui
-                        </TextBlock>
-                    </Viewbox>
-                </Border>
-                <Border Background ="#201A43" Grid.Column="3" CornerRadius="5">
-                    <Viewbox Margin="5">
-                        <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            Non
-                        </TextBlock>
-                    </Viewbox>
+                <Border x:Name="NonQuitterButtonHolder" Background="#201A43" CornerRadius="5" Tag="#5170FF" Grid.Column="3">
+                    <Button x:Name="NonQuitter" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="NonQuitterButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Viewbox Margin="8">
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#FAFAFA" FontStretch="Expanded">
+                                    Non
+                                    </TextBlock>
+                                </Viewbox>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Border>
             </Grid>
         </Grid>
