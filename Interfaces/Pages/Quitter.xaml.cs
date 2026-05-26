@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,20 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Interfaces.Pages;
 
-namespace Interfaces
+namespace Interfaces.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Quitter.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Quitter : Page
     {
-        public MainWindow()
+        public Quitter()
         {
             InitializeComponent();
-
-            mainFrame.Content = new Accueil();
         }
     }
 }
