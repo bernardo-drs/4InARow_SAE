@@ -1,0 +1,75 @@
+﻿<Page x:Class="Interfaces.Pages.HistoriquePartie"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Interfaces.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HistoriquePartie"
+      Background="#20114a">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="422*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="477*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="15"  Grid.Row="1" Grid.Column="1" Background="#004aad"></Border>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="359*"/>
+                <RowDefinition Height="21*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="353*"/>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="12"  Grid.Row="1" Grid.Column="2" Background="#20114a">
+                <TextBlock Text="Historique" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#ffffff" FontFamily="Agency FB"/>
+            </Border>
+
+            <ScrollViewer Grid.Row="2" Grid.ColumnSpan="4" Grid.Column="1" Grid.RowSpan="2" Margin="0,19,23,0">
+                <Border CornerRadius="12" Margin="0,0,10,280" Background="#20114a" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="69*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="46*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="68*"/>
+                            <ColumnDefinition Width="53*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="UneTable" FontSize="10"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Foreground="#5e17eb" />
+                        <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Foreground="#ff66c4" />
+                    </Grid>
+                </Border>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
