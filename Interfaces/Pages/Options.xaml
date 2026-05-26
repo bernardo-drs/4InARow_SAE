@@ -124,9 +124,9 @@
 
         <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15"
                 Width="50" Height="50" CornerRadius="10"
-                Background="#3d2e7a" Grid.Row="0">
+                Background="{DynamicResource AccentColor}" Grid.Row="0">
             <Button x:Name="BtnFermer" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="22" FontFamily="Agency FB"
+                    Foreground="{DynamicResource ButtonTextColor}" FontSize="22" FontFamily="Agency FB"
                     Content="✕" Cursor="Hand"
                     OverridesDefaultStyle="True"
                     Click="BtnFermer_Click">

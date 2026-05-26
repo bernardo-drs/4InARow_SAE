@@ -27,17 +27,30 @@ namespace Systeme
             Application.Current.Resources["GlobalFontSize"] = taille;
         }
 
-        public SolidColorBrush AppliquerContraste(double sliderValue)
+        public void AppliquerContraste(double sliderValue)
         {
-            Color fond = sliderValue switch
+            switch (sliderValue)
             {
-                2 => (Color)ColorConverter.ConvertFromString("#2d1760"),
-                3 => (Color)ColorConverter.ConvertFromString("#0a0520"),
-                _ => (Color)ColorConverter.ConvertFromString("#20114a")
-            };
-            var brush = new SolidColorBrush(fond);
-            Application.Current.Resources["BackgroundColor"] = brush;
-            return brush;
+                case 1:
+                    Application.Current.Resources["TextColor"] = new SolidColorBrush(Colors.White);
+                    Application.Current.Resources["AccentColor"] = new SolidColorBrush(
+                        (Color)ColorConverter.ConvertFromString("#8176a8"));
+                    Application.Current.Resources["ButtonTextColor"] = new SolidColorBrush(Colors.Black);
+                    break;
+
+                case 2:
+                    Application.Current.Resources["TextColor"] = new SolidColorBrush(Colors.Yellow);
+                    Application.Current.Resources["AccentColor"] = new SolidColorBrush(
+                        (Color)ColorConverter.ConvertFromString("#a020f0"));
+                    Application.Current.Resources["ButtonTextColor"] = new SolidColorBrush(Colors.White);
+                    break;
+
+                case 3:
+                    Application.Current.Resources["TextColor"] = new SolidColorBrush(Colors.Black);
+                    Application.Current.Resources["AccentColor"] = new SolidColorBrush(Colors.Black);
+                    Application.Current.Resources["ButtonTextColor"] = new SolidColorBrush(Colors.White);
+                    break;
+            }
         }
 
         public SolidColorBrush? AppliquerCouleurFond(string nomBouton)
