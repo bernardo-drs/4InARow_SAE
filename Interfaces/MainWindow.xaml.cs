@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 using Interfaces.Pages;
 
 namespace Interfaces
@@ -27,11 +28,10 @@ namespace Interfaces
 
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
             Quitter pageQuitter = new Quitter(this);
             this.closeFrame.Content = pageQuitter;
-
 
             e.Cancel = true;
         }

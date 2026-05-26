@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -35,6 +36,16 @@ namespace Interfaces.Pages
         private void OuiQuitterButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void OnMouseEnterButton(object sender, MouseEventArgs e)
+        {
+           AnimationService.FadeColor(sender, "In");
+        }
+
+        private void OnMouseLeaveButton(object sender, MouseEventArgs e)
+        {
+            AnimationService.FadeColor(sender, "Out");
         }
     }
 }

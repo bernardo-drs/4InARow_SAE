@@ -1,4 +1,3 @@
 <Solution>
   <Project Path="Interfaces/Interfaces.csproj" />
-  <Project Path="System/System.csproj" Id="ae064c97-7722-4487-854e-907221939f24" />
 </Solution>

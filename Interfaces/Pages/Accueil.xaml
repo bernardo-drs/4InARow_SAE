@@ -44,7 +44,7 @@
             <!--Bouton Jouer-->
 
             <Border x:Name="PlayButtonHolder" Background="#FAFAFA" CornerRadius="10" Tag="#FAFAFA" Grid.Row="0" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button  BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Jouer">
+                <Button BorderThickness="0" OverridesDefaultStyle="True"  Background="Transparent" Tag="Jouer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Viewbox Margin="8">
@@ -109,11 +109,11 @@
             <!--Bouton Quitter-->
 
             <Border x:Name="QuitterButtonHolder" Background="#5170FF" CornerRadius="10" Tag="#5170FF" Grid.Row="8" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button x:Name="QuitterButton" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="QuitterButton_Click">
+                <Button x:Name="QuitterButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Quitter" Click="QuitterButton_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8">
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
+                            <Viewbox Margin="8" Stretch="Uniform">
+                                <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Foreground="Black" FontStretch="Expanded">
                                     Quitter
                                 </TextBlock>
                             </Viewbox>

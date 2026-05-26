@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -28,40 +29,19 @@ namespace Interfaces.Pages
             window = w;
         }
 
-        public static void FadeButtonColor(object sender, string mode)
+        private void QuitterButton_Click(object sender, RoutedEventArgs e)
         {
-
-            if (sender == null) return;
-
-            Border border = (Border)sender;
-
-            if (border == null) return;
-
-            ColorAnimation fade = new ColorAnimation();
-
-            fade.From = (Color) ColorConverter.ConvertFromString(mode == "In" ? border.Tag.ToString() : "#808080");
-            fade.To = (Color) ColorConverter.ConvertFromString(mode == "In" ? "#808080" : border.Tag.ToString());
-            fade.Duration = TimeSpan.FromSeconds(0.1);
-
-            SolidColorBrush brush = new SolidColorBrush();
-            border.Background = brush;
-
-            brush.BeginAnimation(SolidColorBrush.ColorProperty, fade);
+            window.Close();
         }
 
         private void OnMouseEnterButton(object sender, MouseEventArgs e)
         {
-            FadeButtonColor(sender, "In");
+            AnimationService.FadeColor(sender, "In");
         }
 
         private void OnMouseLeaveButton(object sender, MouseEventArgs e)
         {
-            FadeButtonColor(sender, "Out");
-        }
-
-        private void QuitterButton_Click(object sender, RoutedEventArgs e)
-        {
-            window.Close();
+            AnimationService.FadeColor(sender, "Out");
         }
     }
 }
