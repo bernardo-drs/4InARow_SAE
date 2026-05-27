@@ -22,7 +22,7 @@ namespace Interfaces
         {
             InitializeComponent();
 
-            Accueil AccueilPage = new Accueil(this);
+            ParametreJeu AccueilPage = new ParametreJeu();
 
             mainFrame.Content = AccueilPage;
 
