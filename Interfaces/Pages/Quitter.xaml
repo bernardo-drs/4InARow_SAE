@@ -53,28 +53,80 @@
                     <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
-                <Border x:Name="OuiQuitterButtonHolder" Background="#201A43" Tag="#201A43" CornerRadius="5" Grid.Column="1" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                    <Button x:Name="OuiQuitter" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="OuiQuitterButton_Click">
+                <Border x:Name="OuiQuitterButtonHolder"
+Background="#201A43"
+CornerRadius="5"
+Tag="#201A43"
+Grid.Column="1"
+MouseEnter="OnMouseEnterButton"
+MouseLeave="OnMouseLeaveButton">
+
+                    <Button x:Name="OuiQuitter"
+    BorderThickness="0"
+    OverridesDefaultStyle="True"
+    Background="Transparent"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Padding="0"
+    Click="OuiQuitterButton_Click">
+
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Viewbox Margin="8">
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#FAFAFA" FontStretch="Expanded">
-                                    Oui
-                                    </TextBlock>
-                                </Viewbox>
+
+                                <Grid Background="Transparent">
+
+                                    <Viewbox Margin="8" Stretch="Uniform">
+
+                                        <TextBlock Text="Oui"
+                           FontSize="20"
+                           Foreground="#FAFAFA"
+                           FontStretch="Expanded"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                                    </Viewbox>
+
+                                </Grid>
+
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                 </Border>
-                <Border x:Name="NonQuitterButtonHolder" Background="#201A43" Tag="#201A43" CornerRadius="5" Grid.Column="3" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                    <Button x:Name="NonQuitter" BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Quitter" Click="NonQuitterButton_Click">
+                <Border x:Name="NonQuitterButtonHolder"
+Background="#201A43"
+CornerRadius="5"
+Tag="#201A43"
+Grid.Column="3"
+MouseEnter="OnMouseEnterButton"
+MouseLeave="OnMouseLeaveButton">
+
+                    <Button x:Name="NonQuitter"
+    BorderThickness="0"
+    OverridesDefaultStyle="True"
+    Background="Transparent"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Padding="0"
+    Click="NonQuitterButton_Click">
+
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Viewbox Margin="8">
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#FAFAFA" FontStretch="Expanded">
-                                    Non
-                                    </TextBlock>
-                                </Viewbox>
+
+                                <Grid Background="Transparent">
+
+                                    <Viewbox Margin="8" Stretch="Uniform">
+
+                                        <TextBlock Text="Non"
+                           FontSize="20"
+                           Foreground="#FAFAFA"
+                           FontStretch="Expanded"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                                    </Viewbox>
+
+                                </Grid>
+
                             </ControlTemplate>
                         </Button.Template>
                     </Button>

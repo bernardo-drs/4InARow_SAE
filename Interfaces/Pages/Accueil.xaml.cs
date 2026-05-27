@@ -36,12 +36,14 @@ namespace Interfaces.Pages
 
         private void OnMouseEnterButton(object sender, MouseEventArgs e)
         {
-            AnimationService.FadeColor(sender, "In");
+
+            AnimationService.FadeColor(sender, 0.2, "In", null, null);
         }
 
         private void OnMouseLeaveButton(object sender, MouseEventArgs e)
         {
-            AnimationService.FadeColor(sender, "Out");
+
+            AnimationService.FadeColor(sender, 0.2, "Out", null, null);
         }
     }
 }

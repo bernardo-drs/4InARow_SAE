@@ -43,15 +43,42 @@
 
             <!--Bouton Jouer-->
 
-            <Border x:Name="PlayButtonHolder" Background="#FAFAFA" CornerRadius="10" Tag="#FAFAFA" Grid.Row="0" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button BorderThickness="0" OverridesDefaultStyle="True"  Background="Transparent" Tag="Jouer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Border x:Name="PlayButtonHolder"
+Background="#FAFAFA"
+CornerRadius="10"
+Tag="#FAFAFA"
+Grid.Row="0"
+MouseEnter="OnMouseEnterButton"
+MouseLeave="OnMouseLeaveButton">
+
+                <Button x:Name="PlayButton"
+    BorderThickness="0"
+    OverridesDefaultStyle="True"
+    Background="Transparent"
+    Tag="Play"
+    Click="QuitterButton_Click"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Padding="0">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8">
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
-                                    Jouer
-                                </TextBlock>
-                            </Viewbox>
+
+                            <Grid Background="Transparent">
+
+                                <Viewbox Margin="8" Stretch="Uniform">
+
+                                    <TextBlock Text="Jouer"
+                           FontSize="20"
+                           Foreground="Black"
+                           FontStretch="Expanded"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                                </Viewbox>
+
+                            </Grid>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -59,47 +86,126 @@
 
             <!--Bouton Options-->
 
-            <Border x:Name="OptionsButtonHolder" Background="#D3CDFF" CornerRadius="10" Tag="#D3CDFF" Grid.Row="2" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Options">
+            <Border x:Name="OptionsButtonHolder"
+Background="#d3cdff"
+CornerRadius="10"
+Tag="#d3cdff"
+Grid.Row="2"
+MouseEnter="OnMouseEnterButton"
+MouseLeave="OnMouseLeaveButton">
+
+                <Button x:Name="OptionsButton"
+    BorderThickness="0"
+    OverridesDefaultStyle="True"
+    Background="Transparent"
+    Tag="Options"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Padding="0">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8">
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
-                                    Options
-                                </TextBlock>
-                            </Viewbox>
+
+                            <Grid Background="Transparent">
+
+                                <Viewbox Margin="8" Stretch="Uniform">
+
+                                    <TextBlock Text="Options"
+                           FontSize="20"
+                           Foreground="Black"
+                           FontStretch="Expanded"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                                </Viewbox>
+
+                            </Grid>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
             </Border>
-
             <!--Bouton Historique-->
 
-            <Border x:Name="HistoriqueButtonHolder" Background="#A497FF" CornerRadius="10" Tag="#A497FF" Grid.Row="4" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button  BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Historique">
+            <Border x:Name="HistoriqueButtonHolder"
+Background="#a497ff"
+CornerRadius="10"
+Tag="#a497ff"
+Grid.Row="4"
+MouseEnter="OnMouseEnterButton"
+MouseLeave="OnMouseLeaveButton">
+
+                <Button x:Name="HistoriqueButton"
+    BorderThickness="0"
+    OverridesDefaultStyle="True"
+    Background="Transparent"
+    Tag="Historique"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Padding="0">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8">
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
-                                    Historique
-                                </TextBlock>
-                            </Viewbox>
+
+                            <Grid Background="Transparent">
+
+                                <Viewbox Margin="8" Stretch="Uniform">
+
+                                    <TextBlock Text="Historique"
+                           FontSize="20"
+                           Foreground="Black"
+                           FontStretch="Expanded"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                                </Viewbox>
+
+                            </Grid>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
             </Border>
+
+
 
             <!--Bouton Leaderboard-->
 
-            <Border x:Name="LeaderboardButtonHolder" Background="#8573FF" CornerRadius="10" Tag="#8573FF" Grid.Row="6" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button  BorderThickness="0" OverridesDefaultStyle="True"  Padding="10"  Background="Transparent" Tag="Leaderboard">
+            <Border x:Name="LeaderboardButtonHolder"
+        Background="#8573ff"
+        CornerRadius="10"
+        Tag="#8573ff"
+        Grid.Row="6"
+        MouseEnter="OnMouseEnterButton"
+        MouseLeave="OnMouseLeaveButton">
+
+            <Button x:Name="LeaderboardButton"
+            BorderThickness="0"
+            OverridesDefaultStyle="True"
+            Background="Transparent"
+            Tag="Leaderboard"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Padding="0">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8">
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
-                                    Leaderboard
-                                </TextBlock>
-                            </Viewbox>
+
+                            <Grid Background="Transparent">
+
+                                <Viewbox Margin="8" Stretch="Uniform">
+
+                                    <TextBlock Text="Leaderboard"
+                                   FontSize="20"
+                                   Foreground="Black"
+                                   FontStretch="Expanded"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                                </Viewbox>
+
+                            </Grid>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -108,20 +214,46 @@
 
             <!--Bouton Quitter-->
 
-            <Border x:Name="QuitterButtonHolder" Background="#5170FF" CornerRadius="10" Tag="#5170FF" Grid.Row="8" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                <Button x:Name="QuitterButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Quitter" Click="QuitterButton_Click">
+            <Border x:Name="QuitterButtonHolder"
+        Background="#5170FF"
+        CornerRadius="10"
+        Tag="#5170FF"
+        Grid.Row="8"
+        MouseEnter="OnMouseEnterButton"
+        MouseLeave="OnMouseLeaveButton">
+
+                <Button x:Name="QuitterButton"
+            BorderThickness="0"
+            OverridesDefaultStyle="True"
+            Background="Transparent"
+            Tag="Quitter"
+            Click="QuitterButton_Click"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Padding="0">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Viewbox Margin="8" Stretch="Uniform">
-                                <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Foreground="Black" FontStretch="Expanded">
-                                    Quitter
-                                </TextBlock>
-                            </Viewbox>
+
+                            <Grid Background="Transparent">
+
+                                <Viewbox Margin="8" Stretch="Uniform">
+
+                                    <TextBlock Text="Quitter"
+                                   FontSize="20"
+                                   Foreground="Black"
+                                   FontStretch="Expanded"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                                </Viewbox>
+
+                            </Grid>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
             </Border>
         </Grid>
-
     </Grid>
 </Page>

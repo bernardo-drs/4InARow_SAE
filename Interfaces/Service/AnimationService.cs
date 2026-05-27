@@ -12,24 +12,52 @@ namespace Interfaces.Service
     public class AnimationService
     {
 
-        public static void FadeColor(object? sender, string mode)
+        public static void FadeColor(object? sender, double duration, string mode, string? beginColor, string? endColor)
         {
+
+            /*
+             * 
+            sender -> object Conversible en type Border
+            double duration -> temp de l'animation en secondes
+            string mode -> In ou Out
+            string beginColor -> couleur de début d'animation si nul couleur mise dans le tag de la border
+            string endColor -> couleur de fin d'animation si nul couleur mise dans le tag de la border
+
+            penser à mettre les couleur dans le bon sens
+
+            si mode = In couleur1 = debut couleur2 = fin
+            si mode = Out couleur1 = fin couleur2 = debut
+
+            */
+
             if (sender == null) return;
 
             Border border = (Border)sender;
 
             if (border == null) return;
 
+            beginColor = (beginColor == null ? border.Tag.ToString() : beginColor);
+            endColor = (endColor == null ? "#808080": endColor);
+
+
             ColorAnimation fade = new ColorAnimation();
 
-            fade.From = (Color)ColorConverter.ConvertFromString(mode == "In" ? border.Tag.ToString() : "#808080");
-            fade.To = (Color)ColorConverter.ConvertFromString(mode == "In" ? "#808080" : border.Tag.ToString());
-            fade.Duration = TimeSpan.FromSeconds(0.1);
+            //Debug.WriteLine($"Begin : {beginColor}, End : {endColor}");
 
-            SolidColorBrush brush = new SolidColorBrush();
-            border.Background = brush;
+            try
+            {
+                fade.From = (Color)ColorConverter.ConvertFromString(mode == "In" ? beginColor : endColor);
+                fade.To = (Color)ColorConverter.ConvertFromString(mode == "Out" ? beginColor : endColor);
+                fade.Duration = TimeSpan.FromSeconds(duration);
 
-            brush.BeginAnimation(SolidColorBrush.ColorProperty, fade);
+                SolidColorBrush brush = (SolidColorBrush)border.Background;
+
+                brush.BeginAnimation(SolidColorBrush.ColorProperty, fade);
+            } 
+            catch (Exception ex) {
+                Debug.WriteLine(ex.Message);
+            }
+
 
         }
 
