@@ -47,7 +47,7 @@
                 </Viewbox>
 
                 <Viewbox Grid.Column="1" Grid.Row="2">
-                    <Image Source="C:\Users\jigan\OneDrive\Images\sae\Icone IA.png">
+                    <Image Source="/Images/Icon_IA.png">
 
                     </Image>
                 </Viewbox>
@@ -79,7 +79,7 @@
                 </Viewbox>
 
                 <Viewbox Grid.Column="1" Grid.Row="2">
-                    <Image Source="C:\Users\jigan\OneDrive\Images\sae\Icone Humain2.png" Height="505">
+                    <Image Source="/Images/Icon_Human.png" Height="505">
 
                     </Image>
                 </Viewbox>
