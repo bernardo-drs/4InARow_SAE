@@ -18,9 +18,19 @@ namespace Interfaces.Pages
     /// </summary>
     public partial class HistoriquePartie : Page
     {
-        public HistoriquePartie()
+
+        private MainWindow Window;
+
+        public HistoriquePartie(MainWindow w)
         {
             InitializeComponent();
+
+            Window = w;
+        }
+
+        private void OnLeavePage(object sender, RoutedEventArgs e)
+        {
+            Window.mainFrame.Content = new Accueil();
         }
     }
 }

@@ -11,28 +11,31 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="422*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="150*"/>
-            <ColumnDefinition Width="477*"/>
-            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="391*"/>
+            <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!--Bouton retour en arrière-->
 
-        <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-
+        <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" Grid.RowSpan="2">
+            <Button x:Name="BtnRetour" Click="OnLeavePage" Background="Transparent">
+                <TextBlock Text="X" FontSize="30" Foreground="#ffffff" FontFamily="Arial Rounded MT Bold"></TextBlock>
+            </Button>
         </Border>
 
         <!--Affichage de l'historique des parties-->
 
-        <Border CornerRadius="15"  Grid.Row="1" Grid.Column="2" Background="#004aad"></Border>
+        <Border CornerRadius="15"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#004aad"></Border>
 
-        <Grid Grid.Column="2" Grid.Row="1">
+        <Grid Grid.Column="2" Grid.RowSpan="2" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
                 <RowDefinition Height="45*"/>
@@ -53,8 +56,57 @@
                 <TextBlock Text="Historique" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#ffffff" FontFamily="Agency FB"/>
             </Border>
 
-            <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="0,19,23,0">
+            <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="0,19,23,0" FontFamily="Agency FB">
+                
+                <!--Améliorer le visuel du ScrollViewer-->
+                <ScrollViewer.Template>
+                    <ControlTemplate TargetType="ScrollViewer">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="0"/>
+
+                            <ScrollBar x:Name="PART_VerticalScrollBar" 
+                           Grid.Column="1"
+                           Value="{TemplateBinding VerticalOffset}" 
+                           Maximum="{TemplateBinding ScrollableHeight}" 
+                           ViewportSize="{TemplateBinding ViewportHeight}" 
+                           Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                           Width="10" 
+                           Background="Transparent"
+                           Margin="5,0,0,0">
+                                <ScrollBar.Template>
+                                    <ControlTemplate TargetType="ScrollBar">
+                                        <Track x:Name="PART_Track" IsDirectionReversed="true">
+                                            <Track.DecreaseRepeatButton>
+                                                <RepeatButton Command="ScrollBar.PageUpCommand" Background="Transparent" BorderThickness="0"/>
+                                            </Track.DecreaseRepeatButton>
+                                            <Track.IncreaseRepeatButton>
+                                                <RepeatButton Command="ScrollBar.PageDownCommand" Background="Transparent" BorderThickness="0"/>
+                                            </Track.IncreaseRepeatButton>
+                                            <Track.Thumb>
+                                                <Thumb>
+                                                    <Thumb.Template>
+                                                        <ControlTemplate TargetType="Thumb">
+                                                            <Border Background="#FFFFFF" CornerRadius="4" Width="6" Height="Auto"/>
+                                                        </ControlTemplate>
+                                                    </Thumb.Template>
+                                                </Thumb>
+                                            </Track.Thumb>
+                                        </Track>
+                                    </ControlTemplate>
+                                </ScrollBar.Template>
+                            </ScrollBar>
+                        </Grid>
+                    </ControlTemplate>
+                </ScrollViewer.Template>
                 <StackPanel>
+
+                    <!--Début de l'affichage des parties-->
+
                     <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -76,19 +128,18 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Foreground="#5e17eb" Width="41"/>
-                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Foreground="#ff66c4" Width="22" />
+                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
-                            <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" Width="5" />
-                            <TextBlock Text="4" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" Width="5" />
+                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="4" FontSize="10"  Grid.Row="2" Grid.Column="4" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
                             <TextBlock Text="En cours" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/19/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="3/19/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -113,19 +164,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" />
+                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#f5d554" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" Width="5" />
-                            <TextBlock Text="4" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" Width="5" />
+                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="4" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/18/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="18/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -150,22 +201,22 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
-                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5" />
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="2" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" Width="5" />
-                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" Width="5" />
+                            <TextBlock Text="2" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/16/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
-                    
+
                     <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -187,19 +238,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" />
+                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" Width="5" />
-                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" Width="5" />
+                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/16/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -224,19 +275,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bot" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center"/>
-                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" />
+                            <TextBlock Text="Bot" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="0" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" Width="5" />
-                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" Width="5" />
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/16/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="15/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -261,19 +312,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" />
+                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="5" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" Width="5" />
-                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" Width="5" />
+                            <TextBlock Text="5" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/13/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="13/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -298,21 +349,319 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="0" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" Width="5" />
-                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" Width="5" />
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
                             <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="44"/>
-                            <TextBlock Text="3/12/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" Width="45"/>
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="12/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="4" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="5" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="05/05/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bot" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="5" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="04/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="01/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="3" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="27/02/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#f5d554" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="24/02/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Bernard" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="20/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Pablo" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="0" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Classique" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="20/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="86*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="98*"/>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="12*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Pseudo des joueurs-->
+                            <TextBlock Text="Maé" FontSize="10"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="10"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <!--Point de couleurs des joueurs-->
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
+                            <!--Score de la partie-->
+                            <TextBlock Text="3" FontSize="10"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="10"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
+                            <!--Statue de la partie-->
+                            <TextBlock Text="Terminée" FontSize="10" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <!--Informations de la partie-->
+                            <TextBlock Text="Challenge" FontSize="10"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="10"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <!--Fin de l'affichage des parties-->
 
                 </StackPanel>
             </ScrollViewer>
