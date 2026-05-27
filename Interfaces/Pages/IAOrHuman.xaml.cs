@@ -22,5 +22,11 @@ namespace Interfaces.Pages
         {
             InitializeComponent();
         }
+
+        private void quitterMenu_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Accueil());
+        }
+
     }
 }

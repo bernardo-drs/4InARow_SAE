@@ -88,7 +88,7 @@
 
         <Border Grid.Column="0" Grid.Row="0" CornerRadius="10" Background="#8176A8" Margin="5">
             <Viewbox>
-                <Button BorderThickness="0" Background="Transparent" OverridesDefaultStyle="True" Foreground="White">
+                <Button x:Name="quitterMenu" BorderThickness="0" Background="Transparent" OverridesDefaultStyle="True" Foreground="White" Click="quitterMenu_Click">
                     <Button.Template>
                         <ControlTemplate>
                             <TextBlock FontFamily="Arial Rounded MT Bold">
