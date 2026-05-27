@@ -164,14 +164,14 @@
                     Minimum="1" Maximum="3" Value="2"
                     TickFrequency="1" IsSnapToTickEnabled="True"
                     VerticalAlignment="Center"
-                    Style="{StaticResource CustomSliderStyle}"/>
+                    Style="{StaticResource CustomSliderStyle}" ValueChanged="SliderTailleTexte_ValueChanged"/>
 
             <Slider x:Name="SliderContraste"
                     Grid.Column="4"
                     Minimum="1" Maximum="3" Value="1"
                     TickFrequency="1" IsSnapToTickEnabled="True"
                     VerticalAlignment="Center"
-                    Style="{StaticResource CustomSliderStyle}"/>
+                    Style="{StaticResource CustomSliderStyle}" ValueChanged="SliderContraste_ValueChanged"/>
         </Grid>
 
         <Grid Grid.Row="3">
@@ -195,16 +195,22 @@
 
                 <RadioButton x:Name="CouleurBleuFonce" GroupName="Couleurs"
                              Background="#20114a"
-                                 IsChecked="True"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             IsChecked="True"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#20114a"/>
 
                 <RadioButton x:Name="CouleurMauve" GroupName="Couleurs"
                              Background="#81608a"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#81608a"/>
 
                 <RadioButton x:Name="CouleurVert" GroupName="Couleurs"
                              Background="#01773e"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#01773e"/>
             </UniformGrid>
 
             <UniformGrid Grid.Column="1" Rows="1" Columns="2"
@@ -233,15 +239,21 @@
                          Margin="100,0,100,0" VerticalAlignment="Center">
                 <RadioButton x:Name="CouleurOrange" GroupName="Couleurs"
                              Background="#a7501a"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0" 
+                             Click="BtnCouleur_Click"
+                             Tag="#a7501a"/>
 
                 <RadioButton x:Name="CouleurJaune" GroupName="Couleurs"
                              Background="#ccb147"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#ccb147"/>
 
                 <RadioButton x:Name="CouleurBleuClair" GroupName="Couleurs"
                              Background="#2579a9"
-                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"/>
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#2579a9"/>
             </UniformGrid>
 
             <UniformGrid Grid.Column="1" Rows="1" Columns="2"

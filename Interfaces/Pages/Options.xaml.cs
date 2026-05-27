@@ -25,10 +25,12 @@ namespace Interfaces.Pages
 
         private void BtnAppliquerOptions_Click(object sender, RoutedEventArgs e)
         {
-            _manager.AppliquerTailleTexte(SliderTailleTexte.Value);
 
-            _manager.AppliquerContraste(SliderContraste.Value);
+            _manager.AppliquerFormeJeton(GetFormeCochee());
+        }
 
+        private void BtnCouleur_Click(object sender, RoutedEventArgs e)
+        {
             string? nomCouleur = GetCouleurCochee();
             if (nomCouleur != null)
             {
@@ -37,7 +39,6 @@ namespace Interfaces.Pages
                     this.Background = brushCouleur;
             }
 
-            _manager.AppliquerFormeJeton(GetFormeCochee());
         }
 
         private void BtnFermer_Click(object sender, RoutedEventArgs e)
@@ -61,6 +62,16 @@ namespace Interfaces.Pages
             if (FormeEtoile.IsChecked == true) return "Etoile";
             if (FormeTriangle.IsChecked == true) return "Triangle";
             return "Rond";
+        }
+
+        private void SliderTailleTexte_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _manager.AppliquerTailleTexte(SliderTailleTexte.Value);
+        }
+
+        private void SliderContraste_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _manager.AppliquerContraste(SliderContraste.Value);
         }
     }
 }
