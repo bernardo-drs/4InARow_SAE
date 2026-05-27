@@ -22,18 +22,7 @@ namespace Interfaces
         {
             InitializeComponent();
 
-            Accueil AccueilPage = new Accueil(this);
-
-            mainFrame.Content = AccueilPage;
-
-        }
-
-        private void Window_Closing(object sender, CancelEventArgs e)
-        {
-            Quitter pageQuitter = new Quitter(this);
-            this.closeFrame.Content = pageQuitter;
-
-            e.Cancel = true;
+            mainFrame.Content = new Options();
         }
     }
 }

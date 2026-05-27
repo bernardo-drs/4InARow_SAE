@@ -1,0 +1,298 @@
+﻿<Page x:Class="Interfaces.Pages.Options"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Interfaces.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="996"
+      Title="Options"
+      Background="{DynamicResource BackgroundColor}"
+      FontFamily="Agency FB">
+
+    <Page.Resources>
+        <Style x:Key="SliderThumbStyle" TargetType="Thumb">
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Ellipse Fill="White" Width="22" Height="22"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomSliderStyle" TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Track x:Name="PART_Track">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="Slider.DecreaseLarge">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Height="8" CornerRadius="4" Background="#7a6fb0"/>
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle}"/>
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="Slider.IncreaseLarge">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Border Height="8" CornerRadius="4" Background="#7a6fb0"/>
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ColorButtonStyle" TargetType="RadioButton">
+            <Setter Property="Width" Value="55"/>
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Ellipse x:Name="Outer" Width="55" Height="55"
+                                     Fill="{TemplateBinding Background}"
+                                     Stroke="Transparent" StrokeThickness="3"/>
+                            <Ellipse x:Name="SelectionRing" Width="55" Height="55"
+                                     Fill="Transparent"
+                                     Stroke="Transparent" StrokeThickness="3"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="SelectionRing" Property="Stroke" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ShapeButtonStyle" TargetType="RadioButton">
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="Container" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckStates"/>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Container" Property="Background" Value="#33ffffff"/>
+                                <Setter TargetName="Container" Property="BorderBrush" Value="White"/>
+                                <Setter TargetName="Container" Property="BorderThickness" Value="2"/>
+                                <Setter TargetName="Container" Property="CornerRadius" Value="6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="47" FontFamily="Agency FB">Options</TextBlock>
+
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15"
+                Width="50" Height="50" CornerRadius="10"
+                Background="{DynamicResource AccentColor}" Grid.Row="0">
+            <Button x:Name="BtnFermer" Background="Transparent" BorderThickness="0"
+                    Foreground="{DynamicResource ButtonTextColor}" FontSize="22" FontFamily="Agency FB"
+                    Content="✕" Cursor="Hand"
+                    OverridesDefaultStyle="True"
+                    Click="BtnFermer_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Taille des textes</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Contraste</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="0.15*"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider x:Name="SliderTailleTexte"
+                    Grid.Column="1"
+                    Minimum="1" Maximum="3" Value="2"
+                    TickFrequency="1" IsSnapToTickEnabled="True"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource CustomSliderStyle}" ValueChanged="SliderTailleTexte_ValueChanged"/>
+
+            <Slider x:Name="SliderContraste"
+                    Grid.Column="4"
+                    Minimum="1" Maximum="3" Value="1"
+                    TickFrequency="1" IsSnapToTickEnabled="True"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource CustomSliderStyle}" ValueChanged="SliderContraste_ValueChanged"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Couleur de fond d'écran</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Forme des jetons</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <UniformGrid Grid.Column="0" Rows="1" Columns="3"
+                         Margin="100,0" VerticalAlignment="Center">
+
+                <RadioButton x:Name="CouleurBleuFonce" GroupName="Couleurs"
+                             Background="#20114a"
+                             IsChecked="True"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#20114a"/>
+
+                <RadioButton x:Name="CouleurMauve" GroupName="Couleurs"
+                             Background="#81608a"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#81608a"/>
+
+                <RadioButton x:Name="CouleurVert" GroupName="Couleurs"
+                             Background="#01773e"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#01773e"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Column="1" Rows="1" Columns="2"
+                         Margin="100,0,100,0" VerticalAlignment="Center">
+                <RadioButton x:Name="FormeRond" GroupName="Formes"
+                             IsChecked="True"
+                             Style="{StaticResource ShapeButtonStyle}" Margin="15,0">
+                    <Ellipse Width="55" Height="55" Fill="#b0a8d8"/>
+                </RadioButton>
+
+                <RadioButton x:Name="FormeCarré" GroupName="Formes"
+                             Style="{StaticResource ShapeButtonStyle}" Margin="15,0">
+                    <Rectangle Width="52" Height="52" Fill="#b0a8d8" RadiusX="4" RadiusY="4"/>
+                </RadioButton>
+            </UniformGrid>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="498*"/>
+                <ColumnDefinition Width="301*"/>
+                <ColumnDefinition Width="198*"/>
+            </Grid.ColumnDefinitions>
+
+            <UniformGrid Grid.Column="0" Rows="1" Columns="3"
+                         Margin="100,0,100,0" VerticalAlignment="Center">
+                <RadioButton x:Name="CouleurOrange" GroupName="Couleurs"
+                             Background="#a7501a"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0" 
+                             Click="BtnCouleur_Click"
+                             Tag="#a7501a"/>
+
+                <RadioButton x:Name="CouleurJaune" GroupName="Couleurs"
+                             Background="#ccb147"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#ccb147"/>
+
+                <RadioButton x:Name="CouleurBleuClair" GroupName="Couleurs"
+                             Background="#2579a9"
+                             Style="{StaticResource ColorButtonStyle}" Margin="8,0"
+                             Click="BtnCouleur_Click"
+                             Tag="#2579a9"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Column="1" Rows="1" Columns="2"
+                         Margin="98,0,99,0" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                <RadioButton x:Name="FormeEtoile" GroupName="Formes"
+                             Style="{StaticResource ShapeButtonStyle}" Margin="15,0">
+                    <Path Fill="#b0a8d8" Width="65" Height="65" Stretch="Uniform"
+                          Data="M 50,5 L 61,35 L 95,35 L 68,57 L 79,91 L 50,70 L 21,91 L 32,57 L 5,35 L 39,35 Z"/>
+                </RadioButton>
+
+                <RadioButton x:Name="FormeTriangle" GroupName="Formes"
+                             Style="{StaticResource ShapeButtonStyle}" Margin="15,0">
+                    <Path Fill="#b0a8d8" Width="60" Height="60" Stretch="Uniform"
+                          Data="M 50,5 L 95,90 L 5,90 Z"/>
+                </RadioButton>
+            </UniformGrid>
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="{DynamicResource AccentColor}" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
+                <Button x:Name="BtnAppliquer" Click="BtnAppliquerOptions_Click"
+                        BorderThickness="0" OverridesDefaultStyle="True"
+                        Background="Transparent" Tag="Appliquer">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}" Foreground="{DynamicResource ButtonTextColor}">
+                                    Appliquer les options
+                            </TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+        </Grid>
+
+
+    </Grid>
+</Page>
