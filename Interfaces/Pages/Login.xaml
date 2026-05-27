@@ -1,0 +1,64 @@
+﻿<Page x:Class="Interfaces.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Interfaces.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="560" d:DesignWidth="996"
+      Title="Login" Background="#20114A" FontFamily="Agency FB">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="132*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Margin="0,81,0,0" Grid.RowSpan="2">
+            <TextBlock Foreground="#FAFAFA">
+                Puissance 4
+            </TextBlock>
+        </Viewbox>
+        <Grid Grid.Row="2" Margin="0,60,0,59" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="165*"/>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="#404040" CornerRadius="10" Grid.Column="1">
+                <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
+                    <TextBox Background="Transparent" HorizontalAlignment="Left" TextAlignment="Left">
+                        Entrez votre pseudonyme...
+                    </TextBox>
+                </Viewbox>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="PlayButtonHolder" Background="#FAFAFA" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1">
+            <Button BorderThickness="0" OverridesDefaultStyle="True"  Background="Transparent" Tag="Connexion" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Viewbox Margin="8">
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Black" FontStretch="Expanded">
+Connexion
+                                    </TextBlock>
+                                </Viewbox>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
