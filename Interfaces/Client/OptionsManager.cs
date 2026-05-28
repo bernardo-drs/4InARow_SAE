@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace Systeme
+namespace Interfaces
 {
     public class OptionManager
     {

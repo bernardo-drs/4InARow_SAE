@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using Interfaces.Pages;
+using Interfaces.Service;
 
 namespace Interfaces
 {
@@ -18,11 +19,23 @@ namespace Interfaces
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public PageService PageHandler;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            mainFrame.Content = new Options();
+            PageHandler = new PageService(this);
+
+            PageHandler.Navigate("Accueil");
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            closeFrame.Content = new Quitter(this);
+
+            e.Cancel = true;
         }
     }
 }

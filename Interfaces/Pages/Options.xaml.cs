@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,14 +11,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Systeme;
 
 namespace Interfaces.Pages
 {
     public partial class Options : Page
     {
         private readonly OptionManager _manager = new();
-
         public Options()
         {
             InitializeComponent();
@@ -43,8 +42,7 @@ namespace Interfaces.Pages
 
         private void BtnFermer_Click(object sender, RoutedEventArgs e)
         {
-            if (NavigationService?.CanGoBack == true)
-                NavigationService.GoBack();
+            new PageService("Accueil");
         }
 
         private string? GetCouleurCochee()

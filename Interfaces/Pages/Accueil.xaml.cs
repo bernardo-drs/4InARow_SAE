@@ -29,9 +29,16 @@ namespace Interfaces.Pages
             window = w;
         }
 
+        private void OnModeButtonClick (object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+
+            new PageService((string)button.Tag);
+        }
+
         private void QuitterButton_Click(object sender, RoutedEventArgs e)
         {
-            window.Close();
+            window.closeFrame.Content = new Quitter(window);
         }
 
         private void OnMouseEnterButton(object sender, MouseEventArgs e)
