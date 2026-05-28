@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="Interfaces/Interfaces.csproj" />
-  <Project Path="Systeme/Systeme.csproj" Id="555445b3-958c-4342-bcb1-f85176345fc9" />
+  <Project Path="Systeme/Systeme.csproj" Id="555445b3-958c-4342-bcb1-f85176345fc9">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
 </Solution>

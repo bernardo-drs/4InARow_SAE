@@ -33,12 +33,13 @@ namespace Interfaces.Pages
         {
             Button button = (Button)sender;
 
-            new PageService((string)button.Tag);
+            PageService.Navigate((string)button.Tag);
         }
 
         private void QuitterButton_Click(object sender, RoutedEventArgs e)
         {
-            window.closeFrame.Content = new Quitter(window);
+            PageService.PopUp("Quitter");
+
         }
 
         private void OnMouseEnterButton(object sender, MouseEventArgs e)

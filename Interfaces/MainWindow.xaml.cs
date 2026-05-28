@@ -28,12 +28,12 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            PageHandler.Navigate("Accueil");
+            PageService.Navigate("Accueil");
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            closeFrame.Content = new Quitter(this);
+            PageService.PopUp("Quitter");
 
             e.Cancel = true;
         }
