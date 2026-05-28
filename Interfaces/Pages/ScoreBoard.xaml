@@ -31,7 +31,9 @@
             </Button>
         </Border>
 
-        <!--Affichage de l'historique des parties-->
+        <!--Affichage du Leaderboard-->
+        
+        <!--Fond bleu + colonne et ligne-->
 
         <Border CornerRadius="15"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#004aad"></Border>
 
@@ -53,10 +55,14 @@
                 <ColumnDefinition Width="26*"/>
                 <ColumnDefinition Width="27*"/>
             </Grid.ColumnDefinitions>
+            
+            <!--Titre de l'onglet-->
 
             <Border CornerRadius="12"  Grid.Row="1" Grid.Column="1" Background="#20114a" Grid.ColumnSpan="2" Margin="22,0,0,0">
                 <TextBlock Text="Leaderboard" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#ffffff" FontFamily="Agency FB"/>
             </Border>
+            
+            <!--Top 10 + Nombre de victoires avec la couronne-->
 
             <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent">
                 <Grid>
@@ -70,11 +76,17 @@
                     </Border>
 
                     <Border Grid.Column="1" CornerRadius="8" BorderBrush="#ffffff" BorderThickness="2" Background="Transparent" HorizontalAlignment="Right">
-                        <TextBlock Text="   Nombre de victoire   " Foreground="White" VerticalAlignment="Center" FontFamily="Agency FB" HorizontalAlignment="Right"/>
+                        <TextBlock Text="   Nombre de victoires   " Foreground="White" FontFamily="Agency FB" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
+                    <Viewbox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70,0,0,0">
+                        <Image Source="/Images/couronne.png" Stretch="Uniform"/>
+                    </Viewbox>
                 </Grid>
             </Border>
+            
+            <!--Affichage du classement-->
+            
             <Border CornerRadius="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Right">
 
             </Border>
@@ -128,7 +140,7 @@
                 </ScrollViewer.Template>
                 <StackPanel>
 
-                    <!--Début de l'affichage des parties-->
+                    <!--Début de l'affichage des joueurs-->
 
                     <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
                         <Grid>
@@ -309,9 +321,9 @@
                             <TextBlock Text="0" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
-                    <!--Fin de l'affichage des parties-->
                     
-
+                    <!--Fin de l'affichage des joueurs-->
+                    
                 </StackPanel>
             </ScrollViewer>
         </Grid>
