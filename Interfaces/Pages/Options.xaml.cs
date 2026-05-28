@@ -42,7 +42,7 @@ namespace Interfaces.Pages
 
         private void BtnFermer_Click(object sender, RoutedEventArgs e)
         {
-            new PageService("Accueil");
+            PageService.PopUp("OptionsQuitter");
         }
 
         private string? GetCouleurCochee()

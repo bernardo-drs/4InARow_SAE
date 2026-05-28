@@ -29,7 +29,7 @@ namespace Interfaces.Service
             set { _window = value; }
         }
 
-        public void Navigate(string PageName)
+        public static void Navigate(string? PageName)
         {
 
             /*
@@ -41,10 +41,10 @@ namespace Interfaces.Service
             switch(PageName)
             {
                 case "Accueil":
-                    Window.mainFrame.Content = new Accueil(Window);
+                    _window.mainFrame.Content = new Accueil(_window);
                     break;
                 case "Options":
-                    Window.mainFrame.Content = new Options();
+                    _window.mainFrame.Content = new Options();
                     break;
                 case "Historique":
                     Window.mainFrame.Content = new HistoriquePartie();
@@ -54,5 +54,20 @@ namespace Interfaces.Service
             }
         }
 
+        public static void PopUp(string? nomPage)
+        {
+            switch (nomPage)
+            {
+                case "Quitter":
+                    _window.popUpFrame.Content = new Quitter(_window);
+                    break;
+                case "OptionsQuitter":
+                    _window.popUpFrame.Content = new ConfirmationSortieOption();
+                    break;
+                default:
+                    _window.popUpFrame.Content = null;
+                    break;
+            }
+        }
     }
 }
