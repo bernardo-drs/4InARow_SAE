@@ -1,16 +1,9 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.ComponentModel;
-using Interfaces.Pages;
+﻿using Interfaces.Pages;
 using Interfaces.Service;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Windows;
+using Systeme.Game;
 
 namespace Interfaces
 {
@@ -29,6 +22,9 @@ namespace Interfaces
             PageHandler = new PageService(this);
 
             PageHandler.Navigate("Accueil");
+
+            Grille grille = new Grille(6);
+
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

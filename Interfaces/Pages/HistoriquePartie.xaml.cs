@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,18 +20,15 @@ namespace Interfaces.Pages
     public partial class HistoriquePartie : Page
     {
 
-        private MainWindow Window;
-
-        public HistoriquePartie(MainWindow w)
+        public HistoriquePartie()
         {
             InitializeComponent();
 
-            Window = w;
         }
 
         private void OnLeavePage(object sender, RoutedEventArgs e)
         {
-            Window.mainFrame.Content = new Accueil();
+            new PageService("Accueil");
         }
     }
 }
