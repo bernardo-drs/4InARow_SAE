@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Systeme\Systeme.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <Resource Include="Images\Icon_Human.png" />
+	  <Resource Include="Images\Icon_IA.png" />
+	</ItemGroup>
 </Project>
