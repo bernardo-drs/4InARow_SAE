@@ -28,7 +28,7 @@ namespace Interfaces.Pages
 
         private void OnLeavePage(object sender, RoutedEventArgs e)
         {
-            new PageService("Accueil");
+            PageService.Navigate("Accueil");
         }
     }
 }

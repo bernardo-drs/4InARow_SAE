@@ -12,8 +12,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="19*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="377*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="372*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
 
         <!--Bouton retour en arrière-->
 
-        <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" Grid.RowSpan="2">
+        <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" Grid.RowSpan="2" Margin="5,5,5,5">
             <Button x:Name="BtnRetour" Click="OnLeavePage" Background="Transparent">
                 <TextBlock Text="X" FontSize="30" Foreground="#ffffff" FontFamily="Arial Rounded MT Bold"></TextBlock>
             </Button>
@@ -57,7 +57,7 @@
             </Border>
 
             <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="0,19,23,0" FontFamily="Agency FB">
-                
+
                 <!--Améliorer le visuel du ScrollViewer-->
                 <ScrollViewer.Template>
                     <ControlTemplate TargetType="ScrollViewer">

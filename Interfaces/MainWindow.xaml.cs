@@ -21,7 +21,7 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            PageHandler.Navigate("Accueil");
+            PageService.Navigate("Accueil");
 
             Grille grille = new Grille(6);
 
@@ -29,7 +29,7 @@ namespace Interfaces
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            closeFrame.Content = new Quitter(this);
+            PageService.PopUp("Quitter");
 
             e.Cancel = true;
         }

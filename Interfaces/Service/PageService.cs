@@ -47,7 +47,7 @@ namespace Interfaces.Service
                     _window.mainFrame.Content = new Options();
                     break;
                 case "Historique":
-                    Window.mainFrame.Content = new HistoriquePartie();
+                    _window.mainFrame.Content = new HistoriquePartie();
                     break;
                 default:
                     break;
