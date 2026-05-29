@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,7 +26,7 @@ namespace Interfaces.Pages
 
         private void quitterMenu_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Accueil());
+            new PageService("Accueil");
         }
 
     }

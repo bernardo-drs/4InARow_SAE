@@ -46,6 +46,9 @@ namespace Interfaces.Service
                 case "Options":
                     Window.mainFrame.Content = new Options();
                     break;
+                case "ChoixModeJeu":
+                    Window.mainFrame.Content = new ChoixModeJeu();
+                    break;
                 default:
                     break;
             }

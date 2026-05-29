@@ -28,7 +28,7 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            PageHandler.Navigate("Accueil");
+            PageHandler.Navigate("ChoixModeJeu");
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

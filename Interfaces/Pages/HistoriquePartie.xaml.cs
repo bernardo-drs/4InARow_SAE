@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -30,7 +31,7 @@ namespace Interfaces.Pages
 
         private void OnLeavePage(object sender, RoutedEventArgs e)
         {
-            Window.mainFrame.Content = new Accueil();
+            new PageService("ChoixModeJeu");
         }
     }
 }
