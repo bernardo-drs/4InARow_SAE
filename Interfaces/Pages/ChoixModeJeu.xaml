@@ -51,9 +51,9 @@
                     <ColumnDefinition Width="98*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="brdClass" Grid.Column="1" CornerRadius="10" Background="#20114A" BorderThickness="2">
+                <Border x:Name="brdClass" Grid.Column="1" CornerRadius="10" Background="#20114A" BorderBrush="White" BorderThickness="2">
                     <Viewbox>
-                        <Button x:Name="btnClassique" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="btnClassique_Click">
+                        <Button x:Name="btnClassique" Background="Transparent" OverridesDefaultStyle="True" Click="btnClassique_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="White">
@@ -66,7 +66,7 @@
                     </Viewbox>
                 </Border>
 
-                <Border x:Name="brdChall" Grid.Column="3" CornerRadius="10" Background="#20114A">
+                <Border x:Name="brdChall" Grid.Column="3" CornerRadius="10" Background="#20114A" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btnChallenge" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="btnChallenge_Button_Click">
                             <Button.Template>
@@ -93,7 +93,7 @@ Challenge
                     <ColumnDefinition Width="118*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786">
+                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn3V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False">
                             <Button.Template>
@@ -108,7 +108,7 @@ Challenge
                     </Viewbox>
                 </Border>
 
-                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786">
+                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn5V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False">
                             <Button.Template>

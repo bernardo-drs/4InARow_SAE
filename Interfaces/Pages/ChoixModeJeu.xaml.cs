@@ -32,6 +32,8 @@ namespace Interfaces.Pages
             brd5V.Background = couleurHexa;
             btn3V.IsEnabled = true;
             btn5V.IsEnabled = true;
+
+            
         }
 
         private void btnClassique_Click(object sender, RoutedEventArgs e)
