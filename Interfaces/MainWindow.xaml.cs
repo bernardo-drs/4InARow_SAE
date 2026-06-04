@@ -23,7 +23,7 @@ namespace Interfaces
 
             PageService.Navigate("Game");
 
-            Grille grille = new Grille(6);
+            Grille grille = new Grille(15);
 
             MessageBox.Show(grille.ToString());
         }

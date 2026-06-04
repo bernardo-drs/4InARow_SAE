@@ -53,7 +53,7 @@
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock Foreground="#FAFAFA" Text="XX"/>
                 </Viewbox>
-                <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3" Fill="{StaticResource ColorButtonStyle}"/>
+                <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3"/>
             </Grid>
         </Border>
     </Grid>

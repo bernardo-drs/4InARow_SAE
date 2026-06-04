@@ -40,8 +40,6 @@ namespace Systeme.Game
         {
             StringBuilder sb = new StringBuilder();
 
-
-
             // Numéros des colonnes
             sb.Append("   ");
             for (int x = 0; x < Size; x++)
