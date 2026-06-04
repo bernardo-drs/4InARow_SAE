@@ -34,9 +34,10 @@
 
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="52*"/>
+                    <RowDefinition Height="42*"/>
                     <RowDefinition Height="9*"/>
-                    <RowDefinition Height="52*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="74*"/>
@@ -44,13 +45,46 @@
                     <ColumnDefinition Width="74*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="1" Grid.Row="0" CornerRadius="10" Background="#20114a">
+                <Border Grid.Row="0" CornerRadius="10" Background="#20114a" Grid.Column="1">
                     <Viewbox>
-                        <Button Background="Transparent">
-                            <TextBlock Text="Rejouer" Foreground="White"/>
+                        <Button Background="Transparent" OverridesDefaultStyle="True">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Text="Rejouer" Foreground="White"/>
+                                </ControlTemplate>
+                            </Button.Template>
                         </Button>
                     </Viewbox>
                 </Border>
+
+                <Border Grid.Row="2" Grid.Column="1"  CornerRadius="10" Background="#20114a">
+                    <Viewbox>
+                        <Button Background="Transparent" OverridesDefaultStyle="True" Margin="1">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Text="Retourner au menu" Foreground="White"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
+
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="116*"/>
+                    <ColumnDefinition Width="110*"/>
+                    <ColumnDefinition Width="116*"/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Column="1">
+                    <Image Source="/Images/Icon_Crown.png">
+
+                    </Image>
+                </Viewbox>
 
             </Grid>
         </Grid>
