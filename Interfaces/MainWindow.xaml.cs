@@ -21,7 +21,7 @@ namespace Interfaces
         {
             InitializeComponent();
 
-            mainFrame.Content = new Accueil();
+            mainFrame.Content = new Parametres();
         }
     }
 }
