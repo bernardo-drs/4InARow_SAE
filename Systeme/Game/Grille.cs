@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Systeme.Game
@@ -11,6 +12,10 @@ namespace Systeme.Game
 
         public Grille(int taille)
         {
+            Debug.WriteLine("Initialisation de la grille.");
+
+            Size = taille;
+
             this._content = new Cellule[taille, taille];
             for (int x = 0; x < taille; x++)
             {
@@ -20,23 +25,6 @@ namespace Systeme.Game
                 }
             }
         }
-
-        public override string ToString()
-        {
-            string StringBuffer = "";
-            for (int x = 0; x < Size; x++)
-            {
-                for (int y = 0; x < Size; y++)
-                {
-                    StringBuffer += "X|";
-                }
-                StringBuffer += "\n";
-            }
-
-            return StringBuffer;
-        }
-
-
         public int Size
         {
             get { return this._size; }
@@ -45,7 +33,46 @@ namespace Systeme.Game
 
         public Cellule[,] Content
         {
-            get {  return this._content; }
+            get { return this._content; }
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+
+
+            // Numéros des colonnes
+            sb.Append("   ");
+            for (int x = 0; x < Size; x++)
+            {
+                sb.Append($"{x} ");
+            }
+            sb.AppendLine();
+
+            // Ligne séparatrice
+            sb.Append("  ");
+            for (int x = 0; x < Size; x++)
+            {
+                sb.Append("--");
+            }
+            sb.AppendLine();
+
+            // Contenu de la grille
+            for (int y = 0; y < Size; y++)
+            {
+                sb.Append($"{y}| ");
+
+                for (int x = 0; x < Size; x++)
+                {
+                    sb.Append($"{Content[x,y]}");
+                }
+
+                sb.AppendLine("");
+            }
+
+            return sb.ToString();
+        }
+
     }
 }

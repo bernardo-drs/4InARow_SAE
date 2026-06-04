@@ -21,10 +21,11 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            PageService.Navigate("Accueil");
+            PageService.Navigate("Game");
 
             Grille grille = new Grille(6);
 
+            MessageBox.Show(grille.ToString());
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

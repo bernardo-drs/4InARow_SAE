@@ -281,7 +281,8 @@
             <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="{DynamicResource AccentColor}" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
                 <Button x:Name="BtnAppliquer" Click="BtnAppliquerOptions_Click"
                         BorderThickness="0" OverridesDefaultStyle="True"
-                        Background="Transparent" Tag="Appliquer">
+                        Background="Transparent" Tag="Appliquer" MouseEnter="BtnAppliquer_MouseEnter" MouseLeave="BtnAppliquer_MouseLeave"
+                        >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}" Foreground="{DynamicResource ButtonTextColor}">

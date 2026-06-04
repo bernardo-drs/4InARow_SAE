@@ -7,7 +7,7 @@ namespace Interfaces.Service
 {
     public class PageService
     {
-        private static MainWindow _window;
+        private static MainWindow? _window;
 
         public PageService(MainWindow w)
         {
@@ -48,6 +48,9 @@ namespace Interfaces.Service
                     break;
                 case "Historique":
                     _window.mainFrame.Content = new HistoriquePartie();
+                    break;
+                case "Game":
+                    _window.mainFrame.Content = new Game();
                     break;
                 default:
                     break;

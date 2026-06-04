@@ -19,7 +19,7 @@ namespace Systeme.Game
 
         public override string ToString()
         {
-            return $"Position | X : {Position.X}, Y : {Position.Y}";
+            return $"{(Jeton == null ? " " : "X")}|";
         }
 
         public Jeton? Jeton

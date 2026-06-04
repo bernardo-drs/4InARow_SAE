@@ -26,6 +26,7 @@ namespace Interfaces.Pages
         {
 
             _manager.AppliquerFormeJeton(GetFormeCochee());
+            PageService.Navigate("Accueil");
         }
 
         private void BtnCouleur_Click(object sender, RoutedEventArgs e)
@@ -70,6 +71,17 @@ namespace Interfaces.Pages
         private void SliderContraste_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _manager.AppliquerContraste(SliderContraste.Value);
+        }
+
+        private void BtnAppliquer_MouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationService.FadeColor(BtnAppliquerOptions, 0.1, "In", null, null);
+
+        }
+
+        private void BtnAppliquer_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AnimationService.FadeColor(BtnAppliquerOptions, 0.1, "Out", null, null);
         }
     }
 }
