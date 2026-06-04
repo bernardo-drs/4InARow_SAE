@@ -52,6 +52,9 @@ namespace Interfaces.Service
                 case "Game":
                     _window.mainFrame.Content = new Game();
                     break;
+                case "Leaderboard":
+                    _window.mainFrame.Content = new LeaderBoard(); 
+                    break;
                 default:
                     break;
             }
