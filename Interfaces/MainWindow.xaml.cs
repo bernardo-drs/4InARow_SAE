@@ -21,7 +21,7 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            PageService.Navigate("Game");
+            PageService.Navigate("Accueil");
 
             Grille grille = new Grille(15);
 
