@@ -49,6 +49,9 @@ namespace Interfaces.Service
                 case "Historique":
                     _window.mainFrame.Content = new HistoriquePartie();
                     break;
+                case "Victoire":
+                    _window.mainFrame.Content = new Victoire();
+                    break;
                 default:
                     break;
             }
