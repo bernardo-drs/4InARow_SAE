@@ -182,7 +182,7 @@ namespace Interfaces.Pages
             int hauteur = 6;
             if (row1 == 0) { largeur = 4; hauteur = 4; }
             else if (row1 == 2) { largeur = 5; hauteur = 5; }
-            else if (row1 == 4) { largeur = 7; hauteur = 6; } // Inversion 6x7 classique (7 colonnes, 6 lignes)
+            else if (row1 == 4) { largeur = 7; hauteur = 6; } 
             else if (row1 == 6) { largeur = 7; hauteur = 8; }
             else if (row1 == 8) { largeur = 8; hauteur = 8; }
             else if (row1 == 10) { largeur = 10; hauteur = 10; }
