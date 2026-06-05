@@ -50,6 +50,7 @@ namespace Interfaces.Pages
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
+            _timer.Stop();
             PageService.PopUp("MenuPause");
         }
 
