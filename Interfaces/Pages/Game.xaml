@@ -39,7 +39,7 @@
         <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
                 CornerRadius="10" Margin="5">
             <Viewbox>
-                <TextBlock x:Name="TimerText" Text="0 : 30"
+                <TextBlock x:Name="TimerText" Text="0 : 00"
                            Foreground="White" FontFamily="Agency FB"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Viewbox>

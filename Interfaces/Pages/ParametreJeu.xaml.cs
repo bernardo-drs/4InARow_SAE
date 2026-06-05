@@ -1,5 +1,4 @@
-﻿using Interfaces.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Interfaces.Service;
+using Interfaces;
 
 namespace Interfaces.Pages
 {
@@ -29,9 +30,10 @@ namespace Interfaces.Pages
         int colonne2;
         int colonne3;
 
-        int row1 = 10000;
-        int row2 = 10000;
-        int row3 = 10000;
+        // -1 pour dire que l'utilisateur n'a encore rien choisit
+        int row1 = -1;
+        int row2 = -1;
+        int row3 = -1;
 
         public ParametreJeu()
         {
@@ -40,7 +42,6 @@ namespace Interfaces.Pages
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            // Correction : On passe les 5 paramètres requis à FadeColor
             AnimationService.FadeColor(sender, 0.3, "In", null, null);
 
             if (sender is Border b)
@@ -51,7 +52,6 @@ namespace Interfaces.Pages
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            // Correction : On passe les 5 paramètres requis à FadeColor
             AnimationService.FadeColor(sender, 0.3, "Out", null, null);
 
             if (sender is Border b)
@@ -76,7 +76,7 @@ namespace Interfaces.Pages
 
                 int row = Grid.GetRow(b);
 
-                // On ne retire la bordure que si ce n'est pas le bouton actif de la colonne
+                // supression la bordure que si ce n'est pas le bouton actif de la colonne
                 if (colonne == 1)
                 {
                     if (row != row1)
@@ -103,7 +103,7 @@ namespace Interfaces.Pages
         {
             if (!(sender is Button bouton)) return;
 
-            // Recherche sécurisée de la Border parente du bouton (qu'il y ait une Viewbox ou non)
+            // Recherche sécurisée de la Border parente du bouton 
             Border? b = TrouverParentBorder(bouton);
             if (b == null) return;
 
@@ -170,19 +170,47 @@ namespace Interfaces.Pages
 
         private void btnApplique_Click(object sender, RoutedEventArgs e)
         {
-            
-            int[] taillesGrille = { 4, 5, 6, 8, 8, 10 };
 
-            int[] nbJetons = { 3, 4, 5 }; 
+            if (row1 == -1 || row2 == -1 || row3 == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner une option dans chaque catégorie (Taille, Jetons et Temps) avant de commencer !", "Paramètres incomplets");
+                return;
+            }
 
-            int taille = (row1 >= 0 && row1 < taillesGrille.Length) ? taillesGrille[row1] : 999;
-            int jetons = (row2 >= 0 && row2 < nbJetons.Length) ? nbJetons[row2] : 0;
+            // Conversion des index de lignes XAML en valeurs réelles de jeu
+            int largeur = 7;
+            int hauteur = 6;
+            if (row1 == 0) { largeur = 4; hauteur = 4; }
+            else if (row1 == 2) { largeur = 5; hauteur = 5; }
+            else if (row1 == 4) { largeur = 7; hauteur = 6; } // Inversion 6x7 classique (7 colonnes, 6 lignes)
+            else if (row1 == 6) { largeur = 7; hauteur = 8; }
+            else if (row1 == 8) { largeur = 8; hauteur = 8; }
+            else if (row1 == 10) { largeur = 10; hauteur = 10; }
 
-            if (jetons >= taille)
+            // row2 correspond aux lignes de ta Grid du milieu : 3 jetons (Row 2), 4 jetons (Row 5), 5 jetons (Row 7)
+            int jetons = 4;
+            if (row2 == 2) jetons = 3;
+            else if (row2 == 5) jetons = 4;
+            else if (row2 == 7) jetons = 5;
+
+            if (jetons > largeur && jetons > hauteur)
             {
                 MessageBox.Show("La condition de victoire doit être inférieure à la taille de la grille", "Erreur de taille");
                 return;
             }
+
+            string temps = "Aucune";
+            if (row3 == 0) temps = "Aucune";
+            else if (row3 == 2) temps = "10s";
+            else if (row3 == 4) temps = "15s";
+            else if (row3 == 6) temps = "30s";
+            else if (row3 == 8) temps = "1m";
+            else if (row3 == 10) temps = "2m";
+
+            Interfaces.ConfigurationJeu.LargeurGrille = largeur;
+            Interfaces.ConfigurationJeu.HauteurGrille = hauteur;
+            Interfaces.ConfigurationJeu.JetonsPourGagner = jetons;
+            Interfaces.ConfigurationJeu.LimiteTemps = temps;
 
             PageService.PopUp("ChoixModeJeu");
         }

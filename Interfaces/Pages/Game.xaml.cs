@@ -22,15 +22,36 @@ namespace Interfaces.Pages
     public partial class Game : Page
     {
         private DispatcherTimer _timer;
-        private int _secondesRestantes = 30; //faire la référence avec ce que l'on choisit dans la page ParametreJeu
+        private int _secondesRestantes;
         public Game()
         {
             InitializeComponent();
+            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
+        }
+
+        private int ConvertirLimiteTemps(string limiteTemps)
+        {
+            return limiteTemps switch
+            {
+                "10s" => 10,
+                "15s" => 15,
+                "30s" => 30,
+                "1m" => 60,
+                "2m" => 120,
+                "Aucune" => 0  // "Aucune" ou valeur inconnue = pas de timer
+            };
         }
 
         private void StartTimer()
         {
+            // Si aucune limite, on n'affiche pas de timer
+            if (_secondesRestantes <= 0)
+            {
+                TimerText.Text = "∞";
+                return;
+            }
+
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);
             _timer.Tick += (s, e) =>
@@ -50,7 +71,7 @@ namespace Interfaces.Pages
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
-            _timer.Stop();
+            _timer?.Stop();
             PageService.PopUp("MenuPause");
         }
 
