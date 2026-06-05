@@ -131,7 +131,7 @@
 
                 <Border Grid.Column="1" CornerRadius="10" Background="#20114A">
                     <Viewbox>
-                        <Button Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0">
+                        <Button Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="Btn_LancementPartie">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="White">Lancement de la partie</TextBlock>

@@ -184,7 +184,7 @@ namespace Interfaces.Pages
                 return;
             }
 
-            PageService.Navigate("Game");
+            PageService.PopUp("ChoixModeJeu");
         }
 
         // ==========================================

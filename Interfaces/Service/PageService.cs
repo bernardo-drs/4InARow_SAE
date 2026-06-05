@@ -61,9 +61,6 @@ namespace Interfaces.Service
                 case "ParametreJeu":
                     _window.mainFrame.Content = new ParametreJeu();
                     break;
-                case "ChoixModeJeu":
-                    _window.mainFrame.Content = new ChoixModeJeu();
-                    break;
                 default:
                     break;
             }
@@ -78,6 +75,9 @@ namespace Interfaces.Service
                     break;
                 case "OptionsQuitter":
                     _window.popUpFrame.Content = new ConfirmationSortieOption();
+                    break;
+                case "ChoixModeJeu":
+                    _window.popUpFrame.Content = new ChoixModeJeu();
                     break;
                 default:
                     _window.popUpFrame.Content = null;
