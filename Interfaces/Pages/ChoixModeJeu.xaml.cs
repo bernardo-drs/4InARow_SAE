@@ -80,7 +80,7 @@ namespace Interfaces.Pages
 
         private void Btn_LancementPartie(object sender, RoutedEventArgs e)
         {
-            // Si mode challenge sans avoir choisi 3V ou 5V → erreur
+            // Si mode challenge sans avoir choisi 3V ou 5V -> erreur
             if (modeChallenge && nbVictoires == 0)
             {
                 MessageBox.Show("Veuillez choisir 3 ou 5 victoires pour le mode Challenge.", "Erreur");

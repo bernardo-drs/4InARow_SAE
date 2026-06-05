@@ -7,18 +7,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Game"
-      Background="{DynamicResource BackgroundColor}"
+      Background="#20114A"
       FontFamily="Agency FB">
 
-    <Grid Grid.IsSharedSizeScope="True">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="260*"/>
-            <ColumnDefinition Width="56*"/>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="24*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -27,16 +29,112 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="124*"/>
-            <RowDefinition Height="80*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Border Background="#004aad" Grid.RowSpan="3" Grid.Row="4" Grid.Column="3" CornerRadius="10">
-            <Grid x:Name="GameGrid" Margin="10">
 
-            </Grid>
+        <!-- TIMER haut gauche -->
+        <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
+                CornerRadius="10" Margin="5">
+            <Viewbox>
+                <TextBlock x:Name="TimerText" Text="0 : 30"
+                           Foreground="White" FontFamily="Agency FB"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Viewbox>
         </Border>
-        <Border Background="#004aad" Grid.Row="5" Grid.Column="1" CornerRadius="6">
+
+        <!-- Icône de joueur juste au dessis de la grille -->
+        <Grid Grid.Row="1" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <!-- JOUEUR 1 -->
+            <Border x:Name="BrdJoueur1" Background="#004aad"
+                    Grid.Column="0"
+                    CornerRadius="10" Margin="5"
+                    BorderBrush="White" BorderThickness="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                        Source="/Images/Icon_Human.png" 
+                        Margin="8,3,8,0" 
+                        Stretch="Uniform"/>
+                    
+                    <Border Grid.Row="1" Background="#CC3333" CornerRadius="0,0,8,8">
+                        <Viewbox>
+                            <TextBlock x:Name="ScoreJ1" Text="0"
+                                       Foreground="White" HorizontalAlignment="Center"/>
+                        </Viewbox>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- JOUEUR 2 -->
+            <Border x:Name="BrdJoueur2" Background="#004aad"
+                    Grid.Column="3"
+                    CornerRadius="10" Margin="5"
+                    BorderBrush="Transparent" BorderThickness="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Image Grid.Row="0" 
+                           Source="/Images/Icon_Human.png" 
+                           Margin="8,3,8,0" 
+                           Stretch="Uniform"/>
+                    
+                    <Border Grid.Row="1" Background="#CCAA00" CornerRadius="0,0,8,8">
+                        <Viewbox>
+                            <TextBlock x:Name="ScoreJ2" Text="1"
+                                       Foreground="White" HorizontalAlignment="Center"/>
+                        </Viewbox>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- BOUTON PAUSE haut droite -->
+        <Border Background="#004aad" Grid.Row="1" Grid.Column="7"
+                CornerRadius="10" Margin="5">
+            <Button x:Name="BtnPause" Background="Transparent"
+                    BorderThickness="0" OverridesDefaultStyle="True"
+                    Tag="Game">
+                <!--Click="BtnPause_Click"-->
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Viewbox>
+                            <TextBlock Text="I I" Foreground="White" FontSize="20" FontWeight="Bold"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
+
+        <!-- GRILLE DE JEU -->
+        <Border Background="#004aad" Grid.RowSpan="5" Grid.Row="4"
+                Grid.Column="4" CornerRadius="10" Margin="0,0,0,33">
+            <Grid x:Name="GameGrid" Margin="10"/>
+        </Border>
+
+        <!-- Pied de la grille -->
+        <Border Background="#004aad" Grid.RowSpan="3" Grid.Row="7" Grid.Column="3"/>
+        <Border Background="#004aad" Grid.RowSpan="3" Grid.Row="7" Grid.Column="5"/>
+
+        <!-- JETONS RESTANTS JOUEUR 1 (gauche) -->
+        <Border Background="#004aad" Grid.Row="4" Grid.Column="1"
+                CornerRadius="6" Margin="0,48,0,0" Grid.RowSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="16*"/>
@@ -51,10 +149,43 @@
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
                 <Viewbox Grid.Column="1" Grid.Row="1">
-                    <TextBlock Foreground="#FAFAFA" Text="XX"/>
+                    <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="21"/>
                 </Viewbox>
-                <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3"/>
+                <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3" Fill="Red"/>
             </Grid>
         </Border>
+
+        <!-- JETONS RESTANTS JOUEUR 2 (droite) -->
+        <Border Background="#004aad" Grid.Row="4" Grid.Column="7"
+                CornerRadius="6" Margin="0,48,0,0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="17*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="57*"/>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Viewbox Grid.Column="1" Grid.Row="1">
+                    <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="21"/>
+                </Viewbox>
+                <Ellipse x:Name="Player2Forme" Grid.Column="1" Grid.Row="3" Fill="Yellow"/>
+            </Grid>
+        </Border>
+
+        <!-- MODE DE JEU bas droite -->
+        <TextBlock x:Name="ModeJeuText" Text="Classique"
+                   Foreground="White" FontFamily="Agency FB" FontSize="20"
+                   Grid.Row="9" Grid.Column="7"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0,0,10,0"/>
+        
+        
     </Grid>
+    
 </Page>
