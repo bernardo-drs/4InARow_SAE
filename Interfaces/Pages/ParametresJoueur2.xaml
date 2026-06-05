@@ -108,7 +108,7 @@
             <TextBlock Grid.Row="0"
                        Text="Informations du joueur 2"
                        FontFamily="Baskerville Old Face"
-                       Foreground="White" FontSize="20"
+                       Foreground="White" FontSize="{DynamicResource FontSize15}"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,20"/>
 
@@ -116,7 +116,7 @@
             <TextBlock Grid.Row="1"
                        Text="Nom"
                        FontFamily="Baskerville Old Face"
-                       Foreground="White" FontSize="17"
+                       Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="12,0,0,6"/>
 
             <!-- Row 2 : TextBox Nom + icône erreur -->
@@ -134,14 +134,14 @@
                 <TextBlock x:Name="IconErrNomJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
-                           FontSize="18" VerticalAlignment="Center"
+                           FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                            Margin="6,0,0,0" Visibility="Collapsed"/>
             </Grid>
 
             <!-- Row 3 : message erreur Nom -->
             <TextBlock x:Name="ErrNomJ2" x:FieldModifier="public"
                        Grid.Row="3"
-                       Foreground="#E53935" FontSize="12"
+                       Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Left" Margin="14,2,0,6"
                        Visibility="Collapsed"/>
@@ -150,7 +150,7 @@
             <TextBlock Grid.Row="4"
                        Text="Nationalité"
                        FontFamily="Baskerville Old Face"
-                       Foreground="White" FontSize="17"
+                       Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="12,0,0,6"/>
 
             <!-- Row 5 : TextBox Nationalité + icône erreur -->
@@ -168,14 +168,14 @@
                 <TextBlock x:Name="IconErrNatJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
-                           FontSize="18" VerticalAlignment="Center"
+                           FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                            Margin="6,0,0,0" Visibility="Collapsed"/>
             </Grid>
 
             <!-- Row 6 : message erreur Nationalité -->
             <TextBlock x:Name="ErrNatJ2" x:FieldModifier="public"
                        Grid.Row="6"
-                       Foreground="#E53935" FontSize="12"
+                       Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Left" Margin="14,2,0,6"
                        Visibility="Collapsed"/>
@@ -184,7 +184,7 @@
             <TextBlock Grid.Row="7"
                        Text="Couleur des jetons"
                        FontFamily="Baskerville Old Face"
-                       Foreground="White" FontSize="17"
+                       Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="12,0,0,10"/>
 
             <!-- Row 8 : palette + icône erreur -->
@@ -208,14 +208,14 @@
                 <TextBlock x:Name="IconErrCoulJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
-                           FontSize="18" VerticalAlignment="Center"
+                           FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                            Margin="8,0,0,0" Visibility="Collapsed"/>
             </Grid>
 
             <!-- Row 9 : message erreur Couleur -->
             <TextBlock x:Name="ErrCoulJ2" x:FieldModifier="public"
                        Grid.Row="9"
-                       Foreground="#E53935" FontSize="12"
+                       Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Center" Margin="0,4,0,0"
                        Visibility="Collapsed"/>

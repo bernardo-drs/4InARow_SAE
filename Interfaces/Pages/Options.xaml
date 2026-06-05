@@ -120,13 +120,13 @@
             <RowDefinition Height="1.2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="47" FontFamily="Agency FB">Options</TextBlock>
+        <TextBlock Grid.Row="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="{DynamicResource FontSize47}" FontFamily="Agency FB">Options</TextBlock>
 
         <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15"
                 Width="50" Height="50" CornerRadius="10"
                 Background="{DynamicResource AccentColor}" Grid.Row="0">
             <Button x:Name="BtnFermer" Background="Transparent" BorderThickness="0"
-                    Foreground="{DynamicResource ButtonTextColor}" FontSize="22" FontFamily="Agency FB"
+                    FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
                     Content="✕" Cursor="Hand"
                     OverridesDefaultStyle="True"
                     Click="BtnFermer_Click">
@@ -145,8 +145,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Taille des textes</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Contraste</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Taille des textes</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Contraste</TextBlock>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -180,8 +180,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Couleur de fond d'écran</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}">Forme des jetons</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Couleur de fond d'écran</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Forme des jetons</TextBlock>
         </Grid>
 
         <Grid Grid.Row="4">
@@ -285,7 +285,7 @@
                         >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource GlobalFontSize}" Foreground="{DynamicResource ButtonTextColor}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize20}" Foreground="{DynamicResource ButtonTextColor}">
                                     Appliquer les options
                             </TextBlock>
                         </ControlTemplate>

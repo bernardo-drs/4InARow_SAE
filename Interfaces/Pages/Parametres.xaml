@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="520" d:DesignWidth="900"
       Title="Parametres"
-      Background="#201a43">
+      Background="{DynamicResource BackgroundColor}">
 
     <Page.Resources>
 
@@ -134,7 +134,7 @@
                         <Border x:Name="Bd" Background="{TemplateBinding Background}"
                                 CornerRadius="6" Width="36" Height="36">
                             <TextBlock Text="✕" Foreground="White"
-                                       FontSize="16" FontWeight="Bold"
+                                       FontSize="{DynamicResource FontSize17}" FontWeight="Bold"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
                         </Border>
@@ -201,7 +201,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1"
                            Text="Paramètres"
-                           Foreground="White" FontSize="35"
+                           Foreground="White" FontSize="{DynamicResource FontSize35}"
                            FontFamily="Georgia"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
@@ -254,7 +254,7 @@
                 <TextBlock Grid.Column="0" Grid.Row="1"
                            Text="Informations du joueur 1"
                            FontFamily="Baskerville Old Face"
-                           Foreground="White" FontSize="20"
+                           Foreground="White" FontSize="{DynamicResource FontSize15}"
                            HorizontalAlignment="Center"
                            Margin="0,0,0,20"/>
 
@@ -262,7 +262,7 @@
                 <TextBlock Grid.Column="0" Grid.Row="2"
                            Text="Nom"
                            FontFamily="Baskerville Old Face"
-                           Foreground="White" FontSize="17"
+                           Foreground="White" FontSize="{DynamicResource FontSize17}"
                            HorizontalAlignment="Left" Margin="12,0,0,6"/>
 
                 <!-- ══ Row 3 : TextBox Nom J1 + icône ══ -->
@@ -278,14 +278,14 @@
                     <TextBlock x:Name="IconErrNomJ1"
                                Grid.Column="1"
                                Text="ⓘ" Foreground="#E53935"
-                               FontSize="18" VerticalAlignment="Center"
+                               FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                                Margin="6,0,0,0" Visibility="Collapsed"/>
                 </Grid>
 
                 <!-- ══ Row 4 : erreur Nom J1 ══ -->
                 <TextBlock x:Name="ErrNomJ1"
                            Grid.Column="0" Grid.Row="4"
-                           Foreground="#E53935" FontSize="12"
+                           Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                            FontFamily="Segoe UI" FontStyle="Italic"
                            HorizontalAlignment="Left" Margin="14,2,0,4"
                            Visibility="Collapsed"/>
@@ -294,7 +294,7 @@
                 <TextBlock Grid.Column="0" Grid.Row="5"
                            Text="Nationalité"
                            FontFamily="Baskerville Old Face"
-                           Foreground="White" FontSize="17"
+                           Foreground="White" FontSize="{DynamicResource FontSize17}"
                            HorizontalAlignment="Left" Margin="12,0,0,6"/>
 
                 <!-- ══ Row 6 : TextBox Nationalité J1 + icône ══ -->
@@ -312,14 +312,14 @@
     <TextBlock x:Name="IconErrNatJ1"
                Grid.Column="1"
                Text="ⓘ" Foreground="#E53935"
-               FontSize="18" VerticalAlignment="Center"
+               FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                Margin="6,0,0,0" Visibility="Collapsed"/>
 </Grid>
 
                 <!-- ══ Row 7 : erreur Nationalité J1 ══ -->
                 <TextBlock x:Name="ErrNatJ1"
                            Grid.Column="0" Grid.Row="7"
-                           Foreground="#E53935" FontSize="12"
+                           Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                            FontFamily="Segoe UI" FontStyle="Italic"
                            HorizontalAlignment="Left" Margin="14,2,0,4"
                            Visibility="Collapsed"/>
@@ -328,7 +328,7 @@
                 <TextBlock Grid.Column="0" Grid.Row="8"
                            Text="Couleur des jetons"
                            FontFamily="Baskerville Old Face"
-                           Foreground="White" FontSize="17"
+                           Foreground="White" FontSize="{DynamicResource FontSize17}"
                            HorizontalAlignment="Left" Margin="12,0,0,10"/>
 
                 <!-- ══ Row 9 : palette J1 + icône ══ -->
@@ -352,14 +352,14 @@
                     <TextBlock x:Name="IconErrCoulJ1"
                                Grid.Column="1"
                                Text="ⓘ" Foreground="#E53935"
-                               FontSize="18" VerticalAlignment="Center"
+                               FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                                Margin="8,0,0,0" Visibility="Collapsed"/>
                 </Grid>
 
                 <!-- ══ Row 10 : erreur Couleur J1 ══ -->
                 <TextBlock x:Name="ErrCoulJ1"
                            Grid.Column="0" Grid.Row="10"
-                           Foreground="#E53935" FontSize="12"
+                           Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                            FontFamily="Segoe UI" FontStyle="Italic"
                            HorizontalAlignment="Center" Margin="0,4,0,0"
                            Visibility="Collapsed"/>
