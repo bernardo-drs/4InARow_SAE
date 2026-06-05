@@ -114,6 +114,7 @@ namespace Interfaces.Pages
                     "Paramètres enregistrés",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
+                PageService.Navigate("ParametreJeu");
             }
             else if (RightFrame.Content is ParametresIA)
             {
@@ -124,6 +125,7 @@ namespace Interfaces.Pages
                     "Paramètres enregistrés",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
+                PageService.Navigate("ParametreJeu");
             }
         }
 

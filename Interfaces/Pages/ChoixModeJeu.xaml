@@ -5,9 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
-
+      d:DesignHeight="210" d:DesignWidth="414"
+      Title="ChoixModeJeu">
     <Border Background="#8176A8" CornerRadius="10">
-    <Grid>
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
                 <RowDefinition Height="20*"/>
@@ -30,12 +31,9 @@
                     <Button x:Name="btnCroix" Background="Transparent" OverridesDefaultStyle="True" Click="btnCroix_Click" >
                         <Button.Template>
                             <ControlTemplate>
-                                <TextBlock Foreground="White" FontFamily="Arial Rounded MT Bold">
-X
-                                </TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Arial Rounded MT Bold">X</TextBlock>
                             </ControlTemplate>
                         </Button.Template>
-
                     </Button>
                 </Viewbox>
             </Border>
@@ -54,7 +52,6 @@ X
                         souhaitez-vous faire ?
                     </TextBlock>
                 </Viewbox>
-
             </Grid>
 
             <Grid Grid.Row="4" Grid.ColumnSpan="2">
@@ -71,12 +68,9 @@ X
                         <Button x:Name="btnClassique" Background="Transparent" OverridesDefaultStyle="True" Click="btnClassique_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-    Classique
-                                    </TextBlock>
+                                    <TextBlock Foreground="White">Classique</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
                 </Border>
@@ -86,17 +80,12 @@ X
                         <Button x:Name="btnChallenge" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="btnChallenge_Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-Challenge
-                                    </TextBlock>
+                                    <TextBlock Foreground="White">Challenge</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
                 </Border>
-
-
             </Grid>
 
             <Grid Grid.Row="6" Grid.ColumnSpan="2">
@@ -113,12 +102,9 @@ Challenge
                         <Button x:Name="btn3V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn3V_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-3 victoires
-                                    </TextBlock>
+                                    <TextBlock Foreground="White">3 victoires</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
                 </Border>
@@ -128,12 +114,9 @@ Challenge
                         <Button x:Name="btn5V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn5V_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-5 victoires
-                                    </TextBlock>
+                                    <TextBlock Foreground="White">5 victoires</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
                 </Border>
@@ -151,18 +134,13 @@ Challenge
                         <Button Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-Lancement de la partie
-                                    </TextBlock>
+                                    <TextBlock Foreground="White">Lancement de la partie</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
                 </Border>
-        
-    </Grid>
-
+            </Grid>
         </Grid>
     </Border>
 </Page>

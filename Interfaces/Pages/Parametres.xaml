@@ -378,6 +378,7 @@
                 <Button Content="Enregistrer les données"
                         Style="{StaticResource SaveButton}"
                         HorizontalAlignment="Center"
+                        Tag="Parametres"
                         Click="BtnSave_Click"/>
             </Grid>
         </Grid>

@@ -58,8 +58,11 @@ namespace Interfaces.Service
                 case "Parametres":
                     _window.mainFrame.Content = new Parametres();
                     break;
+                case "ParametreJeu":
+                    _window.mainFrame.Content = new ParametreJeu();
+                    break;
                 case "ChoixModeJeu":
-                    Window.mainFrame.Content = new ChoixModeJeu();
+                    _window.mainFrame.Content = new ChoixModeJeu();
                     break;
                 default:
                     break;

@@ -33,7 +33,6 @@ namespace Interfaces.Pages
         int row2 = 10000;
         int row3 = 10000;
 
-
         public ParametreJeu()
         {
             InitializeComponent();
@@ -41,72 +40,83 @@ namespace Interfaces.Pages
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            AnimationService.FadeColor(sender, "In");
-            Border b = (Border)sender;
+            // Correction : On passe les 5 paramètres requis à FadeColor
+            AnimationService.FadeColor(sender, 0.3, "In", null, null);
 
-            b.BorderThickness = new Thickness(2);
+            if (sender is Border b)
+            {
+                b.BorderThickness = new Thickness(2);
+            }
         }
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            AnimationService.FadeColor(sender, "Out");
-            Border b = (Border)sender;
-            Grid g = (Grid)b.Parent;
-            Grid gp;
+            // Correction : On passe les 5 paramètres requis à FadeColor
+            AnimationService.FadeColor(sender, 0.3, "Out", null, null);
 
-            int colonne = Grid.GetColumn(g);
-
-            if (colonne == 0)
+            if (sender is Border b)
             {
-                if (g.Parent is Grid)
+                // Recherche sécurisée de la Grid parente
+                Grid? g = TrouverParentGrid(b);
+                if (g == null) return;
+
+                int colonne = Grid.GetColumn(g);
+
+                if (colonne == 0)
                 {
-                    gp = (Grid)g.Parent;
-                    colonne = Grid.GetColumn(gp);
+                    if (g.Parent is Grid gp)
+                    {
+                        colonne = Grid.GetColumn(gp);
+                    }
+                    else
+                    {
+                        colonne = Grid.GetColumn(b);
+                    }
+                }
+
+                int row = Grid.GetRow(b);
+
+                // On ne retire la bordure que si ce n'est pas le bouton actif de la colonne
+                if (colonne == 1)
+                {
+                    if (row != row1)
+                        b.BorderThickness = new Thickness(0);
+                }
+                else if (colonne == 3)
+                {
+                    if (row != row2)
+                        b.BorderThickness = new Thickness(0);
+                }
+                else if (colonne == 5)
+                {
+                    if (row != row3)
+                        b.BorderThickness = new Thickness(0);
                 }
                 else
                 {
-                    colonne = Grid.GetColumn(b);
+                    b.BorderThickness = new Thickness(0);
                 }
-            }
-
-            int row = Grid.GetRow(b);
-
-            if (colonne == 1)
-            {
-                if (row != row1)
-                    b.BorderThickness = new Thickness(0);
-            }
-            else if (colonne == 3)
-            {
-                if (row != row2)
-                    b.BorderThickness = new Thickness(0);
-            }
-            else if (colonne == 5)
-            {
-                if (row != row3)
-                    b.BorderThickness = new Thickness(0);
-            }
-            else
-            {
-                b.BorderThickness = new Thickness(0);
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button bouton = (Button)sender;
-            Viewbox vb = (Viewbox)bouton.Parent;
-            Border b = (Border)vb.Parent;
-            Grid g = (Grid)b.Parent;
-            Grid gp;
+            if (!(sender is Button bouton)) return;
+
+            // Recherche sécurisée de la Border parente du bouton (qu'il y ait une Viewbox ou non)
+            Border? b = TrouverParentBorder(bouton);
+            if (b == null) return;
+
+            // Recherche sécurisée de la Grid parente
+            Grid? g = TrouverParentGrid(b);
+            if (g == null) return;
 
             int colonne = Grid.GetColumn(g);
 
             if (colonne == 0)
             {
-                if (g.Parent is Grid)
+                if (g.Parent is Grid gp)
                 {
-                    gp = (Grid)g.Parent;
                     colonne = Grid.GetColumn(gp);
                 }
                 else
@@ -115,10 +125,8 @@ namespace Interfaces.Pages
                 }
             }
 
-
             if (colonne == 1)
             {
-
                 if (active1 != null)
                     active1.BorderThickness = new Thickness(0);
 
@@ -143,7 +151,6 @@ namespace Interfaces.Pages
                 active2 = b;
 
                 click = true;
-
             }
 
             if (colonne == 5)
@@ -171,6 +178,30 @@ namespace Interfaces.Pages
                 string message = "La condition de victoire doit être inférieure à la taille de la grille";
                 MessageBox.Show(message, "Erreur de taille");
             }
+        }
+
+        // ==========================================
+        // MÉTHODES OUTILS POUR ÉVITER LES CRASHES
+        // ==========================================
+
+        private Grid? TrouverParentGrid(DependencyObject enfant)
+        {
+            DependencyObject parent = VisualTreeHelper.GetParent(enfant) ?? (enfant is FrameworkElement fe ? fe.Parent : null);
+            while (parent != null && !(parent is Grid))
+            {
+                parent = VisualTreeHelper.GetParent(parent) ?? (parent is FrameworkElement pfe ? pfe.Parent : null);
+            }
+            return parent as Grid;
+        }
+
+        private Border? TrouverParentBorder(DependencyObject enfant)
+        {
+            DependencyObject parent = VisualTreeHelper.GetParent(enfant) ?? (enfant is FrameworkElement fe ? fe.Parent : null);
+            while (parent != null && !(parent is Border))
+            {
+                parent = VisualTreeHelper.GetParent(parent) ?? (parent is FrameworkElement pfe ? pfe.Parent : null);
+            }
+            return parent as Border;
         }
     }
 }
