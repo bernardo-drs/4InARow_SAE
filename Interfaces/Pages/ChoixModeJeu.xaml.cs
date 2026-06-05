@@ -40,6 +40,8 @@ namespace Interfaces.Pages
             brdChall.BorderThickness = new Thickness(2);
             brdClass.BorderThickness = new Thickness(0);
 
+            Interfaces.ConfigurationJeu.ModeDeJeu = "Challenge";
+
         }
 
         private void btnClassique_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,8 @@ namespace Interfaces.Pages
 
             brdClass.BorderThickness = new Thickness(2);
             brdChall.BorderThickness = new Thickness(0);
+
+            Interfaces.ConfigurationJeu.ModeDeJeu = "Classique";
         }
 
         private void btn3V_Click(object sender, RoutedEventArgs e)

@@ -182,8 +182,7 @@
         <TextBlock x:Name="ModeJeuText" Text="Classique"
                    Foreground="White" FontFamily="Agency FB" FontSize="20"
                    Grid.Row="9" Grid.Column="7"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Margin="0,0,10,0"/>
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
         
     </Grid>

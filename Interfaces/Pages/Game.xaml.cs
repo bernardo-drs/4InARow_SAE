@@ -28,6 +28,7 @@ namespace Interfaces.Pages
             InitializeComponent();
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
+            ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
         }
 
         private int ConvertirLimiteTemps(string limiteTemps)
