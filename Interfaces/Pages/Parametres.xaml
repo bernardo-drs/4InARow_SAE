@@ -271,12 +271,10 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Viewbox Grid.Column="0" Stretch="Fill" Height="38">
-                        <TextBox x:Name="TxtNomJ1"
+                    <TextBox x:Name="TxtNomJ1"
                                  Text="" Tag="Entrez un nom..."
                                  Style="{StaticResource RoundedTextBox}"
-                                 Width="400"/>
-                    </Viewbox>
+                                 Width="400" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="IconErrNomJ1"
                                Grid.Column="1"
                                Text="ⓘ" Foreground="#E53935"
@@ -301,22 +299,22 @@
 
                 <!-- ══ Row 6 : TextBox Nationalité J1 + icône ══ -->
                 <Grid Grid.Column="0" Grid.Row="6" Margin="12,0,12,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Viewbox Grid.Column="0" Stretch="Fill" Height="38">
-                        <TextBox x:Name="TxtNatJ1"
-                                 Text="" Tag="Entrez une nationalité..."
-                                 Style="{StaticResource RoundedTextBox}"
-                                 Width="400"/>
-                    </Viewbox>
-                    <TextBlock x:Name="IconErrNatJ1"
-                               Grid.Column="1"
-                               Text="ⓘ" Foreground="#E53935"
-                               FontSize="18" VerticalAlignment="Center"
-                               Margin="6,0,0,0" Visibility="Collapsed"/>
-                </Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    
+    <TextBox x:Name="TxtNatJ1"
+             Text="" Tag="Entrez une nationalité..."
+             Style="{StaticResource RoundedTextBox}"
+             HorizontalAlignment="Stretch"/>
+             
+    <TextBlock x:Name="IconErrNatJ1"
+               Grid.Column="1"
+               Text="ⓘ" Foreground="#E53935"
+               FontSize="18" VerticalAlignment="Center"
+               Margin="6,0,0,0" Visibility="Collapsed"/>
+</Grid>
 
                 <!-- ══ Row 7 : erreur Nationalité J1 ══ -->
                 <TextBlock x:Name="ErrNatJ1"

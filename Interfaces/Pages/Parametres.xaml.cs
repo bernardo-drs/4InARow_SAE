@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
+using Interfaces.Service;
 
 namespace Interfaces.Pages
 {
@@ -128,10 +129,7 @@ namespace Interfaces.Pages
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            if (NavigationService != null && NavigationService.CanGoBack)
-                NavigationService.GoBack();
-            else if (NavigationService != null)
-                NavigationService.Navigate(new Uri("Pages/Accueil.xaml", UriKind.Relative));
+            PageService.Navigate("Accueil");
         }
 
         private static void ShowError(TextBlock msg, TextBlock icon, string text)
