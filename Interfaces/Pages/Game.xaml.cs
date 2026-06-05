@@ -48,7 +48,7 @@ namespace Interfaces.Pages
             // Si aucune limite, on n'affiche pas de timer
             if (_secondesRestantes <= 0)
             {
-                TimerText.Text = "∞";
+                TimerText.Text = "0 : 00";
                 return;
             }
 
