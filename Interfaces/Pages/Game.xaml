@@ -109,8 +109,8 @@
                 CornerRadius="10" Margin="5">
             <Button x:Name="BtnPause" Background="Transparent"
                     BorderThickness="0" OverridesDefaultStyle="True"
-                    Tag="Game">
-                <!--Click="BtnPause_Click"-->
+                    Tag="Game"
+                    Click="BtnPause_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Viewbox>

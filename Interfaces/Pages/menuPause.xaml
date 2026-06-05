@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="210" d:DesignWidth="414"
-      Background="#004aad"
+      Background="#5170ff"
       FontFamily="Agency FB"
       Title="menuPause">
 

@@ -79,6 +79,9 @@ namespace Interfaces.Service
                 case "ChoixModeJeu":
                     _window.popUpFrame.Content = new ChoixModeJeu();
                     break;
+                case "MenuPause":
+                    _window.popUpFrame.Content = new menuPause();
+                    break;
                 default:
                     _window.popUpFrame.Content = null;
                     break;

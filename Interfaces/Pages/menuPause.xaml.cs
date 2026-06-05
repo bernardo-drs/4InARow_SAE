@@ -36,7 +36,8 @@ namespace Interfaces.Pages
 
         private void OnModeButtonClick(object sender, RoutedEventArgs e)
         {
-            // Retourner à la page de la parite
+            PageService.PopUp(null);
+            PageService.Navigate("Game");
         }
 
         private void OnArreterClick(object sender, RoutedEventArgs e)
@@ -53,7 +54,8 @@ namespace Interfaces.Pages
 
         private void OnConfirmerArretClick(object sender, RoutedEventArgs e)
         {
-            // revenir à l'acceuil
+            PageService.PopUp(null);
+            PageService.Navigate("Accueil");
         }
     }
 }

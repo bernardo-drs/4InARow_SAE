@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Interfaces.Service;
 
 namespace Interfaces.Pages
 {
@@ -49,7 +50,8 @@ namespace Interfaces.Pages
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
-
+            PageService.PopUp("MenuPause");
         }
+
     }
 }
