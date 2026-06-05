@@ -19,9 +19,7 @@ namespace Interfaces
         {
             InitializeComponent();
 
-            PageHandler = new PageService(this);
-
-            PageService.Navigate("Accueil");
+            Accueil AccueilPage = new Accueil(this);
 
             Grille grille = new Grille(15);
 

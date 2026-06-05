@@ -5,11 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="210" d:DesignWidth="414"
-      Title="ChoixModeJeu" FontFamily="Agency FB">
 
     <Border Background="#8176A8" CornerRadius="10">
-        <Grid>
+    <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
                 <RowDefinition Height="20*"/>
@@ -162,8 +160,8 @@ Lancement de la partie
                         </Button>
                     </Viewbox>
                 </Border>
-
-            </Grid>
+        
+    </Grid>
 
         </Grid>
     </Border>
