@@ -170,14 +170,21 @@ namespace Interfaces.Pages
 
         private void btnApplique_Click(object sender, RoutedEventArgs e)
         {
-            bool estGrilleTailleQuatre = (colonne1 == 1 && row1 == 0);
-            bool estCinqJetonsAlignes = (colonne2 == 3 && row2 == 7);
+            
+            int[] taillesGrille = { 4, 5, 6, 8, 8, 10 };
 
-            if (estGrilleTailleQuatre && estCinqJetonsAlignes)
+            int[] nbJetons = { 3, 4, 5 }; 
+
+            int taille = (row1 >= 0 && row1 < taillesGrille.Length) ? taillesGrille[row1] : 999;
+            int jetons = (row2 >= 0 && row2 < nbJetons.Length) ? nbJetons[row2] : 0;
+
+            if (jetons >= taille)
             {
-                string message = "La condition de victoire doit être inférieure à la taille de la grille";
-                MessageBox.Show(message, "Erreur de taille");
+                MessageBox.Show("La condition de victoire doit être inférieure à la taille de la grille", "Erreur de taille");
+                return;
             }
+
+            PageService.Navigate("Game");
         }
 
         // ==========================================
@@ -202,6 +209,11 @@ namespace Interfaces.Pages
                 parent = VisualTreeHelper.GetParent(parent) ?? (parent is FrameworkElement pfe ? pfe.Parent : null);
             }
             return parent as Border;
+        }
+
+        private void Button_retour(object sender, RoutedEventArgs e)
+        {
+            PageService.Navigate("Parametres");
         }
     }
 }

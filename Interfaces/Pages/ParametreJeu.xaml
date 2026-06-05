@@ -446,7 +446,7 @@
             <Border BorderBrush="White" Grid.Row="0" Grid.RowSpan="2" Grid.Column="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="5,5,5,5">
 
                 <Viewbox>
-                    <Button Background="Transparent" OverridesDefaultStyle="False">
+                    <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_retour">
                         <Button.Template>
                             <ControlTemplate>
                                 <TextBlock Foreground="White" FontFamily="Arial Rounded MT Bold">
