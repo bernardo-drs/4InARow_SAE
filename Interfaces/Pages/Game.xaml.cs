@@ -21,7 +21,7 @@ namespace Interfaces.Pages
     public partial class Game : Page
     {
         private DispatcherTimer _timer;
-        private int _secondesRestantes = 30; //faire la référence avec ce sue l'on choisit dans la page ParametreJeu
+        private int _secondesRestantes = 30; //faire la référence avec ce que l'on choisit dans la page ParametreJeu
         public Game()
         {
             InitializeComponent();
