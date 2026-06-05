@@ -7,30 +7,54 @@ namespace Systeme.Game
 {
     public class Cellule
     {
-        private Position _position;
-        private Jeton? _jeton;
+        private int positionX;
+        private int positionY;
+        private Jeton Contenu;
 
-        public Cellule(Jeton? jeton, int posX, int posY)
+        public Cellule(int x, int y)
         {
-            this._position = new Position(posX, posY);
-
-            Jeton = jeton;
+            this.positionX = x;
+            this.positionY = y;
+            this.Contenu = null;
         }
 
-        public override string ToString()
+        public int GetX()
         {
-            return $"{(Jeton == null ? " " : "X")}|";
+            return this.positionX;
         }
 
-        public Jeton? Jeton
+        public int GetY()
         {
-            get { return this._jeton; }
-            set { this._jeton = value; }
+            return this.positionY;
         }
 
-        public Position Position
+        public bool EstOccupee()
         {
-            get { return this._position; }
+            return this.Contenu != null;
+        }
+
+        public bool EstVide()
+        {
+            return this.Contenu == null;
+        }
+
+        public void RecevoirJeton(Jeton j)
+        {
+            Contenu = j;
+        }
+
+        public void Vider()
+        {
+            Contenu = null;
+        }
+
+        public string GetCouleur()
+        {
+            if (EstVide())
+                return "Vide";
+
+            return Contenu.GetCouleurJeton();
         }
     }
+
 }

@@ -8,26 +8,23 @@ namespace Systeme.Game
 {
     public class Jeton
     {
+        private string couleurJeton;
+        private string formeJeton;
 
-        private Player? _owner;
-        private string _couleurJeton;
-
-        public Jeton(Player owner, string couleurJeton)
+        public Jeton(string couleur, string forme = "rond")
         {
-            Owner = owner;
-            CouleurJeton = couleurJeton;
+            this.couleurJeton = couleur;
+            this.formeJeton = forme;
         }
 
-        public Player? Owner
+        public string GetCouleurJeton()
         {
-            get { return this._owner; }
-            set { this._owner = value;}
+            return this.couleurJeton;
         }
 
-        public string CouleurJeton
+        public string GetFormeJeton()
         {
-            get { return this._couleurJeton; }
-            set {this._couleurJeton = value;}
+            return this.formeJeton;
         }
     }
 }
