@@ -13,6 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Interfaces.Service;
+using Systeme.Game;
+using Systeme.User;
 
 namespace Interfaces.Pages
 {
@@ -23,11 +25,21 @@ namespace Interfaces.Pages
     {
         private DispatcherTimer _timer;
         private int _secondesRestantes;
+        private Partie _partie;          
+        private int _jetonsJ1;
+        private int _jetonsJ2;
+
         public Game()
         {
             InitializeComponent();
+
+            Humain j1 = new Humain(1, ConfigurationJeu.NomJoueur1, ConfigurationJeu.CouleurJoueur1, "", "");
+            Humain j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
+            _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
+
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
+
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
             InitialiserJetons();
@@ -38,64 +50,37 @@ namespace Interfaces.Pages
             BordureJ1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
             BordureJ2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
 
-            Game.OnReprendre += () =>
-            {
-                if (_secondesRestantes > 0)
-                    _timer?.Start();
-            };
+            BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.White);
+            BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
 
-        MessageBox.Show(
-                    $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
-                    $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
-                    $"Joueur 2 : {ConfigurationJeu.NomJoueur2}\n" +
-                    $"Couleur J2 : {ConfigurationJeu.CouleurJoueur2}\n" +
-                    $"Est un bot : {ConfigurationJeu.Joueur2EstBot}\n\n" +
-                    $"Grille : {ConfigurationJeu.LargeurGrille} x {ConfigurationJeu.HauteurGrille}\n" +
-                    $"Jetons pour gagner : {ConfigurationJeu.JetonsPourGagner}\n" +
-                    $"Limite temps : {ConfigurationJeu.LimiteTemps}\n" +
-                    $"Mode de Jeu : {ConfigurationJeu.ModeDeJeu}\n" +
-                    $"Forme jeton : {ConfigurationJeu.FormeJeton}",
-                    "Debug — Vérification des données");
-            }
+            Game.OnReprendre += () => { if (_secondesRestantes > 0) _timer?.Start(); };
+        }
 
         private void CreerGrille()
         {
-            int largeur = ConfigurationJeu.LargeurGrille;
-            int hauteur = ConfigurationJeu.HauteurGrille;
+            Grille plateau = _partie.GetPlateau();
+            int largeur = plateau.GetNBColonnes();
+            int hauteur = plateau.GetNBLignes();
 
-            // Créer les colonnes
             for (int col = 0; col < largeur; col++)
-            {
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            }
 
-            // Créer les lignes
             for (int row = 0; row < hauteur; row++)
-            {
                 GameGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            }
 
-            // Remplir la grille avec des cellules vides
             for (int row = 0; row < hauteur; row++)
             {
                 for (int col = 0; col < largeur; col++)
                 {
-                    // Viewbox pour centrer et adapter la taille
                     Viewbox vb = new Viewbox
                     {
                         Stretch = Stretch.Uniform,
-                        Margin = new Thickness(4)
+                        Margin = new Thickness(4),
+                        Tag = col,
+                        Cursor = Cursors.Hand
                     };
-
-                    // Ellipse représentant la cellule vide
-                    Ellipse cellule = new Ellipse
-                    {
-                        Fill = new SolidColorBrush(Color.FromRgb(0, 30, 80)),
-                        Width = 50,
-                        Height = 50,
-                    };
-
                     vb.Child = SwitchForme(new SolidColorBrush(Color.FromRgb(0, 30, 80)));
+                    vb.MouseLeftButtonDown += OnColonneCliquee;
 
                     Grid.SetRow(vb, row);
                     Grid.SetColumn(vb, col);
@@ -112,17 +97,95 @@ namespace Interfaces.Pages
             // Correction ici : ajout des parenthèses et du double "=="
             if (totalCases % 2 == 0)
             {
-                int jetonsParJoueur = totalCases / 2;
-                JetonsJ1.Text = jetonsParJoueur.ToString();
-                JetonsJ2.Text = jetonsParJoueur.ToString();
+                _jetonsJ1 = totalCases / 2;
+                _jetonsJ2 = totalCases / 2;
             }
             else
             {
-                int jetonsJ1 = (totalCases + 1) / 2; // joueur 1 commence donc il a 1 jeton de plus si impair
-                int jetonsJ2 = totalCases / 2;
+                _jetonsJ1 = (totalCases + 1) / 2;
+                _jetonsJ2 = totalCases / 2;
+            }
+            JetonsJ1.Text = _jetonsJ1.ToString();
+            JetonsJ2.Text = _jetonsJ2.ToString();
+        }
 
-                JetonsJ1.Text = jetonsJ1.ToString();
-                JetonsJ2.Text = jetonsJ2.ToString();
+        private void OnColonneCliquee(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Viewbox vb && vb.Tag is int col)
+                JouerDansColonne(col);
+        }
+
+        private void JouerDansColonne(int col)
+        {
+            Joueur joueurActuel = _partie.GetParticipantActuel();
+            Grille plateau = _partie.GetPlateau();
+
+            // Trouver la ligne avant de placer (pour mettre à jour l'UI)
+            int ligneLibre = plateau.GetPremiereLigneLibre(col);
+            if (ligneLibre == -1) return; // Colonne pleine
+
+            // Placer le jeton via la logique métier
+            Jeton jeton = new Jeton(joueurActuel.GetCouleurJeton(), ConfigurationJeu.FormeJeton);
+            _partie.GetPlateau().PlacerJeton(col, jeton);
+
+            // Mettre à jour la cellule visuelle
+            SolidColorBrush couleur = new SolidColorBrush(
+                (Color)ColorConverter.ConvertFromString(joueurActuel.GetCouleurJeton()));
+
+            foreach (UIElement child in GameGrid.Children)
+            {
+                if (Grid.GetRow(child) == ligneLibre && Grid.GetColumn(child) == col
+                    && child is Viewbox vbCible)
+                {
+                    vbCible.Child = SwitchForme(couleur);
+                    break;
+                }
+            }
+
+            // Mettre à jour les jetons restants
+            if (joueurActuel == _partie.GetListeParticipant()[0])
+            {
+                _jetonsJ1--;
+                JetonsJ1.Text = _jetonsJ1.ToString();
+            }
+            else
+            {
+                _jetonsJ2--;
+                JetonsJ2.Text = _jetonsJ2.ToString();
+            }
+
+            // Vérifier la fin de partie AVANT de changer le tour
+            if (_partie.VerifierFin())
+            {
+                _timer?.Stop();
+                string gagnant = plateau.GrilleEstPleine() && !plateau.VerifierAlignement(
+                    joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner)
+                    ? "Match nul !"
+                    : $"{joueurActuel.GetNomJoueur()} a gagné !";
+
+                MessageBox.Show(gagnant, "Fin de partie");
+                PageService.Navigate("Accueil");
+                return;
+            }
+
+            // Changer de joueur
+            _partie.ChangerTour();
+            MettreAJourSurbrillance();
+        }
+
+        private void MettreAJourSurbrillance()
+        {
+            Joueur actuel = _partie.GetParticipantActuel();
+
+            if (actuel == _partie.GetListeParticipant()[0])
+            {
+                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.White);
+                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
+            }
+            else
+            {
+                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.White);
             }
         }
 

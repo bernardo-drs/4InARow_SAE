@@ -15,9 +15,9 @@ namespace Systeme.Game
         private Joueur[] listeParticipant;
         private Joueur participantActuel;
 
-        public Partie(Joueur j1, Joueur j2, int nbAAligner = 4)
+        public Partie(Joueur j1, Joueur j2, int nbAAligner = 4, int lignes = 6, int colonnes = 7)
         {
-            this.plateau = new Grille();
+            this.plateau = new Grille(lignes, colonnes);
             this.debut = DateTime.Now;
             this.etatPartie = "Configuration";
             this.nbJetonAAligner = nbAAligner;
