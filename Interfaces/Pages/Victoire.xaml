@@ -35,17 +35,9 @@
             </Border>
 
             <!-- Couronne -->
-            <Grid Grid.Column="1" Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="116*"/>
-                    <ColumnDefinition Width="110*"/>
-                    <ColumnDefinition Width="116*"/>
-                </Grid.ColumnDefinitions>
-                <Viewbox Grid.Column="1">
-                    <Image Source="/Images/Icon_Crown.png"/>
-                </Viewbox>
-            </Grid>
-
+            <Viewbox Grid.Column="1" Grid.Row="0">
+                <Image Source="/Images/Icon_couronne.png"/>
+            </Viewbox>
             <!-- Boutons -->
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.RowDefinitions>
@@ -64,11 +56,11 @@
 
                 <!-- Joueur 1 (gauche) -->
                 <StackPanel x:Name="PanelJoueur1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
-                            Visibility="Visible" VerticalAlignment="Center" Margin="0,0,5,0">
+                            Visibility="Collapsed" VerticalAlignment="Center" Margin="0,0,5,0">
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ1" Text="Joueur 1" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
-                    <Border CornerRadius="8" BorderThickness="3" Margin="2">
+                    <Border CornerRadius="8" BorderThickness="5" Margin="2">
                         <Border.BorderBrush>
                             <SolidColorBrush x:Name="BordureJ1"/>
                         </Border.BorderBrush>
@@ -85,11 +77,11 @@
 
                 <!-- Joueur 2 (droite) -->
                 <StackPanel x:Name="PanelJoueur2" Grid.Row="0" Grid.Column="4" Grid.RowSpan="3"
-                            Visibility="Visible" VerticalAlignment="Center" Margin="5,0,0,0">
+                            Visibility="Collapsed" VerticalAlignment="Center" Margin="5,0,0,0">
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ2" Text="Joueur 2" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
-                    <Border CornerRadius="8" BorderThickness="3" Margin="2">
+                    <Border CornerRadius="8" BorderThickness="5" Margin="2">
                         <Border.BorderBrush>
                             <SolidColorBrush x:Name="BordureJ2"/>
                         </Border.BorderBrush>
@@ -106,7 +98,7 @@
 
                 <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
                     <Viewbox>
-                        <Button Background="Transparent" OverridesDefaultStyle="True">
+                        <Button x:Name="btn_Rejouer" Background="Transparent" OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Text="Rejouer" Foreground="White" Margin="5" FontSize="10"/>

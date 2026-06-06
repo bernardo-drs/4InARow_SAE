@@ -45,6 +45,16 @@ namespace Interfaces.Pages
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
 
+            if (ConfigurationJeu.ModeDeJeu == "Challenge")
+            {
+                ScoreJ1.Visibility = Visibility.Visible;
+                ScoreJ2.Visibility = Visibility.Visible;
+
+                ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+
+            }
+
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
             InitialiserJetons();
@@ -173,6 +183,18 @@ namespace Interfaces.Pages
 
                 Victoire.NomGagnant = joueurActuel.GetNomJoueur();
                 Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
+
+                if (joueurActuel == _partie.GetListeParticipant()[0])
+                {
+                    ConfigurationJeu.ScoreJoueur1++;
+                    ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                }
+                else
+                {
+                    ConfigurationJeu.ScoreJoueur2++;
+                    ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+                }
+
                 PageService.PopUp("Victoire");
                 return;
             }

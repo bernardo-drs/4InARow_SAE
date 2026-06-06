@@ -21,6 +21,10 @@ namespace Interfaces
         public static string CouleurJoueur2 { get; set; } = "#FDD835"; // Jaune par défaut
         public static bool Joueur2EstBot { get; set; } = false;
 
+        //Score des joueurs
+        public static int ScoreJoueur1 { get; set; } = 0;
+        public static int ScoreJoueur2 { get; set; } = 0;
+
 
         // Option du jeu
         public static double TailleTexte { get; set; } = 2.0;    // De 1 à 3

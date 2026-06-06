@@ -30,6 +30,7 @@ namespace Interfaces.Pages
             InitializeComponent();
 
             RunVainqueur.Text = NomGagnant;
+            RunVainqueur.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(CouleurGagnant));
 
             BordureJ1.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1);
             BordureJ2.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2);
@@ -37,26 +38,37 @@ namespace Interfaces.Pages
             NomJ1.Text = ConfigurationJeu.NomJoueur1;
             NomJ2.Text = ConfigurationJeu.NomJoueur2;
 
-            PanelJoueur1.Visibility = Visibility.Visible;
-            PanelJoueur2.Visibility = Visibility.Visible;
+            ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString(); 
+            ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+
 
             if (ConfigurationJeu.ModeDeJeu == "Challenge")
             {
                 PanelJoueur1.Visibility = Visibility.Visible;
                 PanelJoueur2.Visibility = Visibility.Visible;
 
-                NomJ1.Text = ConfigurationJeu.NomJoueur1;
-                NomJ2.Text = ConfigurationJeu.NomJoueur2;
             }
         }
 
         private void BtnMenu_Click(object sender, RoutedEventArgs e)
         {
             PageService.Navigate("Accueil");
+            PageService.PopUp(null);
 
-            this.Visibility = Visibility.Collapsed;
+            ConfigurationJeu.ScoreJoueur1 = 0;
+            ConfigurationJeu.ScoreJoueur2 = 0;
 
-            PageService.Navigate("Accueil");
+        }
+
+        private void btn_Rejouer_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.PopUp(null);
+            PageService.Navigate("Game");
+
+            if (ConfigurationJeu.ModeDeJeu == "Challenge")
+            {
+                //
+            }
 
         }
     }

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Icon_couronne.png" />
     <None Remove="Images\Icon_Crown.png" />
   </ItemGroup>
 
@@ -17,6 +18,9 @@
   </ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="Images\Icon_couronne.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Images\Icon_Crown.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Resource>
