@@ -34,10 +34,10 @@ namespace Interfaces.Pages
             AnimationService.FadeColor(sender, 0.2, "Out", null, null);
         }
 
-        private void OnModeButtonClick(object sender, RoutedEventArgs e)
+        private void ReprendreClick(object sender, RoutedEventArgs e)
         {
             PageService.PopUp(null);
-            PageService.Navigate("Game");
+            Game.DemanderReprendre();  // Pour ne pas que le timer se rénitialise
         }
 
         private void OnArreterClick(object sender, RoutedEventArgs e)

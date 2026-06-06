@@ -41,7 +41,7 @@
                 </Border>
 
                 <Border x:Name="ReprendreButtonHolder" Background="#20114a" CornerRadius="10" Tag="#20114a" Grid.Row="3" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                    <Button x:Name="ReprendreButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Reprendre" Click="OnModeButtonClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                    <Button x:Name="ReprendreButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Reprendre" Click="ReprendreClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid Background="Transparent">
@@ -55,7 +55,7 @@
                 </Border>
 
                 <Border x:Name="EnregistrerButtonHolder" Background="#20114a" CornerRadius="10" Tag="#20114a" Grid.Row="5" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
-                    <Button x:Name="EnregistrerButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Enregistrer" Click="OnModeButtonClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                    <Button x:Name="EnregistrerButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Enregistrer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid Background="Transparent">

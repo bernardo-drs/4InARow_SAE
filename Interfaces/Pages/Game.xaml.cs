@@ -38,7 +38,13 @@ namespace Interfaces.Pages
             BordureJ1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
             BordureJ2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
 
-            MessageBox.Show(
+            Game.OnReprendre += () =>
+            {
+                if (_secondesRestantes > 0)
+                    _timer?.Start();
+            };
+
+        MessageBox.Show(
                     $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
                     $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
                     $"Joueur 2 : {ConfigurationJeu.NomJoueur2}\n" +
@@ -203,12 +209,17 @@ namespace Interfaces.Pages
             _timer.Start();
         }
 
+        public static event Action OnReprendre;
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
             _timer?.Stop();
             PageService.PopUp("MenuPause");
         }
 
+        public static void DemanderReprendre()
+        {
+            OnReprendre?.Invoke();
+        }
 
     }
 }
