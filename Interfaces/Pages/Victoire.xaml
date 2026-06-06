@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="210" d:DesignWidth="414"
-        Title="Victoire" FontFamily="Agency FB">
+      d:DesignHeight="300" d:DesignWidth="530"
+      Title="Victoire" FontFamily="Agency FB"
+      Background="#5170ff">
 
-    <Border Background="#004AAD" CornerRadius="10">
+    <Border CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="46*"/>
@@ -21,17 +22,31 @@
                 <ColumnDefinition Width="334*"/>
                 <ColumnDefinition Width="37*"/>
             </Grid.ColumnDefinitions>
+
+            <!-- Texte vainqueur -->
             <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10">
                 <Viewbox>
                     <TextBlock Foreground="White" Margin="1">
-                        <Run Text="Le joueur"></Run>
-                        <Run x:Name="RunVainqueur" Text="..."></Run>
-                        <Run Text="a remporté la partie"></Run>
+                        <Run Text="Le joueur "/>
+                        <Run x:Name="RunVainqueur" Text="..."/>
+                        <Run Text=" a remporté la partie"/>
                     </TextBlock>
                 </Viewbox>
-
             </Border>
 
+            <!-- Couronne -->
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="116*"/>
+                    <ColumnDefinition Width="110*"/>
+                    <ColumnDefinition Width="116*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <Image Source="/Images/Icon_Crown.png"/>
+                </Viewbox>
+            </Grid>
+
+            <!-- Boutons -->
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="42*"/>
@@ -40,51 +55,78 @@
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="74*"/>
-                    <ColumnDefinition Width="157*"/>
-                    <ColumnDefinition Width="74*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="210*"/>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="91*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Row="0" CornerRadius="10" Background="#20114a" Grid.Column="1">
+                <!-- Joueur 1 (gauche) -->
+                <StackPanel x:Name="PanelJoueur1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+                            Visibility="Visible" VerticalAlignment="Center" Margin="0,0,5,0">
+                    <Viewbox Height="30">
+                        <TextBlock x:Name="NomJ1" Text="Joueur 1" Foreground="White" FontWeight="Bold"/>
+                    </Viewbox>
+                    <Border x:Name="BordureJ1" CornerRadius="8" BorderThickness="3" Margin="2">
+                        <Border.BorderBrush>
+                            <SolidColorBrush x:Name="CouleurBordureJ1" Color="Red"/>
+                        </Border.BorderBrush>
+                        <StackPanel>
+                            <Image Source="/Images/Icon_Human.png" Height="50" Width="50"/>
+                            <Border Background="White" CornerRadius="4" Margin="2">
+                                <Viewbox Height="16">
+                                    <TextBlock x:Name="ScoreJ1" Text="0" HorizontalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Joueur 2 (droite) -->
+                <StackPanel x:Name="PanelJoueur2" Grid.Row="0" Grid.Column="4" Grid.RowSpan="3"
+                            Visibility="Visible" VerticalAlignment="Center" Margin="5,0,0,0">
+                    <Viewbox Height="30">
+                        <TextBlock x:Name="NomJ2" Text="Joueur 2" Foreground="White" FontWeight="Bold"/>
+                    </Viewbox>
+                    <Border x:Name="BordureJ2" CornerRadius="8" BorderThickness="3" Margin="2">
+                        <Border.BorderBrush>
+                            <SolidColorBrush x:Name="CouleurBordureJ2" Color="Yellow"/>
+                        </Border.BorderBrush>
+                        <StackPanel>
+                            <Image Source="/Images/Icon_Human.png" Height="50" Width="50"/>
+                            <Border Background="White" CornerRadius="4" Margin="2">
+                                <Viewbox Height="16">
+                                    <TextBlock x:Name="ScoreJ2" Text="0" HorizontalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="True">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="Rejouer" Foreground="White"/>
+                                    <TextBlock Text="rejouer" Foreground="White" Margin="1"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
                     </Viewbox>
                 </Border>
 
-                <Border Grid.Row="2" Grid.Column="1"  CornerRadius="10" Background="#20114a">
+                <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
                     <Viewbox>
-                        <Button Background="Transparent" OverridesDefaultStyle="True" Margin="1">
+                        <Button Background="Transparent" OverridesDefaultStyle="True">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="Retourner au menu" Foreground="White"/>
+                                    <TextBlock Text="retourner au menu" Foreground="White" Margin="1"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
                     </Viewbox>
                 </Border>
-
-            </Grid>
-            <Grid Grid.Column="1" Grid.Row="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="116*"/>
-                    <ColumnDefinition Width="110*"/>
-                    <ColumnDefinition Width="116*"/>
-                </Grid.ColumnDefinitions>
-
-                <Viewbox Grid.Column="1">
-                    <Image Source="/Images/Icon_Crown.png">
-
-                    </Image>
-                </Viewbox>
 
             </Grid>
         </Grid>

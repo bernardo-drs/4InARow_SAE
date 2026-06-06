@@ -82,6 +82,9 @@ namespace Interfaces.Service
                 case "MenuPause":
                     _window.popUpFrame.Content = new menuPause();
                     break;
+                case "Victoire":
+                    _window.popUpFrame.Content = new Victoire();
+                    break;
                 default:
                     _window.popUpFrame.Content = null;
                     break;

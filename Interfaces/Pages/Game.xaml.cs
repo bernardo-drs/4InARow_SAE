@@ -171,8 +171,9 @@ namespace Interfaces.Pages
                     ? "Match nul !"
                     : $"{joueurActuel.GetNomJoueur()} a gagné !";
 
-                MessageBox.Show(gagnant, "Fin de partie");
-                PageService.Navigate("Accueil");
+                Victoire.NomGagnant = joueurActuel.GetNomJoueur();
+                Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
+                PageService.PopUp("Victoire");
                 return;
             }
 

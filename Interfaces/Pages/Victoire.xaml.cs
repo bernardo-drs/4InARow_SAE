@@ -22,25 +22,29 @@ namespace Interfaces.Pages
 
     public partial class Victoire : Page
     {
+        public static string NomGagnant { get; set; }
+        public static string CouleurGagnant { get; set; }
+
         public Victoire()
         {
             InitializeComponent();
-            bool ok = false;
             BrushConverter bc = new BrushConverter();
 
-            if (ok)
+            RunVainqueur.Text = NomGagnant;
+            Brush b = (Brush)bc.ConvertFromString(CouleurGagnant);
+            RunVainqueur.Foreground = b;
+
+            if (ConfigurationJeu.ModeDeJeu == "Challenge")
             {
-                RunVainqueur.Text = "rouge";
-                Brush b = (Brush)bc.ConvertFromString("Red");
-                RunVainqueur.Foreground = b;
+                PanelJoueur1.Visibility = Visibility.Visible;
+                PanelJoueur2.Visibility = Visibility.Visible;
+
+                NomJ1.Text = ConfigurationJeu.NomJoueur1;
+                NomJ2.Text = ConfigurationJeu.NomJoueur2;
+
+                CouleurBordureJ1.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1);
+                CouleurBordureJ2.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2);
             }
-            else
-            {
-                RunVainqueur.Text = "vert";
-                Brush b = (Brush)bc.ConvertFromString("Green");
-                RunVainqueur.Foreground = b;
-            }
-            
         }
     }
 }
