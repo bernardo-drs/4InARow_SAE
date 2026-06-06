@@ -7,9 +7,9 @@ namespace Interfaces
     public static class ConfigurationJeu
     {
         // Paramètre du jeu
-        public static int LargeurGrille { get; set; }
-        public static int HauteurGrille { get; set; }
-        public static int JetonsPourGagner { get; set; }
+        public static int LargeurGrille { get; set; } = 7;
+        public static int HauteurGrille { get; set; } = 6;
+        public static int JetonsPourGagner { get; set; } = 4;
         public static string LimiteTemps { get; set; } = "Aucune";
 
         public static string ModeDeJeu { get; set; } = "Classique";

@@ -89,7 +89,7 @@
     </Page.Resources>
 
     <Viewbox Stretch="Uniform" Width="420" Height="400">
-        <Grid Width="420">
+        <Grid Width="420" Margin="0,-5,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -105,10 +105,10 @@
             </Grid.RowDefinitions>
 
             <!-- Row 0 : titre -->
-            <TextBlock Grid.Row="0"
+            <TextBlock Grid.Row="0" 
                        Text="Informations du joueur 2"
                        FontFamily="Baskerville Old Face"
-                       Foreground="White" FontSize="{DynamicResource FontSize15}"
+                       Foreground="White" FontSize="{DynamicResource FontSize22}"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,20"/>
 
@@ -117,7 +117,7 @@
                        Text="Nom"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="12,0,0,6"/>
+                       HorizontalAlignment="Left" Margin="20,0,0,6"/>
 
             <!-- Row 2 : TextBox Nom + icône erreur -->
             <Grid Grid.Row="2" Margin="12,0,12,0">
@@ -125,12 +125,13 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Viewbox Grid.Column="0" Stretch="Fill" Height="38">
-                    <TextBox x:Name="TxtNomJ2" x:FieldModifier="public"
+                
+                <TextBox x:Name="TxtNomJ2" x:FieldModifier="public"
                              Text="" Tag="Entrez un nom..."
                              Style="{StaticResource RoundedTextBox}"
-                             Width="400"/>
-                </Viewbox>
+                             Height="45" Width="380"/>
+                
+                
                 <TextBlock x:Name="IconErrNomJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
@@ -144,14 +145,15 @@
                        Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Left" Margin="14,2,0,6"
-                       Visibility="Collapsed"/>
+                       Height="18"
+                       Visibility="Hidden"/>
 
             <!-- Row 4 : label Nationalité -->
             <TextBlock Grid.Row="4"
                        Text="Nationalité"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="12,0,0,6"/>
+                       HorizontalAlignment="Left" Margin="20,0,0,6"/>
 
             <!-- Row 5 : TextBox Nationalité + icône erreur -->
             <Grid Grid.Row="5" Margin="12,0,12,0">
@@ -159,12 +161,10 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Viewbox Grid.Column="0" Stretch="Fill" Height="38">
-                    <TextBox x:Name="TxtNatJ2" x:FieldModifier="public"
+                <TextBox x:Name="TxtNatJ2" x:FieldModifier="public"
                              Text="" Tag="Entrez une nationalité..."
                              Style="{StaticResource RoundedTextBox}"
-                             Width="400"/>
-                </Viewbox>
+                             Height="45" Width="380"/>
                 <TextBlock x:Name="IconErrNatJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
@@ -174,18 +174,19 @@
 
             <!-- Row 6 : message erreur Nationalité -->
             <TextBlock x:Name="ErrNatJ2" x:FieldModifier="public"
-                       Grid.Row="6"
-                       Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
-                       FontFamily="Segoe UI" FontStyle="Italic"
-                       HorizontalAlignment="Left" Margin="14,2,0,6"
-                       Visibility="Collapsed"/>
+                   Grid.Row="6"
+                   Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
+                   FontFamily="Segoe UI" FontStyle="Italic"
+                   HorizontalAlignment="Left" Margin="14,2,0,6"
+                   Height="18"
+                   Visibility="Hidden"/>
 
             <!-- Row 7 : label Couleur -->
             <TextBlock Grid.Row="7"
                        Text="Couleur des jetons"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="12,0,0,10"/>
+                       HorizontalAlignment="Left" Margin="20,0,0,10"/>
 
             <!-- Row 8 : palette + icône erreur -->
             <Grid Grid.Row="8" HorizontalAlignment="Center">

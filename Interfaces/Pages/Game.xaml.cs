@@ -40,6 +40,7 @@ namespace Interfaces.Pages
             else
                 j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
+            _partie.DemarrerPartie();
 
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
@@ -115,6 +116,10 @@ namespace Interfaces.Pages
 
         private void OnColonneCliquee(object sender, MouseButtonEventArgs e)
         {
+            // Pour ne pas pouvoir appuyer lors du tout de l'IA
+            if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
+                return;
+
             if (sender is Viewbox vb && vb.Tag is int col)
                 JouerDansColonne(col);
         }
@@ -327,10 +332,6 @@ namespace Interfaces.Pages
             int colAleatoire = colonnesDisponibles[rng.Next(colonnesDisponibles.Count)];
 
             JouerDansColonne(colAleatoire);
-
-            // Réinitialiser le timer pour le joueur suivant
-            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
-            StartTimer();
         }
 
         public static event Action OnReprendre;

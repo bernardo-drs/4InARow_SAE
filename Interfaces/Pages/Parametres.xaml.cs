@@ -181,8 +181,8 @@ namespace Interfaces.Pages
 
         private static void ClearError(TextBlock msg, TextBlock icon)
         {
-            msg.Visibility = Visibility.Collapsed;
-            icon.Visibility = Visibility.Collapsed;
+            msg.Visibility = Visibility.Hidden;
+            icon.Visibility = Visibility.Hidden;
         }
 
         private static string GetBgColor(Button? btn)

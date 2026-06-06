@@ -21,9 +21,9 @@
             <RowDefinition Height="252*"/>
             <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
+        
         <Viewbox Grid.ColumnSpan="3" Grid.Row="1" >
             <TextBlock x:Name="GameTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FAFAFA" FontSize="{DynamicResource FontSize47}" Text="Puissance 4"/>
-
 
         </Viewbox>
 

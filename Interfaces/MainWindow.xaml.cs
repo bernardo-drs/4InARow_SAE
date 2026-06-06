@@ -26,8 +26,6 @@ namespace Interfaces
             mainFrame.Navigate(AccueilPage);
 
             Grille grille = new Grille(15);
-
-            MessageBox.Show(grille.ToString());
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
