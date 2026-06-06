@@ -267,9 +267,36 @@ namespace Interfaces.Pages
                 if (_secondesRestantes <= 0)
                 {
                     _timer.Stop();
+                    PlacerJetonAleatoire();
                 }
             };
             _timer.Start();
+        }
+
+        private void PlacerJetonAleatoire()
+        {
+            Grille plateau = _partie.GetPlateau();
+            int largeur = plateau.GetNBColonnes();
+
+            // Trouver toutes les colonnes non pleines
+            List<int> colonnesDisponibles = new List<int>();
+            for (int col = 0; col < largeur; col++)
+            {
+                if (plateau.GetPremiereLigneLibre(col) != -1)
+                    colonnesDisponibles.Add(col);
+            }
+
+            if (colonnesDisponibles.Count == 0) return; // Grille pleine
+
+            // Choisir une colonne aléatoire
+            Random rng = new Random();
+            int colAleatoire = colonnesDisponibles[rng.Next(colonnesDisponibles.Count)];
+
+            JouerDansColonne(colAleatoire);
+
+            // Réinitialiser le timer pour le joueur suivant
+            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
+            StartTimer();
         }
 
         public static event Action OnReprendre;
