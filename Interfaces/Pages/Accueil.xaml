@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="560" d:DesignWidth="996"
-      Title="Accueil" Background="#20114A" FontFamily="Agency FB">
+      Title="Accueil" Background="{DynamicResource BackgroundColor}" FontFamily="Agency FB">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -69,7 +69,7 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Jouer"
-                           FontSize="20"
+                           FontSize="{DynamicResource FontSize15}"
                            Foreground="Black"
                            FontStretch="Expanded"
                            HorizontalAlignment="Center"
@@ -112,7 +112,7 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Options"
-                           FontSize="20"
+                           FontSize="{DynamicResource FontSize15}"
                            Foreground="Black"
                            FontStretch="Expanded"
                            HorizontalAlignment="Center"
@@ -154,7 +154,7 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Historique"
-                           FontSize="20"
+                           FontSize="{DynamicResource FontSize15}"
                            Foreground="Black"
                            FontStretch="Expanded"
                            HorizontalAlignment="Center"
@@ -199,7 +199,7 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Leaderboard"
-                                   FontSize="20"
+                                   FontSize="{DynamicResource FontSize15}"
                                    Foreground="Black"
                                    FontStretch="Expanded"
                                    HorizontalAlignment="Center"
@@ -243,7 +243,7 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Quitter"
-                                   FontSize="20"
+                                   FontSize="{DynamicResource FontSize15}"
                                    Foreground="Black"
                                    FontStretch="Expanded"
                                    HorizontalAlignment="Center"

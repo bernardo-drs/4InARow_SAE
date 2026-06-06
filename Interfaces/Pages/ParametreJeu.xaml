@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Interfaces.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ParametreJeu" Background="#20114A" FontFamily="Agency FB">
+      Title="ParametreJeu" Background="{DynamicResource BackgroundColor}" FontFamily="Agency FB">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="98*"/>

@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="210" d:DesignWidth="414"
       Title="ChoixModeJeu">
+    
     <Border Background="#8176A8" CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>

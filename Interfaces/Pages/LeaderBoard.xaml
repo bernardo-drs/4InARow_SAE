@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LeaderBoard"
-      Background="#20114a">
+      Background="{DynamicResource BackgroundColor}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
 
         <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" Grid.RowSpan="2">
             <Button x:Name="BtnRetour" Click="OnLeavePage" Background="Transparent">
-                <TextBlock Text="X" FontSize="30" Foreground="#ffffff" FontFamily="Arial Rounded MT Bold"></TextBlock>
+                <TextBlock Text="X" FontSize="{DynamicResource FontSize30}" Foreground="#ffffff" FontFamily="Arial Rounded MT Bold"></TextBlock>
             </Button>
         </Border>
 
@@ -59,7 +59,7 @@
             <!--Titre de l'onglet-->
 
             <Border CornerRadius="12"  Grid.Row="1" Grid.Column="1" Background="#20114a" Grid.ColumnSpan="2" Margin="22,0,0,0">
-                <TextBlock Text="Leaderboard" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#ffffff" FontFamily="Agency FB"/>
+                <TextBlock Text="Leaderboard" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}" Foreground="#ffffff" FontFamily="Agency FB"/>
             </Border>
 
             <!--Top 10 + Nombre de victoires avec la couronne-->
@@ -152,11 +152,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#1" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#1" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="UneTable" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" />
+                            <TextBlock Grid.Column="1" Text="UneTable" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}" />
                             <!--Nombre de victoires-->
-                            <TextBlock Text="7" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="7" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -170,11 +170,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#2" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#2" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Jiao" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Jiao" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="5" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="5" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -188,11 +188,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#3" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#3" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Bernard" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Bernard" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="4" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="4" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -206,11 +206,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#4" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#4" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Polo" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Polo" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="3" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -224,11 +224,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#5" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#5" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Maé" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Maé" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="3" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -242,11 +242,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#6" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#6" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Clem" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Clem" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="2" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="2" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -260,11 +260,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#7" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#7" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Bot" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Bot" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="1" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -278,11 +278,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#8" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#8" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Loïc" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Loïc" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="0" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -296,11 +296,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#9" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#9" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Volcan" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Volcan" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="0" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
@@ -314,11 +314,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Placement-->
-                            <TextBlock Text="#10" FontSize="30" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="#10" FontSize="{DynamicResource FontSize30}" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                             <!--Pseudonyme des joueurs-->
-                            <TextBlock Grid.Column="1" Text="Lacden" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <TextBlock Grid.Column="1" Text="Lacden" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize15}"/>
                             <!--Nombre de victoires-->
-                            <TextBlock Text="0" FontSize="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize20}" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                         </Grid>
                     </Border>
 
