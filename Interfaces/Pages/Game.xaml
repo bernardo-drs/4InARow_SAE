@@ -23,6 +23,7 @@
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="24*"/>
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="53*"/>
@@ -60,6 +61,7 @@
                     Grid.Column="0"
                     CornerRadius="10" Margin="5"
                     BorderBrush="White" BorderThickness="3">
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="70*"/>
@@ -142,6 +144,7 @@
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="57*"/>
@@ -149,6 +152,7 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
+                
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="21"/>
                 </Viewbox>
@@ -165,6 +169,7 @@
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="57*"/>
@@ -172,6 +177,7 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
+                
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="21"/>
                 </Viewbox>

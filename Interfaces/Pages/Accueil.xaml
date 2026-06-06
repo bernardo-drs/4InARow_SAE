@@ -22,9 +22,9 @@
             <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.ColumnSpan="3" Grid.Row="1" >
-            <TextBlock x:Name="GameTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FAFAFA">
-    Puissance 4
-            </TextBlock>
+            <TextBlock x:Name="GameTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FAFAFA" FontSize="{DynamicResource FontSize47}" Text="Puissance 4"/>
+
+
         </Viewbox>
 
         <Grid Grid.Row="3" Grid.Column="1">
@@ -44,22 +44,22 @@
             <!--Bouton Jouer-->
 
             <Border x:Name="PlayButtonHolder"
-Background="#FAFAFA"
-CornerRadius="10"
-Tag="#FAFAFA"
-Grid.Row="0"
-MouseEnter="OnMouseEnterButton"
-MouseLeave="OnMouseLeaveButton">
+                Background="#FAFAFA"
+                CornerRadius="10"
+                Tag="#FAFAFA"
+                Grid.Row="0"
+                MouseEnter="OnMouseEnterButton"
+                MouseLeave="OnMouseLeaveButton">
 
                 <Button x:Name="PlayButton"
-    BorderThickness="0"
-    OverridesDefaultStyle="True"
-    Background="Transparent"
-    Tag="Parametres"
-    Click="OnModeButtonClick"
-    HorizontalAlignment="Stretch"
-    VerticalAlignment="Stretch"
-    Padding="0">
+                    BorderThickness="0"
+                    OverridesDefaultStyle="True"
+                    Background="Transparent"
+                    Tag="Parametres"
+                    Click="OnModeButtonClick"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -69,16 +69,14 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Jouer"
-                           FontSize="{DynamicResource FontSize15}"
-                           Foreground="Black"
-                           FontStretch="Expanded"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                                       FontSize="{DynamicResource FontSize15}"
+                                       Foreground="Black"
+                                       FontStretch="Expanded"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
 
                                 </Viewbox>
-
                             </Grid>
-
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -87,22 +85,22 @@ MouseLeave="OnMouseLeaveButton">
             <!--Bouton Options-->
 
             <Border x:Name="OptionsButtonHolder"
-Background="#d3cdff"
-CornerRadius="10"
-Tag="#d3cdff"
-Grid.Row="2"
-MouseEnter="OnMouseEnterButton"
-MouseLeave="OnMouseLeaveButton">
+                Background="#d3cdff"
+                CornerRadius="10"
+                Tag="#d3cdff"
+                Grid.Row="2"
+                MouseEnter="OnMouseEnterButton"
+                MouseLeave="OnMouseLeaveButton">
 
                 <Button x:Name="OptionsButton"
-    BorderThickness="0"
-    OverridesDefaultStyle="True"
-    Background="Transparent"
-    Tag="Options"
-    Click="OnModeButtonClick"
-    HorizontalAlignment="Stretch"
-    VerticalAlignment="Stretch"
-    Padding="0">
+                    BorderThickness="0"
+                    OverridesDefaultStyle="True"
+                    Background="Transparent"
+                    Tag="Options"
+                    Click="OnModeButtonClick"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0">        
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -112,16 +110,14 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Options"
-                           FontSize="{DynamicResource FontSize15}"
-                           Foreground="Black"
-                           FontStretch="Expanded"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                                       FontSize="{DynamicResource FontSize15}"
+                                       Foreground="Black"
+                                       FontStretch="Expanded"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
 
                                 </Viewbox>
-
                             </Grid>
-
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -129,22 +125,22 @@ MouseLeave="OnMouseLeaveButton">
             <!--Bouton Historique-->
 
             <Border x:Name="HistoriqueButtonHolder"
-Background="#a497ff"
-CornerRadius="10"
-Tag="#a497ff"
-Grid.Row="4"
-MouseEnter="OnMouseEnterButton"
-MouseLeave="OnMouseLeaveButton">
+                Background="#a497ff"
+                CornerRadius="10"
+                Tag="#a497ff"
+                Grid.Row="4"
+                MouseEnter="OnMouseEnterButton"
+                MouseLeave="OnMouseLeaveButton">
 
                 <Button x:Name="HistoriqueButton"
-    BorderThickness="0"
-    OverridesDefaultStyle="True"
-    Background="Transparent"
-    Tag="Historique"
-    Click="OnModeButtonClick"
-    HorizontalAlignment="Stretch"
-    VerticalAlignment="Stretch"
-    Padding="0">
+                    BorderThickness="0"
+                    OverridesDefaultStyle="True"
+                    Background="Transparent"
+                    Tag="Historique"
+                    Click="OnModeButtonClick"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -154,16 +150,14 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Historique"
-                           FontSize="{DynamicResource FontSize15}"
-                           Foreground="Black"
-                           FontStretch="Expanded"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                                       FontSize="{DynamicResource FontSize15}"
+                                       Foreground="Black"
+                                       FontStretch="Expanded"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
 
                                 </Viewbox>
-
                             </Grid>
-
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -174,22 +168,22 @@ MouseLeave="OnMouseLeaveButton">
             <!--Bouton Leaderboard-->
 
             <Border x:Name="LeaderboardButtonHolder"
-        Background="#8573ff"
-        CornerRadius="10"
-        Tag="#8573ff"
-        Grid.Row="6"
-        MouseEnter="OnMouseEnterButton"
-        MouseLeave="OnMouseLeaveButton">
+                Background="#8573ff"
+                CornerRadius="10"
+                Tag="#8573ff"
+                Grid.Row="6"
+                MouseEnter="OnMouseEnterButton"
+                MouseLeave="OnMouseLeaveButton">
 
-            <Button x:Name="LeaderboardButton"
-            BorderThickness="0"
-            OverridesDefaultStyle="True"
-            Background="Transparent"
-            Tag="Leaderboard"
-            Click="OnModeButtonClick"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            Padding="0">
+                <Button x:Name="LeaderboardButton"
+                    BorderThickness="0"
+                    OverridesDefaultStyle="True"
+                    Background="Transparent"
+                    Tag="Leaderboard"
+                    Click="OnModeButtonClick"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0">
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -199,16 +193,14 @@ MouseLeave="OnMouseLeaveButton">
                                 <Viewbox Margin="8" Stretch="Uniform">
 
                                     <TextBlock Text="Leaderboard"
-                                   FontSize="{DynamicResource FontSize15}"
-                                   Foreground="Black"
-                                   FontStretch="Expanded"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                                       FontSize="{DynamicResource FontSize15}"
+                                       Foreground="Black"
+                                       FontStretch="Expanded"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
 
                                 </Viewbox>
-
                             </Grid>
-
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -218,22 +210,22 @@ MouseLeave="OnMouseLeaveButton">
             <!--Bouton Quitter-->
 
             <Border x:Name="QuitterButtonHolder"
-        Background="#5170FF"
-        CornerRadius="10"
-        Tag="#5170FF"
-        Grid.Row="8"
-        MouseEnter="OnMouseEnterButton"
-        MouseLeave="OnMouseLeaveButton">
+                Background="#5170FF"
+                CornerRadius="10"
+                Tag="#5170FF"
+                Grid.Row="8"
+                MouseEnter="OnMouseEnterButton"
+                MouseLeave="OnMouseLeaveButton">
 
                 <Button x:Name="QuitterButton"
-            BorderThickness="0"
-            OverridesDefaultStyle="True"
-            Background="Transparent"
-            Tag="Quitter"
-            Click="QuitterButton_Click"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            Padding="0">
+                    BorderThickness="0"
+                    OverridesDefaultStyle="True"
+                    Background="Transparent"
+                    Tag="Quitter"
+                    Click="QuitterButton_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0">    
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -250,9 +242,7 @@ MouseLeave="OnMouseLeaveButton">
                                    VerticalAlignment="Center"/>
 
                                 </Viewbox>
-
                             </Grid>
-
                         </ControlTemplate>
                     </Button.Template>
                 </Button>

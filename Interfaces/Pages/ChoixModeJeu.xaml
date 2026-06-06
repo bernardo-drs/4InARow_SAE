@@ -9,6 +9,7 @@
       Title="ChoixModeJeu">
     
     <Border Background="#8176A8" CornerRadius="10">
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
@@ -22,6 +23,7 @@
                 <RowDefinition Height="35*"/>
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="188*"/>
                 <ColumnDefinition Width="19*"/>

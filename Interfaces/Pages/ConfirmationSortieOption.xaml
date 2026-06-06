@@ -9,7 +9,9 @@
       Title="ConfirmationSortieOption">
 
     <Border Background="#8176A8" CornerRadius="10">
+        
         <Grid>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="18*"/>
                 <RowDefinition Height="44*"/>
@@ -19,12 +21,14 @@
                 <RowDefinition Height="37*"/>
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
+            
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150*"/>
                     <ColumnDefinition Width="217*"/>
                     <ColumnDefinition Width="150*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Border Background ="#201A43" Grid.Column="1" CornerRadius="5">
                     <Viewbox Margin="5">
                         <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize30}">
@@ -33,18 +37,21 @@
                     </Viewbox>
                 </Border>
             </Grid>
+            
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="277*"/>
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Viewbox Margin="5" Grid.Column="1">
                     <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="{DynamicResource FontSize20}">
                             Êtes-vous sur de vouloir quitter les options du jeu ?
                     </TextBlock>
                 </Viewbox>
             </Grid>
+            
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40*"/>
@@ -53,22 +60,23 @@
                     <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Border x:Name="OuioptionQuitterButtonHolder"
-Background="#201A43"
-CornerRadius="5"
-Tag="#201A43"
-Grid.Column="1"
-MouseEnter="OnMouseEnterButton"
-MouseLeave="OnMouseLeaveButton">
+                    Background="#201A43"
+                    CornerRadius="5"
+                    Tag="#201A43"
+                    Grid.Column="1"
+                    MouseEnter="OnMouseEnterButton"
+                    MouseLeave="OnMouseLeaveButton">
 
                     <Button x:Name="OuiOptionQuitter"
-    BorderThickness="0"
-    OverridesDefaultStyle="True"
-    Background="Transparent"
-    HorizontalAlignment="Stretch"
-    VerticalAlignment="Stretch"
-    Padding="0"
-    Click="OuiOptionQuitterButton_Click">
+                        BorderThickness="0"
+                        OverridesDefaultStyle="True"
+                        Background="Transparent"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Padding="0"
+                        Click="OuiOptionQuitterButton_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -78,36 +86,35 @@ MouseLeave="OnMouseLeaveButton">
                                     <Viewbox Margin="8" Stretch="Uniform">
 
                                         <TextBlock Text="Oui"
-                           FontSize="{DynamicResource FontSize20}"
-                           Foreground="#FAFAFA"
-                           FontStretch="Expanded"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                                           FontSize="{DynamicResource FontSize20}"
+                                           Foreground="#FAFAFA"
+                                           FontStretch="Expanded"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
 
                                     </Viewbox>
-
                                 </Grid>
-
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                 </Border>
+                
                 <Border x:Name="NonOptionQuitterButtonHolder"
-Background="#201A43"
-CornerRadius="5"
-Tag="#201A43"
-Grid.Column="3"
-MouseEnter="OnMouseEnterButton"
-MouseLeave="OnMouseLeaveButton">
+                    Background="#201A43"
+                    CornerRadius="5"
+                    Tag="#201A43"
+                    Grid.Column="3"
+                    MouseEnter="OnMouseEnterButton"
+                    MouseLeave="OnMouseLeaveButton">
 
                     <Button x:Name="NonOptionQuitter"
-    BorderThickness="0"
-    OverridesDefaultStyle="True"
-    Background="Transparent"
-    HorizontalAlignment="Stretch"
-    VerticalAlignment="Stretch"
-    Padding="0"
-    Click="NonOptionQuitterButton_Click">
+                        BorderThickness="0"
+                        OverridesDefaultStyle="True"
+                        Background="Transparent"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Padding="0"
+                        Click="NonOptionQuitterButton_Click">       
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -117,16 +124,14 @@ MouseLeave="OnMouseLeaveButton">
                                     <Viewbox Margin="8" Stretch="Uniform">
 
                                         <TextBlock Text="Non"
-                           FontSize="{DynamicResource FontSize20}"
-                           Foreground="#FAFAFA"
-                           FontStretch="Expanded"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                                           FontSize="{DynamicResource FontSize20}"
+                                           Foreground="#FAFAFA"
+                                           FontStretch="Expanded"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
 
                                     </Viewbox>
-
                                 </Grid>
-
                             </ControlTemplate>
                         </Button.Template>
                     </Button>

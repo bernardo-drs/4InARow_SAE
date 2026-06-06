@@ -16,6 +16,7 @@
             <RowDefinition Height="372*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="62*"/>
             <ColumnDefinition Width="143*"/>
@@ -78,6 +79,7 @@
                            Width="10" 
                            Background="Transparent"
                            Margin="5,0,0,0">
+                                
                                 <ScrollBar.Template>
                                     <ControlTemplate TargetType="ScrollBar">
                                         <Track x:Name="PART_Track" IsDirectionReversed="true">
