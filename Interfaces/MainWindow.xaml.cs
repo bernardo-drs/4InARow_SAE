@@ -1,7 +1,5 @@
-﻿using Interfaces.Pages;
-using Interfaces.Service;
+﻿using Interfaces.Service;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows;
 using Systeme.Game;
 
@@ -21,9 +19,9 @@ namespace Interfaces
 
             PageHandler = new PageService(this);
 
-            Accueil AccueilPage = new Accueil(this);
+            PageService.Navigate("Accueil");
 
-            mainFrame.Navigate(AccueilPage);
+            Grille grille = new Grille(6);
 
             Grille grille = new Grille(15);
         }
