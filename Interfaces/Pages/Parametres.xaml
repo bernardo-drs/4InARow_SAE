@@ -15,36 +15,34 @@
             <Setter Property="Background"                 Value="#5A5480"/>
             <Setter Property="Foreground"                 Value="White"/>
             <Setter Property="BorderThickness"            Value="0"/>
-            <Setter Property="FontSize"                   Value="16"/>
+            <Setter Property="FontSize"                    Value="16"/>
             <Setter Property="FontFamily"                 Value="Segoe UI"/>
-            <Setter Property="Padding"                    Value="10,6"/>
-            <Setter Property="Height"                     Value="38"/>
+            <Setter Property="Padding"                    Value="16,0"/>
+            <Setter Property="Height"                     Value="46"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment"   Value="Center"/>
             <Setter Property="AcceptsReturn"              Value="False"/>
             <Setter Property="TextWrapping"               Value="NoWrap"/>
-            <Setter Property="FontStyle"                  Value="Normal"/>
-            <Setter Property="FontWeight"                 Value="Normal"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border Background="{TemplateBinding Background}"
-                                CornerRadius="20" Padding="{TemplateBinding Padding}">
+            CornerRadius="20" Padding="{TemplateBinding Padding}">
                             <Grid>
                                 <TextBlock x:Name="Placeholder"
-                                           Text="{TemplateBinding Tag}"
-                                           Foreground="#AAAACC"
-                                           FontStyle="Italic"
-                                           FontSize="{TemplateBinding FontSize}"
-                                           FontFamily="{TemplateBinding FontFamily}"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           IsHitTestVisible="False"
-                                           Visibility="Collapsed"/>
+                       Text="{TemplateBinding Tag}"
+                       Foreground="#AAAACC"
+                       FontStyle="Italic"
+                       FontSize="{TemplateBinding FontSize}"
+                       FontFamily="{TemplateBinding FontFamily}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       IsHitTestVisible="False"
+                       Visibility="Collapsed"/>
                                 <ScrollViewer x:Name="PART_ContentHost"
-                                              VerticalAlignment="Center"
-                                              HorizontalScrollBarVisibility="Hidden"
-                                              VerticalScrollBarVisibility="Hidden"/>
+                          VerticalAlignment="Center"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -279,11 +277,11 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBox x:Name="TxtNomJ1" Text="" Tag="Entrez un nom..."
-                                     Style="{StaticResource RoundedTextBox}" Height="45" Width="360" HorizontalAlignment="Left"/>
+                                     Style="{StaticResource RoundedTextBox}" Height="45" Width="354" HorizontalAlignment="Left"/>
                             <TextBlock x:Name="IconErrNomJ1" Grid.Column="1"
-                                       Text="ⓘ" Foreground="#E53935"
+                                       Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                                       Margin="6,0,0,0" Visibility="Collapsed"/>
+                                       Margin="8,0,0,0" Visibility="Hidden"/>
                         </Grid>
                         <TextBlock x:Name="ErrNomJ1" Foreground="#E53935"
                                    FontSize="{DynamicResource FontSize12}"
@@ -300,11 +298,11 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBox x:Name="TxtNatJ1" Text="" Tag="Entrez une nationalité..."
-                                     Style="{StaticResource RoundedTextBox}" Height="45" Width="360" HorizontalAlignment="Left"/>
+                                     Style="{StaticResource RoundedTextBox}" Height="45" Width="354" HorizontalAlignment="Left"/>
                             <TextBlock x:Name="IconErrNatJ1" Grid.Column="1"
-                                       Text="ⓘ" Foreground="#E53935"
+                                       Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                                       Margin="6,0,0,0" Visibility="Collapsed"/>
+                                       Margin="8,0,0,0" Visibility="Hidden"/>
                         </Grid>
                         <TextBlock x:Name="ErrNatJ1" Foreground="#E53935"
                                    FontSize="{DynamicResource FontSize12}"
@@ -333,7 +331,7 @@
                                 </UniformGrid>
                             </Border>
                             <TextBlock x:Name="IconErrCoulJ1" Grid.Column="1"
-                                       Text="ⓘ" Foreground="#E53935"
+                                       Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
                                        Margin="8,0,0,0" Visibility="Collapsed"/>
                         </Grid>

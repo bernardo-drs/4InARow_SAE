@@ -4,15 +4,14 @@
       Background="Transparent">
 
     <Page.Resources>
-
         <Style x:Key="RoundedTextBox" TargetType="TextBox">
             <Setter Property="Background"                 Value="#5A5480"/>
             <Setter Property="Foreground"                 Value="White"/>
             <Setter Property="BorderThickness"            Value="0"/>
-            <Setter Property="FontSize"                   Value="16"/>
+            <Setter Property="FontSize"                    Value="16"/>
             <Setter Property="FontFamily"                 Value="Segoe UI"/>
-            <Setter Property="Padding"                    Value="10,6"/>
-            <Setter Property="Height"                     Value="38"/>
+            <Setter Property="Padding"                    Value="16,0"/>
+            <Setter Property="Height"                     Value="46"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment"   Value="Center"/>
             <Setter Property="AcceptsReturn"              Value="False"/>
@@ -21,22 +20,22 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border Background="{TemplateBinding Background}"
-                                CornerRadius="20" Padding="{TemplateBinding Padding}">
+                    CornerRadius="20" Padding="{TemplateBinding Padding}">
                             <Grid>
                                 <TextBlock x:Name="Placeholder"
-                                           Text="{TemplateBinding Tag}"
-                                           Foreground="#AAAACC"
-                                           FontStyle="Italic"
-                                           FontSize="{TemplateBinding FontSize}"
-                                           FontFamily="{TemplateBinding FontFamily}"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           IsHitTestVisible="False"
-                                           Visibility="Collapsed"/>
+                               Text="{TemplateBinding Tag}"
+                               Foreground="#AAAACC"
+                               FontStyle="Italic"
+                               FontSize="{TemplateBinding FontSize}"
+                               FontFamily="{TemplateBinding FontFamily}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Visibility="Collapsed"/>
                                 <ScrollViewer x:Name="PART_ContentHost"
-                                              VerticalAlignment="Center"
-                                              HorizontalScrollBarVisibility="Hidden"
-                                              VerticalScrollBarVisibility="Hidden"/>
+                                  VerticalAlignment="Center"
+                                  HorizontalScrollBarVisibility="Hidden"
+                                  VerticalScrollBarVisibility="Hidden"/>
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -59,7 +58,7 @@
             <Setter Property="Margin"          Value="4"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor"          Value="Hand"/>
-            <Setter Property="Tag"             Value="unselected"/>
+            <Setter Property="Tag"              Value="unselected"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -85,110 +84,93 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </Page.Resources>
 
-    <Viewbox Stretch="Uniform" Width="420" Height="400">
-        <Grid Width="420" Margin="0,-5,0,0">
+    <Viewbox Stretch="Uniform">
+        <Grid Width="420" Margin="20,15">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="22"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="22"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
 
-            <!-- Row 0 : titre -->
             <TextBlock Grid.Row="0" 
                        Text="Informations du joueur 2"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize22}"
                        HorizontalAlignment="Center"
-                       Margin="0,0,0,20"/>
+                       Margin="0,0,0,15"/>
 
-            <!-- Row 1 : label Nom -->
             <TextBlock Grid.Row="1"
                        Text="Nom"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="20,0,0,6"/>
+                       HorizontalAlignment="Left" Margin="10,0,0,4"/>
 
-            <!-- Row 2 : TextBox Nom + icône erreur -->
-            <Grid Grid.Row="2" Margin="12,0,12,0">
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                
                 <TextBox x:Name="TxtNomJ2" x:FieldModifier="public"
-                             Text="" Tag="Entrez un nom..."
-                             Style="{StaticResource RoundedTextBox}"
-                             Height="45" Width="360" HorizontalAlignment="Left"/>
-                
-                
+                         Text="" Tag="Entrez un nom..."
+                         Style="{StaticResource RoundedTextBox}"/>
                 <TextBlock x:Name="IconErrNomJ2" x:FieldModifier="public"
                            Grid.Column="1"
-                           Text="ⓘ" Foreground="#E53935"
+                           Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="6,0,0,0" Visibility="Collapsed"/>
+                           Margin="8,0,0,0" Visibility="Hidden"/>
             </Grid>
 
-            <!-- Row 3 : message erreur Nom -->
             <TextBlock x:Name="ErrNomJ2" x:FieldModifier="public"
                        Grid.Row="3"
                        Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
-                       HorizontalAlignment="Left" Margin="14,2,0,6"
-                       Height="18"
+                       HorizontalAlignment="Left" Margin="12,2,0,0"
+                       VerticalAlignment="Top"
                        Visibility="Hidden"/>
-
-            <!-- Row 4 : label Nationalité -->
             <TextBlock Grid.Row="4"
                        Text="Nationalité"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="20,0,0,6"/>
+                       HorizontalAlignment="Left" Margin="10,0,0,4"/>
 
-            <!-- Row 5 : TextBox Nationalité + icône erreur -->
-            <Grid Grid.Row="5" Margin="12,0,12,0">
+            <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="TxtNatJ2" x:FieldModifier="public"
-                             Text="" Tag="Entrez une nationalité..."
-                             Style="{StaticResource RoundedTextBox}"
-                             Height="45" Width="360" HorizontalAlignment="Left"/>
+                         Text="" Tag="Entrez une nationalité..."
+                         Style="{StaticResource RoundedTextBox}"/>
                 <TextBlock x:Name="IconErrNatJ2" x:FieldModifier="public"
                            Grid.Column="1"
-                           Text="ⓘ" Foreground="#E53935"
+                           Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="6,0,0,0" Visibility="Collapsed"/>
+                           Margin="8,0,0,0" Visibility="Hidden"/>
             </Grid>
 
-            <!-- Row 6 : message erreur Nationalité -->
             <TextBlock x:Name="ErrNatJ2" x:FieldModifier="public"
-                   Grid.Row="6"
-                   Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
-                   FontFamily="Segoe UI" FontStyle="Italic"
-                   HorizontalAlignment="Left" Margin="14,2,0,6"
-                   Height="18"
-                   Visibility="Hidden"/>
+                       Grid.Row="6"
+                       Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
+                       FontFamily="Segoe UI" FontStyle="Italic"
+                       HorizontalAlignment="Left" Margin="12,2,0,0"
+                       VerticalAlignment="Top"
+                       Visibility="Hidden"/>
 
-            <!-- Row 7 : label Couleur -->
             <TextBlock Grid.Row="7"
                        Text="Couleur des jetons"
                        FontFamily="Baskerville Old Face"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
-                       HorizontalAlignment="Left" Margin="20,0,0,10"/>
+                       HorizontalAlignment="Left" Margin="10,0,0,8"/>
 
-            <!-- Row 8 : palette + icône erreur -->
             <Grid Grid.Row="8" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -196,31 +178,29 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Background="#4A4470" CornerRadius="14" Padding="10,8">
                     <UniformGrid Columns="4" Rows="2">
-                        <Button Style="{StaticResource ColorButton}" Background="#ff3131" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ff66c4" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#000000" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#5e17eb" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ffde59" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#7ed957" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ffffff" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ff751f" Tag="unselected" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#ff3131" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#ff66c4" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#000000" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#5e17eb" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#ffde59" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#7ed957" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#ffffff" Click="ColorButton_Click"/>
+                        <Button Style="{StaticResource ColorButton}" Background="#ff751f" Click="ColorButton_Click"/>
                     </UniformGrid>
                 </Border>
                 <TextBlock x:Name="IconErrCoulJ2" x:FieldModifier="public"
                            Grid.Column="1"
-                           Text="ⓘ" Foreground="#E53935"
+                           Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="8,0,0,0" Visibility="Collapsed"/>
+                           Margin="8,0,0,0" Visibility="Hidden"/>
             </Grid>
 
-            <!-- Row 9 : message erreur Couleur -->
             <TextBlock x:Name="ErrCoulJ2" x:FieldModifier="public"
                        Grid.Row="9"
                        Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Center" Margin="0,4,0,0"
-                       Visibility="Collapsed"/>
-
+                       Visibility="Hidden"/>
         </Grid>
     </Viewbox>
 </Page>
