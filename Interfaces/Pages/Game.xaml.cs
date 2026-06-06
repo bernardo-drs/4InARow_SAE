@@ -29,6 +29,97 @@ namespace Interfaces.Pages
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
+            CreerGrille();
+        }
+
+        private void CreerGrille()
+        {
+            int largeur = ConfigurationJeu.LargeurGrille;
+            int hauteur = ConfigurationJeu.HauteurGrille;
+
+            // Créer les colonnes
+            for (int col = 0; col < largeur; col++)
+            {
+                GameGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            }
+
+            // Créer les lignes
+            for (int row = 0; row < hauteur; row++)
+            {
+                GameGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            }
+
+            // Remplir la grille avec des cellules vides
+            for (int row = 0; row < hauteur; row++)
+            {
+                for (int col = 0; col < largeur; col++)
+                {
+                    // Viewbox pour centrer et adapter la taille
+                    Viewbox vb = new Viewbox
+                    {
+                        Stretch = Stretch.Uniform,
+                        Margin = new Thickness(4)
+                    };
+
+                    // Ellipse représentant la cellule vide
+                    Ellipse cellule = new Ellipse
+                    {
+                        Fill = new SolidColorBrush(Color.FromRgb(0, 30, 80)),
+                        Width = 50,
+                        Height = 50,
+                    };
+
+                    vb.Child = SwitchForme(new SolidColorBrush(Color.FromRgb(0, 30, 80)));
+
+                    Grid.SetRow(vb, row);
+                    Grid.SetColumn(vb, col);
+                    GameGrid.Children.Add(vb);
+                }
+            }
+        }
+
+        private Shape SwitchForme(SolidColorBrush couleur)
+        {
+            switch (ConfigurationJeu.FormeJeton)
+            {
+                case "Carré":
+                    return new Rectangle
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50,
+                        RadiusX = 4,
+                        RadiusY = 4
+                    };
+
+                case "Etoile":
+                    return new Path
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50,
+                        Stretch = Stretch.Uniform,
+                        Data = Geometry.Parse("M 50,5 L 61,35 L 95,35 L 68,57 L 79,91 L 50,70 L 21,91 L 32,57 L 5,35 L 39,35 Z")
+                    };
+
+                case "Triangle":
+                    return new Path
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50,
+                        Stretch = Stretch.Uniform,
+                        Data = Geometry.Parse("M 50,5 L 95,90 L 5,90 Z")
+                    };
+
+                default: // "Rond"
+                    return new Ellipse
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50
+                    };
+            }
         }
 
         private int ConvertirLimiteTemps(string limiteTemps)

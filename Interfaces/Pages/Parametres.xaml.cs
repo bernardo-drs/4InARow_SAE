@@ -14,20 +14,20 @@ namespace Interfaces.Pages
         public Parametres()
         {
             InitializeComponent();
-            RightFrame.Navigate(new ParametresJoueur2());
+            RightFrame.Content = new ParametresJoueur2();
             BtnTab2J.Style = (Style)FindResource("TabButtonActive");
         }
 
         private void BtnTab2J_Click(object sender, RoutedEventArgs e)
         {
-            RightFrame.Navigate(new ParametresJoueur2());
+            RightFrame.Content = new ParametresJoueur2();
             BtnTab2J.Style = (Style)FindResource("TabButtonActive");
             BtnTabIA.Style = (Style)FindResource("TabButton");
         }
 
         private void BtnTabIA_Click(object sender, RoutedEventArgs e)
         {
-            RightFrame.Navigate(new ParametresIA());
+            RightFrame.Content = new ParametresIA();
             BtnTabIA.Style = (Style)FindResource("TabButtonActive");
             BtnTab2J.Style = (Style)FindResource("TabButton");
         }

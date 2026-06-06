@@ -23,6 +23,10 @@
             <Setter Property="VerticalContentAlignment"   Value="Center"/>
             <Setter Property="AcceptsReturn"              Value="False"/>
             <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="FontStyle"                  Value="Normal"/>
+            <!-- ← ajouter -->
+            <Setter Property="FontWeight"                 Value="Normal"/>
+            <!-- ← ajouter -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
@@ -249,6 +253,7 @@
                             Style="{StaticResource TabButton}"
                             Click="BtnTabIA_Click"/>
                 </StackPanel>
+                
 
                 <!-- ══ Row 1 : titre J1 ══ -->
                 <TextBlock Grid.Column="0" Grid.Row="1"
