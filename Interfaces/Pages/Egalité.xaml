@@ -1,0 +1,94 @@
+﻿<Page x:Class="Interfaces.Pages.Egalité"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Interfaces.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="210" d:DesignWidth="414"
+      Title="Egalité" FontFamily="Agency FB">
+
+    <Border Background="#004AAD" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="109*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="334*"/>
+                <ColumnDefinition Width="37*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10">
+                <Viewbox>
+                    <TextBlock Foreground="White" Margin="1">
+                        <Run Text="Personne n'a remporté la partie"></Run>
+                    </TextBlock>
+                </Viewbox>
+
+            </Border>
+
+            <Grid Grid.Column="1" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="74*"/>
+                    <ColumnDefinition Width="157*"/>
+                    <ColumnDefinition Width="74*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" CornerRadius="10" Background="#20114a" Grid.Column="1">
+                    <Viewbox>
+                        <Button Background="Transparent" OverridesDefaultStyle="True">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Text="Rejouer" Foreground="White"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="1"  CornerRadius="10" Background="#20114a">
+                    <Viewbox>
+                        <Button Background="Transparent" OverridesDefaultStyle="True" Margin="1">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Text="Retourner au menu" Foreground="White"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
+
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="116*"/>
+                    <ColumnDefinition Width="110*"/>
+                    <ColumnDefinition Width="116*"/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Column="1">
+                    <Grid>
+                        <Image Source="/Images/Icon_Main.png" Height="244" Width="287"/>
+                        <Rectangle Fill="White" Opacity="1">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/Images/Icon_Main.png" Stretch="Uniform"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Grid>
+                </Viewbox>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>
