@@ -32,6 +32,12 @@ namespace Interfaces.Pages
             CreerGrille();
             InitialiserJetons();
 
+            Player1Forme.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
+            Player2Forme.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
+
+            BordureJ1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
+            BordureJ2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
+
             MessageBox.Show(
                     $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
                     $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
