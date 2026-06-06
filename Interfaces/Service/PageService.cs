@@ -85,6 +85,9 @@ namespace Interfaces.Service
                 case "Victoire":
                     _window.popUpFrame.Content = new Victoire();
                     break;
+                case "Egalite":
+                    _window.popUpFrame.Content = new Egalite();
+                    break;
                 default:
                     _window.popUpFrame.Content = null;
                     break;

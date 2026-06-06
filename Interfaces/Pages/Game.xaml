@@ -83,7 +83,7 @@
 
             <!-- JOUEUR 2 -->
             <Border x:Name="BrdJoueur2" Background="#004aad"
-                    Grid.Column="3"
+                    Grid.Column="2"
                     CornerRadius="10" Margin="5"
                     BorderBrush="Transparent" BorderThickness="3">
                 <Grid>

@@ -176,10 +176,14 @@ namespace Interfaces.Pages
             {
                 _timer?.Stop();
                 Grille p = _partie.GetPlateau();
-                string gagnant = p.GrilleEstPleine() && !p.VerifierAlignement(
-                    joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner)
-                    ? "Match nul !"
-                    : $"{joueurActuel.GetNomJoueur()} a gagné !";
+                bool estNul = p.GrilleEstPleine() && !p.VerifierAlignement(
+                    joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner);
+
+                if (estNul)
+                {
+                    PageService.PopUp("Egalite");
+                    return;
+                }
 
                 Victoire.NomGagnant = joueurActuel.GetNomJoueur();
                 Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
