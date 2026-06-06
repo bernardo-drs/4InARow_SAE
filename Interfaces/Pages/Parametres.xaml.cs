@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
@@ -16,6 +17,34 @@ namespace Interfaces.Pages
             InitializeComponent();
             RightFrame.Content = new ParametresJoueur2();
             BtnTab2J.Style = (Style)FindResource("TabButtonActive");
+            this.Loaded += Parametres_Loaded;
+        }
+
+        private void Parametres_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Sélectionne rouge par défaut pour J1
+            foreach (Button btn in FindVisualChildren<Button>(PaletteJ1))
+            {
+                if (GetBgColor(btn) == "#ff3131")
+                {
+                    if (_selectedColorJ1 != null) _selectedColorJ1.Tag = "unselected";
+                    _selectedColorJ1 = btn;
+                    btn.Tag = "selected";
+                    break;
+                }
+            }
+        }
+
+        private static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
+        {
+            int count = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < count; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                if (child is T t) yield return t;
+                foreach (var grandChild in FindVisualChildren<T>(child))
+                    yield return grandChild;
+            }
         }
 
         private void BtnTab2J_Click(object sender, RoutedEventArgs e)
@@ -40,7 +69,7 @@ namespace Interfaces.Pages
             btn.Tag = "selected";
         }
 
-        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             bool valid = true;
 
@@ -65,9 +94,9 @@ namespace Interfaces.Pages
                 valid = false;
             }
 
+            // ══ CAS 1 : Joueur 2 est un humain ══
             if (RightFrame.Content is ParametresJoueur2 pageJ2)
             {
-                // Réinitialiser erreurs J2
                 ClearError(pageJ2.ErrNomJ2, pageJ2.IconErrNomJ2);
                 ClearError(pageJ2.ErrNatJ2, pageJ2.IconErrNatJ2);
                 ClearError(pageJ2.ErrCoulJ2, pageJ2.IconErrCoulJ2);
@@ -88,7 +117,6 @@ namespace Interfaces.Pages
                     valid = false;
                 }
 
-                // Noms identiques
                 if (!string.IsNullOrWhiteSpace(nomJ1) && !string.IsNullOrWhiteSpace(nomJ2)
                     && string.Equals(nomJ1, nomJ2, StringComparison.OrdinalIgnoreCase))
                 {
@@ -97,7 +125,6 @@ namespace Interfaces.Pages
                     valid = false;
                 }
 
-                // Couleurs identiques
                 if (!string.IsNullOrEmpty(coulJ1) && !string.IsNullOrEmpty(coulJ2)
                     && coulJ1 == coulJ2)
                 {
@@ -108,23 +135,34 @@ namespace Interfaces.Pages
 
                 if (!valid) return;
 
-                MessageBox.Show(
-                    $"Joueur 1 : {nomJ1} — {natJ1} — Jeton : {GetCouleurLabel(_selectedColorJ1)}\n" +
-                    $"Joueur 2 : {nomJ2} — {natJ2} — Jeton : {GetCouleurLabel(pageJ2.SelectedColorJ2)}",
-                    "Paramètres enregistrés",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                // Sauvegarde J1
+                ConfigurationJeu.NomJoueur1 = nomJ1;
+                ConfigurationJeu.CouleurJoueur1 = coulJ1;
+
+                // Sauvegarde J2 humain
+                ConfigurationJeu.NomJoueur2 = nomJ2;
+                ConfigurationJeu.CouleurJoueur2 = coulJ2;
+                ConfigurationJeu.Joueur2EstBot = false;
+
                 PageService.Navigate("ParametreJeu");
             }
-            else if (RightFrame.Content is ParametresIA)
+
+            // ══ CAS 2 : Joueur 2 est un bot ══
+            else if (RightFrame.Content is ParametresIA pageIA)
             {
                 if (!valid) return;
 
-                MessageBox.Show(
-                    $"Joueur 1 : {nomJ1} — {natJ1} — Jeton : {GetCouleurLabel(_selectedColorJ1)}",
-                    "Paramètres enregistrés",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                string coulIA = GetBgColor(pageIA.SelectedColorIA);
+
+                // Sauvegarde J1
+                ConfigurationJeu.NomJoueur1 = nomJ1;
+                ConfigurationJeu.CouleurJoueur1 = coulJ1;
+
+                // Sauvegarde bot
+                ConfigurationJeu.NomJoueur2 = "Bot";
+                ConfigurationJeu.CouleurJoueur2 = string.IsNullOrEmpty(coulIA) ? "#FDD835" : coulIA;
+                ConfigurationJeu.Joueur2EstBot = true;
+
                 PageService.Navigate("ParametreJeu");
             }
         }
@@ -148,8 +186,14 @@ namespace Interfaces.Pages
         }
 
         private static string GetBgColor(Button? btn)
-            => (btn?.Background as SolidColorBrush)?.Color.ToString() ?? "";
-
+        {
+            if (btn?.Background is SolidColorBrush brush)
+            {
+                Color c = brush.Color;
+                return $"#{c.R:X2}{c.G:X2}{c.B:X2}".ToLower(); // retourne #ff3131 au lieu de #FFFF3131
+            }
+            return "";
+        }
         private static string GetCouleurLabel(Button? btn)
         {
             if (btn == null) return "Non sélectionnée";

@@ -343,15 +343,15 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" Background="#4A4470" CornerRadius="14" Padding="10,8">
-                        <UniformGrid Columns="4" Rows="2">
-                            <Button Style="{StaticResource ColorButton}" Background="#E53935" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#E91E8C" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#1A1A1A" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#7B1FA2" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#FDD835" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#43A047" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#EEEEEE" Tag="unselected" Click="ColorButton_Click"/>
-                            <Button Style="{StaticResource ColorButton}" Background="#FF6F00" Tag="unselected" Click="ColorButton_Click"/>
+                        <UniformGrid x:Name="PaletteJ1" Columns="4" Rows="2">
+                            <Button Style="{StaticResource ColorButton}" Background="#ff3131" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ff66c4" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#000000" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#5e17eb" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ffde59" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#7ed957" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ffffff" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ff751f" Tag="unselected" Click="ColorButton_Click"/>
                         </UniformGrid>
                     </Border>
                     <TextBlock x:Name="IconErrCoulJ1"

@@ -30,6 +30,18 @@ namespace Interfaces.Pages
             StartTimer();
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
+
+            MessageBox.Show(
+        $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
+        $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
+        $"Joueur 2 : {ConfigurationJeu.NomJoueur2}\n" +
+        $"Couleur J2 : {ConfigurationJeu.CouleurJoueur2}\n" +
+        $"Est un bot : {ConfigurationJeu.Joueur2EstBot}\n\n" +
+        $"Grille : {ConfigurationJeu.LargeurGrille} x {ConfigurationJeu.HauteurGrille}\n" +
+        $"Jetons pour gagner : {ConfigurationJeu.JetonsPourGagner}\n" +
+        $"Limite temps : {ConfigurationJeu.LimiteTemps}\n" +
+        $"Forme jeton : {ConfigurationJeu.FormeJeton}",
+        "Debug — Vérification des données");
         }
 
         private void CreerGrille()
