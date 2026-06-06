@@ -300,7 +300,7 @@ namespace Interfaces.Pages
             {
                 _secondesRestantes--;
                 int min = _secondesRestantes / 60;
-                int sec = _secondesRestantes % 60;
+                int sec = _secondesRestantes + 1 % 60;
                 TimerText.Text = $"{min} : {sec:D2}";
 
                 if (_secondesRestantes <= 0)

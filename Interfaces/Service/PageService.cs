@@ -49,6 +49,18 @@ namespace Interfaces.Service
                 case "Historique":
                     _window.mainFrame.Content = new HistoriquePartie();
                     break;
+                case "Game":
+                    _window.mainFrame.Content = new Game();
+                    break;
+                case "Leaderboard":
+                    _window.mainFrame.Content = new LeaderBoard();
+                    break;
+                case "Parametres":
+                    _window.mainFrame.Content = new Parametres();
+                    break;
+                case "ParametreJeu":
+                    _window.mainFrame.Content = new ParametreJeu();
+                    break;
                 default:
                     break;
             }

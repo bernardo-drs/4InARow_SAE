@@ -23,7 +23,6 @@ namespace Interfaces
 
             Grille grille = new Grille(6);
 
-            Grille grille = new Grille(15);
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
