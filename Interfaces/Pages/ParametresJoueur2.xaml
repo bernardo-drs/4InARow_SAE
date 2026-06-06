@@ -129,7 +129,7 @@
                 <TextBox x:Name="TxtNomJ2" x:FieldModifier="public"
                              Text="" Tag="Entrez un nom..."
                              Style="{StaticResource RoundedTextBox}"
-                             Height="45" Width="380"/>
+                             Height="45" Width="360" HorizontalAlignment="Left"/>
                 
                 
                 <TextBlock x:Name="IconErrNomJ2" x:FieldModifier="public"
@@ -164,7 +164,7 @@
                 <TextBox x:Name="TxtNatJ2" x:FieldModifier="public"
                              Text="" Tag="Entrez une nationalité..."
                              Style="{StaticResource RoundedTextBox}"
-                             Height="45" Width="380"/>
+                             Height="45" Width="360" HorizontalAlignment="Left"/>
                 <TextBlock x:Name="IconErrNatJ2" x:FieldModifier="public"
                            Grid.Column="1"
                            Text="ⓘ" Foreground="#E53935"
