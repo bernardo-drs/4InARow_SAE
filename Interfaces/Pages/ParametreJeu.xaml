@@ -86,7 +86,7 @@
                             <Button x:Name="btn4" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                                         4 x 4
                                         </TextBlock>
                                     </ControlTemplate>
@@ -104,7 +104,7 @@
                             <Button x:Name="btn5" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                         5 x 5
                                         </TextBlock>
                                     </ControlTemplate>
@@ -122,7 +122,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                         6 x 7
                                         </TextBlock>
                                     </ControlTemplate>
@@ -140,7 +140,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                         8 x 7
                                         </TextBlock>
                                     </ControlTemplate>
@@ -158,7 +158,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                         8 x 8
                                         </TextBlock>
                                     </ControlTemplate>
@@ -176,7 +176,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                         10 x 10
                                         </TextBlock>
                                     </ControlTemplate>
@@ -214,20 +214,20 @@
                     <ColumnDefinition Width="41*"/>
                 </Grid.ColumnDefinitions>
 
-                <Viewbox Margin="4,11,0,0" Grid.RowSpan="2" Grid.Column="1">
-                    <TextBlock Foreground="White">
+                <Viewbox Margin="30,11,30,11" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TextBlock Foreground="White" FontSize="1">
                     Jetons à aligner
                     </TextBlock>
                 </Viewbox>
 
-                <Border BorderBrush="White" Grid.Row="2" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="4,20,0,0" Grid.RowSpan="2" Grid.Column="1">
+                <Border BorderBrush="White" Grid.Row="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
 
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
-                3 jetons
+                                    <TextBlock Foreground="White" Margin="2">
+                                    3 jetons
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
@@ -244,7 +244,7 @@
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
+                                    <TextBlock Foreground="White" Margin="2">
     4 jetons
                                     </TextBlock>
                                 </ControlTemplate>
@@ -256,13 +256,13 @@
 
                 </Border>
 
-                <Border BorderBrush="White" Grid.Row="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="4,0,0,1" Grid.Column="1">
+                <Border BorderBrush="White" Grid.Row="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
 
                     <Viewbox>
                         <Button x:Name="btn5J" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
+                                    <TextBlock Foreground="White" Margin="2">
     5 jetons
                                     </TextBlock>
                                 </ControlTemplate>
@@ -274,13 +274,13 @@
 
                 </Border>
 
-                <Border BorderBrush="White" Grid.Row="9" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="1,0,0,12" Grid.RowSpan="2">
+                <Border BorderBrush="White" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="1,0,0,12" Grid.RowSpan="2">
 
-                    <Viewbox Width="165">
+                    <Viewbox>
                         <Button x:Name="btnApplique" Background="Transparent" OverridesDefaultStyle="False" Click="btnApplique_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White">
+                                    <TextBlock Foreground="White" Margin="4">
     Appliquer les paramètres
                                     </TextBlock>
                                 </ControlTemplate>
@@ -338,7 +338,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="2">
                                 Aucune
                                         </TextBlock>
                                     </ControlTemplate>
@@ -352,11 +352,11 @@
 
                     <Border BorderBrush="White" Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
 
-                        <Viewbox Width="130">
+                        <Viewbox>
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="4">
                 10 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -370,11 +370,11 @@
 
                     <Border BorderBrush="White" Grid.Row="4" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
 
-                        <Viewbox Width="130">
+                        <Viewbox>
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="4">
                 15 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -388,11 +388,11 @@
 
                     <Border BorderBrush="White" Grid.Row="6" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
 
-                        <Viewbox Width="130">
+                        <Viewbox>
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="4">
                 30 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -410,7 +410,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="4">
                 1 minute
                                         </TextBlock>
                                     </ControlTemplate>
@@ -428,7 +428,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White">
+                                        <TextBlock Foreground="White" Margin="4">
                 2 minutes
                                         </TextBlock>
                                     </ControlTemplate>
