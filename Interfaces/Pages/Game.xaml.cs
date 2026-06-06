@@ -34,7 +34,11 @@ namespace Interfaces.Pages
             InitializeComponent();
 
             Humain j1 = new Humain(1, ConfigurationJeu.NomJoueur1, ConfigurationJeu.CouleurJoueur1, "", "");
-            Humain j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
+            Joueur j2;
+            if (ConfigurationJeu.Joueur2EstBot)
+                j2 = new IntelligenceArtificielle(2, "IA", ConfigurationJeu.CouleurJoueur2, 4); // 4 = le niveau de difficulté
+            else
+                j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
 
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
@@ -120,15 +124,13 @@ namespace Interfaces.Pages
             Joueur joueurActuel = _partie.GetParticipantActuel();
             Grille plateau = _partie.GetPlateau();
 
-            // Trouver la ligne avant de placer (pour mettre à jour l'UI)
             int ligneLibre = plateau.GetPremiereLigneLibre(col);
-            if (ligneLibre == -1) return; // Colonne pleine
+            if (ligneLibre == -1) return;
 
-            // Placer le jeton via la logique métier
             Jeton jeton = new Jeton(joueurActuel.GetCouleurJeton(), ConfigurationJeu.FormeJeton);
-            _partie.GetPlateau().PlacerJeton(col, jeton);
+            plateau.PlacerJeton(col, jeton);
 
-            // Mettre à jour la cellule visuelle
+            // Mettre à jour l'UI
             SolidColorBrush couleur = new SolidColorBrush(
                 (Color)ColorConverter.ConvertFromString(joueurActuel.GetCouleurJeton()));
 
@@ -142,7 +144,7 @@ namespace Interfaces.Pages
                 }
             }
 
-            // Mettre à jour les jetons restants
+            // Mettre à jour les jetons
             if (joueurActuel == _partie.GetListeParticipant()[0])
             {
                 _jetonsJ1--;
@@ -154,11 +156,12 @@ namespace Interfaces.Pages
                 JetonsJ2.Text = _jetonsJ2.ToString();
             }
 
-            // Vérifier la fin de partie AVANT de changer le tour
+            // Vérifier fin de partie
             if (_partie.VerifierFin())
             {
                 _timer?.Stop();
-                string gagnant = plateau.GrilleEstPleine() && !plateau.VerifierAlignement(
+                Grille p = _partie.GetPlateau();
+                string gagnant = p.GrilleEstPleine() && !p.VerifierAlignement(
                     joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner)
                     ? "Match nul !"
                     : $"{joueurActuel.GetNomJoueur()} a gagné !";
@@ -171,7 +174,38 @@ namespace Interfaces.Pages
             // Changer de joueur
             _partie.ChangerTour();
             MettreAJourSurbrillance();
+
+            // Réinitialiser le timer pour le joueur suivant
+            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
+            if (_secondesRestantes > 0)
+            {
+                _timer?.Stop();
+                StartTimer();
+            }
+
+            // Si c'est au tour de l'IA, jouer automatiquement
+            JouerIA();
         }
+
+        private void JouerIA()
+        {
+            Joueur joueurActuel = _partie.GetParticipantActuel();
+
+            if (joueurActuel is IntelligenceArtificielle ia)
+            {
+                // Petit délai pour que l'UI se mette à jour avant le coup de l'IA
+                DispatcherTimer timerIA = new DispatcherTimer();
+                timerIA.Interval = TimeSpan.FromMilliseconds(500);
+                timerIA.Tick += (s, e) =>
+                {
+                    timerIA.Stop();
+                    int colIA = ia.ChoisirCoup(_partie.GetPlateau(), _partie);
+                    JouerDansColonne(colIA);
+                };
+                timerIA.Start();
+            }
+        }
+
 
         private void MettreAJourSurbrillance()
         {
