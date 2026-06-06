@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="530"
       Title="Victoire" FontFamily="Agency FB"
-      Background="#5170ff">
+      Background="#004aad">
 
     <Border CornerRadius="10">
         <Grid>
@@ -26,7 +26,7 @@
             <!-- Texte vainqueur -->
             <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10">
                 <Viewbox>
-                    <TextBlock Foreground="White" Margin="1">
+                    <TextBlock Foreground="White" Margin="5">
                         <Run Text="Le joueur "/>
                         <Run x:Name="RunVainqueur" Text="..."/>
                         <Run Text=" a remporté la partie"/>
@@ -68,9 +68,9 @@
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ1" Text="Joueur 1" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
-                    <Border x:Name="BordureJ1" CornerRadius="8" BorderThickness="3" Margin="2">
+                    <Border CornerRadius="8" BorderThickness="3" Margin="2">
                         <Border.BorderBrush>
-                            <SolidColorBrush x:Name="CouleurBordureJ1" Color="Red"/>
+                            <SolidColorBrush x:Name="BordureJ1"/>
                         </Border.BorderBrush>
                         <StackPanel>
                             <Image Source="/Images/Icon_Human.png" Height="50" Width="50"/>
@@ -89,9 +89,9 @@
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ2" Text="Joueur 2" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
-                    <Border x:Name="BordureJ2" CornerRadius="8" BorderThickness="3" Margin="2">
+                    <Border CornerRadius="8" BorderThickness="3" Margin="2">
                         <Border.BorderBrush>
-                            <SolidColorBrush x:Name="CouleurBordureJ2" Color="Yellow"/>
+                            <SolidColorBrush x:Name="BordureJ2"/>
                         </Border.BorderBrush>
                         <StackPanel>
                             <Image Source="/Images/Icon_Human.png" Height="50" Width="50"/>
@@ -109,7 +109,7 @@
                         <Button Background="Transparent" OverridesDefaultStyle="True">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="rejouer" Foreground="White" Margin="1"/>
+                                    <TextBlock Text="Rejouer" Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -118,10 +118,10 @@
 
                 <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
                     <Viewbox>
-                        <Button Background="Transparent" OverridesDefaultStyle="True">
+                        <Button x:Name="BtnMenu" Background="Transparent" OverridesDefaultStyle="True" Click="BtnMenu_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="retourner au menu" Foreground="White" Margin="1"/>
+                                    <TextBlock Text="Retourner au menu" Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>

@@ -28,11 +28,17 @@ namespace Interfaces.Pages
         public Victoire()
         {
             InitializeComponent();
-            BrushConverter bc = new BrushConverter();
 
             RunVainqueur.Text = NomGagnant;
-            Brush b = (Brush)bc.ConvertFromString(CouleurGagnant);
-            RunVainqueur.Foreground = b;
+
+            BordureJ1.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1);
+            BordureJ2.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2);
+
+            NomJ1.Text = ConfigurationJeu.NomJoueur1;
+            NomJ2.Text = ConfigurationJeu.NomJoueur2;
+
+            PanelJoueur1.Visibility = Visibility.Visible;
+            PanelJoueur2.Visibility = Visibility.Visible;
 
             if (ConfigurationJeu.ModeDeJeu == "Challenge")
             {
@@ -41,10 +47,17 @@ namespace Interfaces.Pages
 
                 NomJ1.Text = ConfigurationJeu.NomJoueur1;
                 NomJ2.Text = ConfigurationJeu.NomJoueur2;
-
-                CouleurBordureJ1.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1);
-                CouleurBordureJ2.Color = (Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2);
             }
+        }
+
+        private void BtnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.Navigate("Accueil");
+
+            this.Visibility = Visibility.Collapsed;
+
+            PageService.Navigate("Accueil");
+
         }
     }
 }
