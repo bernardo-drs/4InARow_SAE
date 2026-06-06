@@ -130,18 +130,18 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
-                            <TextBlock Text="3" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" Foreground="#5e17eb" VerticalAlignment="Center"/>
-                            <TextBlock Text="4" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" Foreground="#ff66c4" VerticalAlignment="Center"/>
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="4" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
-                            <TextBlock Text="En cours" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="En cours" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="3/19/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="3/19/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -166,19 +166,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#f5d554" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
-                            <TextBlock Text="4" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="4" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="18/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="18/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -203,19 +203,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5" />
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="2" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
+                            <TextBlock Text="2" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -240,19 +240,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -277,19 +277,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bot" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bot" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center"/>
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="15/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="15/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -314,19 +314,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="5" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="5" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="13/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="13/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -351,19 +351,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center" />
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="12/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="12/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -388,19 +388,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="4" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
-                            <TextBlock Text="5" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="4" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="5" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="05/05/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="05/05/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -425,19 +425,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Bot" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Bot" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="5" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
+                            <TextBlock Text="5" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="04/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="04/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -462,19 +462,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff66c4" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff66c4" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="01/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="01/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -499,19 +499,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
-                            <TextBlock Text="3" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="27/02/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="27/02/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -536,19 +536,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#f5d554" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="UneTable" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#f5d554" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#f5d554" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="24/02/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="24/02/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -573,19 +573,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#5e17eb" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Jiao" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#5e17eb" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#000000" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#5e17eb" VerticalAlignment="Center"/>
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#000000" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="20/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="20/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -610,19 +610,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#ff3131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Pablo" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ff3131" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="0" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
+                            <TextBlock Text="0" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff3131" VerticalAlignment="Center"/>
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="20/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Classique" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="20/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
@@ -647,19 +647,19 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Pseudo des joueurs-->
-                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Maé" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="1" Foreground="#7ed957" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Clem" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="1" Foreground="#ff751f" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <!--Point de couleurs des joueurs-->
                             <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#7ed957" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff751f" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
-                            <TextBlock Text="3" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
-                            <TextBlock Text="1" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
+                            <TextBlock Text="3" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#7ed957" VerticalAlignment="Center" />
+                            <TextBlock Text="1" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ff751f" VerticalAlignment="Center" />
                             <!--Statue de la partie-->
-                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize10}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
+                            <TextBlock Text="Terminée" FontSize="{DynamicResource FontSize12}" Grid.RowSpan="2" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"/>
                             <!--Informations de la partie-->
-                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize10}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
-                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize10}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="Challenge" FontSize="{DynamicResource FontSize12}"  Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
+                            <TextBlock Text="16/03/2026" FontSize="{DynamicResource FontSize12}"  Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center"/>
                         </Grid>
                     </Border>
 
