@@ -9,10 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Icon_Crown.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Systeme\Systeme.csproj" />
   </ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="Images\Icon_Crown.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Images\Icon_Human.png" />
 	  <Resource Include="Images\Icon_IA.png" />
 	</ItemGroup>
