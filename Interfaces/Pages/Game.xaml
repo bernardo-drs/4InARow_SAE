@@ -41,7 +41,7 @@
         <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
                 CornerRadius="10" Margin="5">
             <Viewbox>
-                <TextBlock x:Name="TimerText" Text="0 : 00"
+                <TextBlock x:Name="TimerText" Text="- : --"
                            Foreground="White" FontFamily="Agency FB"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Viewbox>
@@ -154,7 +154,7 @@
                 </Grid.RowDefinitions>
                 
                 <Viewbox Grid.Column="1" Grid.Row="1">
-                    <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="21"/>
+                    <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="--"/>
                 </Viewbox>
                 <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3" Fill="Red"/>
             </Grid>
@@ -179,7 +179,7 @@
                 </Grid.RowDefinitions>
                 
                 <Viewbox Grid.Column="1" Grid.Row="1">
-                    <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="21"/>
+                    <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="--"/>
                 </Viewbox>
                 <Ellipse x:Name="Player2Forme" Grid.Column="1" Grid.Row="3" Fill="Yellow"/>
             </Grid>

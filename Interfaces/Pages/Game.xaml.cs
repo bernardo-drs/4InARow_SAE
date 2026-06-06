@@ -30,19 +30,21 @@ namespace Interfaces.Pages
             StartTimer();
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
+            InitialiserJetons();
 
             MessageBox.Show(
-        $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
-        $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
-        $"Joueur 2 : {ConfigurationJeu.NomJoueur2}\n" +
-        $"Couleur J2 : {ConfigurationJeu.CouleurJoueur2}\n" +
-        $"Est un bot : {ConfigurationJeu.Joueur2EstBot}\n\n" +
-        $"Grille : {ConfigurationJeu.LargeurGrille} x {ConfigurationJeu.HauteurGrille}\n" +
-        $"Jetons pour gagner : {ConfigurationJeu.JetonsPourGagner}\n" +
-        $"Limite temps : {ConfigurationJeu.LimiteTemps}\n" +
-        $"Forme jeton : {ConfigurationJeu.FormeJeton}",
-        "Debug — Vérification des données");
-        }
+                    $"Joueur 1 : {ConfigurationJeu.NomJoueur1}\n" +
+                    $"Couleur J1 : {ConfigurationJeu.CouleurJoueur1}\n\n" +
+                    $"Joueur 2 : {ConfigurationJeu.NomJoueur2}\n" +
+                    $"Couleur J2 : {ConfigurationJeu.CouleurJoueur2}\n" +
+                    $"Est un bot : {ConfigurationJeu.Joueur2EstBot}\n\n" +
+                    $"Grille : {ConfigurationJeu.LargeurGrille} x {ConfigurationJeu.HauteurGrille}\n" +
+                    $"Jetons pour gagner : {ConfigurationJeu.JetonsPourGagner}\n" +
+                    $"Limite temps : {ConfigurationJeu.LimiteTemps}\n" +
+                    $"Mode de Jeu : {ConfigurationJeu.ModeDeJeu}\n" +
+                    $"Forme jeton : {ConfigurationJeu.FormeJeton}",
+                    "Debug — Vérification des données");
+            }
 
         private void CreerGrille()
         {
@@ -87,6 +89,28 @@ namespace Interfaces.Pages
                     Grid.SetColumn(vb, col);
                     GameGrid.Children.Add(vb);
                 }
+            }
+        }
+
+        private void InitialiserJetons()
+        {
+            // Le nombre de jetons = nombre total de cases / 2
+            int totalCases = ConfigurationJeu.LargeurGrille * ConfigurationJeu.HauteurGrille;
+
+            // Correction ici : ajout des parenthèses et du double "=="
+            if (totalCases % 2 == 0)
+            {
+                int jetonsParJoueur = totalCases / 2;
+                JetonsJ1.Text = jetonsParJoueur.ToString();
+                JetonsJ2.Text = jetonsParJoueur.ToString();
+            }
+            else
+            {
+                int jetonsJ1 = (totalCases + 1) / 2; // joueur 1 commence donc il a 1 jeton de plus si impair
+                int jetonsJ2 = totalCases / 2;
+
+                JetonsJ1.Text = jetonsJ1.ToString();
+                JetonsJ2.Text = jetonsJ2.ToString();
             }
         }
 
@@ -143,13 +167,13 @@ namespace Interfaces.Pages
                 "30s" => 30,
                 "1m" => 60,
                 "2m" => 120,
-                "Aucune" => 0  // "Aucune" ou valeur inconnue = pas de timer
+                "Aucune" => 0  // "Aucune" = le timer reste à 0
             };
         }
 
         private void StartTimer()
         {
-            // Si aucune limite, on n'affiche pas de timer
+            // Si aucune limite
             if (_secondesRestantes <= 0)
             {
                 TimerText.Text = "0 : 00";
