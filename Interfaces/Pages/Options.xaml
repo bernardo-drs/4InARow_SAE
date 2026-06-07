@@ -129,7 +129,8 @@
                     FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
                     Content="✕" Cursor="Hand"
                     OverridesDefaultStyle="True"
-                    Click="BtnFermer_Click">
+                    Click="BtnFermer_Click"
+                    Foreground="{DynamicResource ButtonTextColor}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="Transparent">
@@ -145,8 +146,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Taille des textes</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Contraste</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}">Taille des textes</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}">Contraste</TextBlock>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -180,8 +181,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Couleur de fond d'écran</TextBlock>
-            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize20}">Forme des jetons</TextBlock>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}">Couleur de fond d'écran</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}">Forme des jetons</TextBlock>
         </Grid>
 
         <Grid Grid.Row="4">

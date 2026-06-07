@@ -16,6 +16,11 @@ namespace Interfaces.Service
             // Textes en jaune si contraste >= 2
             foreach (var tb in FindVisualChildren<TextBlock>(page))
             {
+                if (tb.Tag?.ToString() == "Error")
+                {
+                    continue;
+                }
+
                 if (contraste >= 2.0)
                     tb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD700"));
                 else
@@ -28,7 +33,7 @@ namespace Interfaces.Service
                 foreach (var border in FindVisualChildren<Border>(page))
                 {
                     if (border.Tag != null)
-                        border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0000"));
+                        border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
                 }
             }
             else

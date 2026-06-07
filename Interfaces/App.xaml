@@ -12,7 +12,8 @@
         <SolidColorBrush x:Key="TextColor"       Color="#FFFFFF"/>
         <SolidColorBrush x:Key="AccentColor"     Color="#7a6fb0"/>
         <SolidColorBrush x:Key="ButtonTextColor" Color="#FFFFFF"/>
-        
+        <SolidColorBrush x:Key="ButtonTextColor2" Color="#000000"/>
+
         <!-- Toute les tailles d'écriture différente -->
         <sys:Double x:Key="FontSize10">10</sys:Double>
         <sys:Double x:Key="FontSize12">12</sys:Double>

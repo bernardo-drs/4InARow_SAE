@@ -305,13 +305,15 @@
                             <TextBlock x:Name="IconErrNomJ1" Grid.Column="1"
                                        Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                                       Margin="8,0,0,0" Visibility="Hidden"/>
+                                       Margin="8,0,0,0" Visibility="Hidden"
+                                       Tag="Error"/>
                         </Grid>
                         <TextBlock x:Name="ErrNomJ1" Foreground="#E53935"
                                    FontSize="{DynamicResource FontSize12}"
                                    FontFamily="Segoe UI" FontStyle="Italic"
                                    HorizontalAlignment="Left" Margin="14,2,0,4"
-                                   Height="18" Visibility="Hidden"/>
+                                   Height="18" Visibility="Hidden"
+                                   Tag="Error"/>
 
                         <TextBlock Text="Nationalité" FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize17}"
@@ -326,13 +328,15 @@
                             <TextBlock x:Name="IconErrNatJ1" Grid.Column="1"
                                        Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                                       Margin="8,0,0,0" Visibility="Hidden"/>
+                                       Margin="8,0,0,0" Visibility="Hidden"
+                                       Tag="Error"/>
                         </Grid>
                         <TextBlock x:Name="ErrNatJ1" Foreground="#E53935"
                                    FontSize="{DynamicResource FontSize12}"
                                    FontFamily="Segoe UI" FontStyle="Italic"
                                    HorizontalAlignment="Left" Margin="14,2,0,4"
-                                   Height="18" Visibility="Hidden"/>
+                                   Height="18" Visibility="Hidden"
+                                   Tag="Error"/>
 
                         <TextBlock Text="Couleur des jetons" FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize17}"
@@ -357,13 +361,15 @@
                             <TextBlock x:Name="IconErrCoulJ1" Grid.Column="1"
                                        Text="⚠" Foreground="#E53935"
                                        FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                                       Margin="8,0,0,0" Visibility="Collapsed"/>
+                                       Margin="8,0,0,0" Visibility="Collapsed"
+                                       Tag="Error"/>
                         </Grid>
                         <TextBlock x:Name="ErrCoulJ1" Foreground="#E53935"
                                    FontSize="{DynamicResource FontSize12}"
                                    FontFamily="Segoe UI" FontStyle="Italic"
                                    HorizontalAlignment="Center" Margin="0,4,0,0"
-                                   Visibility="Collapsed"/>
+                                   Visibility="Collapsed"
+                                   Tag="Error"/>
                     </StackPanel>
                 </ScrollViewer>
 
@@ -437,8 +443,10 @@
                         HorizontalAlignment="Center"
                         Tag="Parametres"
                         Click="BtnSave_Click"
-                        Foreground="White"
-                        FontFamily="Agency FB"/>
+                        Foreground="{DynamicResource ButtonTextColor}"
+                        FontFamily="Agency FB"
+                        Background="{DynamicResource AccentColor}"
+                        />
             </Grid>
 
         </Grid>

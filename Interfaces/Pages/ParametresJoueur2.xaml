@@ -126,7 +126,8 @@
                            Grid.Column="1"
                            Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="8,0,0,0" Visibility="Hidden"/>
+                           Margin="8,0,0,0" Visibility="Hidden"
+                           Tag="Error"/>
             </Grid>
 
             <TextBlock x:Name="ErrNomJ2" x:FieldModifier="public"
@@ -135,7 +136,8 @@
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Left" Margin="12,2,0,0"
                        VerticalAlignment="Top"
-                       Visibility="Hidden"/>
+                       Visibility="Hidden"
+                       Tag="Error"/>
             <TextBlock Grid.Row="4"
                        Text="Nationalité"
                        FontFamily="Agency FB"
@@ -154,7 +156,8 @@
                            Grid.Column="1"
                            Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="8,0,0,0" Visibility="Hidden"/>
+                           Margin="8,0,0,0" Visibility="Hidden"
+                           Tag="Error"/>
             </Grid>
 
             <TextBlock x:Name="ErrNatJ2" x:FieldModifier="public"
@@ -163,7 +166,8 @@
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Left" Margin="12,2,0,0"
                        VerticalAlignment="Top"
-                       Visibility="Hidden"/>
+                       Visibility="Hidden"
+                       Tag="Error"/>
 
             <TextBlock Grid.Row="7"
                        Text="Couleur des jetons"
@@ -192,7 +196,8 @@
                            Grid.Column="1"
                            Text="⚠" Foreground="#E53935"
                            FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                           Margin="8,0,0,0" Visibility="Hidden"/>
+                           Margin="8,0,0,0" Visibility="Hidden"
+                           Tag="Error"/>
             </Grid>
 
             <TextBlock x:Name="ErrCoulJ2" x:FieldModifier="public"
@@ -200,7 +205,8 @@
                        Foreground="#E53935" FontSize="{DynamicResource FontSize12}"
                        FontFamily="Segoe UI" FontStyle="Italic"
                        HorizontalAlignment="Center" Margin="0,4,0,0"
-                       Visibility="Hidden"/>
+                       Visibility="Hidden"
+                       Tag="Error"/>
         </Grid>
     </Viewbox>
 </Page>

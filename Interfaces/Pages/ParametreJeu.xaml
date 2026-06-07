@@ -86,7 +86,7 @@
                             <Button x:Name="btn4" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                                         4 x 4
                                         </TextBlock>
                                     </ControlTemplate>
@@ -104,7 +104,7 @@
                             <Button x:Name="btn5" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                         5 x 5
                                         </TextBlock>
                                     </ControlTemplate>
@@ -122,7 +122,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                         6 x 7
                                         </TextBlock>
                                     </ControlTemplate>
@@ -140,7 +140,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                         8 x 7
                                         </TextBlock>
                                     </ControlTemplate>
@@ -158,7 +158,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                         8 x 8
                                         </TextBlock>
                                     </ControlTemplate>
@@ -176,7 +176,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                         10 x 10
                                         </TextBlock>
                                     </ControlTemplate>
@@ -226,7 +226,7 @@
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White" Margin="2">
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                                     3 jetons
                                     </TextBlock>
                                 </ControlTemplate>
@@ -244,7 +244,7 @@
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White" Margin="2">
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
     4 jetons
                                     </TextBlock>
                                 </ControlTemplate>
@@ -262,7 +262,7 @@
                         <Button x:Name="btn5J" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White" Margin="2">
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
     5 jetons
                                     </TextBlock>
                                 </ControlTemplate>
@@ -280,7 +280,7 @@
                         <Button x:Name="btnApplique" Background="Transparent" OverridesDefaultStyle="False" Click="btnApplique_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="White" Margin="4">
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
     Appliquer les paramètres
                                     </TextBlock>
                                 </ControlTemplate>
@@ -338,7 +338,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="2">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
                                 Aucune
                                         </TextBlock>
                                     </ControlTemplate>
@@ -356,7 +356,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="4">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
                 10 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -374,7 +374,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="4">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
                 15 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -392,7 +392,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="4">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
                 30 secondes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -410,7 +410,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="4">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
                 1 minute
                                         </TextBlock>
                                     </ControlTemplate>
@@ -428,7 +428,7 @@
                             <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <TextBlock Foreground="White" Margin="4">
+                                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
                 2 minutes
                                         </TextBlock>
                                     </ControlTemplate>
@@ -452,7 +452,8 @@
             FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
             Content="✕" Cursor="Hand"
             OverridesDefaultStyle="True"
-            Click="Button_retour">
+            Click="Button_retour"
+            Foreground="{DynamicResource ButtonTextColor}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="Transparent">

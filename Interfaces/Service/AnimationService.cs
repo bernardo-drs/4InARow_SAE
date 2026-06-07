@@ -37,13 +37,30 @@ namespace Interfaces.Service
             if (border == null) return;
 
             if (ConfigurationJeu.Contraste == 3.0)
-                beginColor = "#FF0000";
+            {
+                beginColor = "#000000";
+            }
             else
-                beginColor = (beginColor == null ? border.Tag.ToString() : beginColor);
+            {
+                // On vérifie d'abord si beginColor n'a pas déjà une valeur
+                if (beginColor == null)
+                {
+                    // On vérifie ensuite si le Tag du border n'est pas vide pour éviter le crash
+                    if (border.Tag != null)
+                    {
+                        beginColor = border.Tag.ToString();
+                    }
+                    else
+                    {
+                        // Couleur de secours si le Tag est null (ex: blanc)
+                        beginColor = "#FFFFFF";
+                    }
+                }
+            }
 
             // Si contraste = 3, la couleur de fin est toujours rouge
             if (ConfigurationJeu.Contraste == 3.0)
-                endColor = "#FF0000";
+                endColor = "#000000";
             else
                 endColor = (endColor == null ? "#808080" : endColor);
 

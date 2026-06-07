@@ -96,12 +96,12 @@ namespace Interfaces
         // Contraste
         public void AppliquerContraste(double valeur)
         {
-            var (text, accent, buttonText) = valeur switch
+            var (text, accent, buttonText, buttonText2) = valeur switch
             {
-                1 => ("#FFFFFF", "#7a6fb0", "#FFFFFF"),
-                2 => ("#FFFF00", "#7a6fb0", "#FFFF00"),
-                3 => ("#FFFF00", "#FF0000", "#FFFF00"),
-                _ => ("#FFFFFF", "#7a6fb0", "#FFFFFF")
+                1 => ("#FFFFFF", "#7a6fb0", "#FFFFFF", "#000000"),
+                2 => ("#FFFF00", "#7a6fb0", "#FFFF00", "#FFFF00"),
+                3 => ("#FFFF00", "#000000", "#FFFF00", "#FFFF00"),
+                _ => ("#FFFFFF", "#7a6fb0", "#FFFFFF", "#000000")
             };
 
             Application.Current.Resources["TextColor"] = new SolidColorBrush(
@@ -110,6 +110,8 @@ namespace Interfaces
                 (Color)ColorConverter.ConvertFromString(accent));
             Application.Current.Resources["ButtonTextColor"] = new SolidColorBrush(
                 (Color)ColorConverter.ConvertFromString(buttonText));
+            Application.Current.Resources["ButtonTextColor2"] = new SolidColorBrush(
+                (Color)ColorConverter.ConvertFromString(buttonText2));
 
             AppliquerCouleurBoutons(valeur);
         }
@@ -159,7 +161,7 @@ namespace Interfaces
 
                 if (child is Border border && border.Tag is string tag && tag.StartsWith("#"))
                 {
-                    string couleur = contraste == 1 ? tag : "#FF0000";
+                    string couleur = contraste == 1 ? tag : "#000000";
                     border.Background = new SolidColorBrush(
                         (Color)ColorConverter.ConvertFromString(couleur));
                     border.InvalidateVisual();

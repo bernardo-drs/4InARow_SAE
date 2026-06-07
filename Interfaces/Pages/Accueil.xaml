@@ -70,10 +70,11 @@
 
                                     <TextBlock Text="Jouer"
                                        FontSize="{DynamicResource FontSize15}"
-                                       Foreground="Black"
+                                       Foreground="{DynamicResource ButtonTextColor2}"
                                        FontStretch="Expanded"
                                        HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"/>
+                                       VerticalAlignment="Center"
+                                       />
 
                                 </Viewbox>
                             </Grid>
@@ -111,7 +112,7 @@
 
                                     <TextBlock Text="Options"
                                        FontSize="{DynamicResource FontSize15}"
-                                       Foreground="Black"
+                                       Foreground="{DynamicResource ButtonTextColor2}"
                                        FontStretch="Expanded"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
@@ -151,7 +152,7 @@
 
                                     <TextBlock Text="Historique"
                                        FontSize="{DynamicResource FontSize15}"
-                                       Foreground="Black"
+                                       Foreground="{DynamicResource ButtonTextColor2}"
                                        FontStretch="Expanded"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
@@ -194,7 +195,7 @@
 
                                     <TextBlock Text="Leaderboard"
                                        FontSize="{DynamicResource FontSize15}"
-                                       Foreground="Black"
+                                       Foreground="{DynamicResource ButtonTextColor2}"
                                        FontStretch="Expanded"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
@@ -236,7 +237,7 @@
 
                                     <TextBlock Text="Quitter"
                                    FontSize="{DynamicResource FontSize15}"
-                                   Foreground="Black"
+                                   Foreground="{DynamicResource ButtonTextColor2}"
                                    FontStretch="Expanded"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
