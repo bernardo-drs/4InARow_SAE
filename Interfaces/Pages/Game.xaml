@@ -39,7 +39,7 @@
 
         <!-- TIMER haut gauche -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
-                CornerRadius="10" Margin="5" Tag="#201A43">
+                CornerRadius="10" Margin="5">
             <Viewbox>
                 <TextBlock x:Name="TimerText" Text="- : --"
                            Foreground="White" FontFamily="Agency FB"
@@ -109,7 +109,7 @@
 
         <!-- BOUTON PAUSE haut droite -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="7"
-                CornerRadius="10" Margin="5" Tag="#201A43">
+                CornerRadius="10" Margin="5">
             <Button x:Name="BtnPause" Background="Transparent"
                     BorderThickness="0" OverridesDefaultStyle="True"
                     Tag="Game"

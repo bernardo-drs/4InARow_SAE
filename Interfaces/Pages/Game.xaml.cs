@@ -44,7 +44,7 @@ namespace Interfaces.Pages
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
             _partie.DemarrerPartie();
 
-            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps) + 1;
+            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
 
             if (ConfigurationJeu.ModeDeJeu == "Challenge")
