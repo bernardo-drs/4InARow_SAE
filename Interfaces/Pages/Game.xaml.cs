@@ -44,7 +44,7 @@ namespace Interfaces.Pages
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
             _partie.DemarrerPartie();
 
-            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
+            _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps) + 1;
             StartTimer();
 
             if (ConfigurationJeu.ModeDeJeu == "Challenge")
@@ -424,7 +424,7 @@ namespace Interfaces.Pages
             {
                 _secondesRestantes--;
                 int min = _secondesRestantes / 60;
-                int sec = _secondesRestantes + 1 % 60;
+                int sec = _secondesRestantes % 60;
                 TimerText.Text = $"{min} : {sec:D2}";
 
                 if (_secondesRestantes <= 0)

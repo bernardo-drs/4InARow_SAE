@@ -189,7 +189,7 @@ namespace Interfaces.Pages
 
             // row2 correspond aux lignes de ta Grid du milieu : 3 jetons (Row 2), 4 jetons (Row 5), 5 jetons (Row 7)
             int jetons = 4;
-            if (row2 == 2) jetons = 3;
+            if (row2 == 3) jetons = 3;
             else if (row2 == 5) jetons = 4;
             else if (row2 == 7) jetons = 5;
 
