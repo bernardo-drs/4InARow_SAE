@@ -152,6 +152,8 @@ namespace Interfaces.Pages
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
+            // Si il y a un Popup le clavier deviens inutilisable
+            if (PageService.PopUpOuverte) return;
             // Ignore si c'est le tour de l'IA
             if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
                 return;

@@ -1,7 +1,8 @@
-﻿using Interfaces.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
+using Interfaces.Pages;
 
 namespace Interfaces.Service
 {
@@ -68,6 +69,8 @@ namespace Interfaces.Service
 
         public static void PopUp(string? nomPage)
         {
+            PopUpOuverte = nomPage != null; 
+
             switch (nomPage)
             {
                 case "Quitter":
@@ -95,6 +98,11 @@ namespace Interfaces.Service
                     _window.popUpFrame.Content = null;
                     break;
             }
+
+            _window.Overlay.Visibility = nomPage == null
+                ? Visibility.Collapsed
+                : Visibility.Visible;
         }
+        public static bool PopUpOuverte { get; private set; } = false;
     }
 }

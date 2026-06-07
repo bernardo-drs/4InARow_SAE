@@ -18,6 +18,7 @@
             <ColumnDefinition Width="250*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="mainFrame" Grid.ColumnSpan="3" Grid.RowSpan="3" NavigationUIVisibility="Hidden"></Frame>
+        <Rectangle x:Name="Overlay" Grid.ColumnSpan="3" Grid.RowSpan="3" Fill="#80000000" Visibility="Collapsed"/>
         <Frame x:Name="popUpFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
