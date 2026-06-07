@@ -219,7 +219,7 @@
                             <TextBlock Text="Maé" FontSize="{DynamicResource FontSize15}"  Grid.Row="1" Grid.Column="1" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Text="Bernard" FontSize="{DynamicResource FontSize15}"  Grid.Row="2" Grid.Column="1" Foreground="#ff66c4" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <!--Point de couleurs des joueurs-->
-                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="5" HorizontalAlignment="Center" Margin="0,5,0,5" />
+                            <Ellipse  Grid.Row="1" Grid.Column="2" Fill="#ffffff" Width="12" HorizontalAlignment="Center" Margin="0,5,0,5" />
                             <Ellipse  Grid.Row="2" Grid.Column="2" Fill="#ff66c4" Width="12" HorizontalAlignment="Center" Margin="0,5,0,5"/>
                             <!--Score de la partie-->
                             <TextBlock Text="2" FontSize="{DynamicResource FontSize15}"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Foreground="#ffffff" VerticalAlignment="Center" />
