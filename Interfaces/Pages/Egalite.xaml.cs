@@ -38,6 +38,11 @@ namespace Interfaces.Pages
                 PanelJoueur1.Visibility = Visibility.Visible;
                 PanelJoueur2.Visibility = Visibility.Visible;
 
+                BordureBtnRejouer.Visibility = Visibility.Collapsed;
+                BordureBtnMenu.Visibility = Visibility.Collapsed;
+
+                BordureBtnContinuer.Visibility = Visibility.Visible;
+
             }
         }
 

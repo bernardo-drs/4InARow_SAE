@@ -70,11 +70,6 @@ namespace Interfaces.Pages
             PageService.PopUp(null);
             PageService.Navigate("Game");
 
-            if (ConfigurationJeu.ModeDeJeu == "Challenge")
-            {
-                //
-            }
-
         }
     }
 }

@@ -96,17 +96,17 @@
                     </Border>
                 </StackPanel>
 
-                <!-- Bouton Rejouer (mode normal : en haut) -->
+                <!-- Bouton Rejouer  -->
                 <Border x:Name="BordureBtnRejouer"
-            Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
-            CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
+                        Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                        CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
                     <Viewbox>
                         <Button x:Name="btn_Rejouer" Background="Transparent"
-                    OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
+                                OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock x:Name="TxtRejouer" Text="Rejouer"
-                                   Foreground="White" Margin="5" FontSize="10"/>
+                                               Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -114,18 +114,18 @@
                 </Border>
 
                 <Border x:Name="BordureBtnContinuer"
-                    Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
-                    CornerRadius="10" Background="#20114a"
-                    Margin="30,0,30,0"
-                    VerticalAlignment="Center"
-                    Visibility="Collapsed">
+                        Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
+                        CornerRadius="10" Background="#20114a"
+                        Margin="30,0,30,0"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed">
                     <Viewbox>
                         <Button Background="Transparent"
-                    OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
+                                OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Text="Continuer"
-                               Foreground="White" Margin="5" FontSize="10"/>
+                                               Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -134,15 +134,15 @@
 
                 <!-- Bouton Menu -->
                 <Border x:Name="BordureBtnMenu"
-            Grid.Row="2" Grid.Column="2"
-            CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
+                        Grid.Row="2" Grid.Column="2"
+                        CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
                     <Viewbox>
                         <Button x:Name="BtnMenu" Background="Transparent"
-                    OverridesDefaultStyle="True" Click="BtnMenu_Click">
+                                OverridesDefaultStyle="True" Click="BtnMenu_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Text="Retourner au menu"
-                                   Foreground="White" Margin="5" FontSize="10"/>
+                                               Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
