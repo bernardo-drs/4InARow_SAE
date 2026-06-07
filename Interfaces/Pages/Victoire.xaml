@@ -56,7 +56,7 @@
 
                 <!-- Joueur 1 (gauche) -->
                 <StackPanel x:Name="PanelJoueur1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
-                            Visibility="Collapsed" VerticalAlignment="Center" Margin="0,0,5,0">
+                Visibility="Collapsed" VerticalAlignment="Center" Margin="0,0,5,0">
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ1" Text="Joueur 1" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
@@ -77,7 +77,7 @@
 
                 <!-- Joueur 2 (droite) -->
                 <StackPanel x:Name="PanelJoueur2" Grid.Row="0" Grid.Column="4" Grid.RowSpan="3"
-                            Visibility="Collapsed" VerticalAlignment="Center" Margin="5,0,0,0">
+                Visibility="Collapsed" VerticalAlignment="Center" Margin="5,0,0,0">
                     <Viewbox Height="30">
                         <TextBlock x:Name="NomJ2" Text="Joueur 2" Foreground="White" FontWeight="Bold"/>
                     </Viewbox>
@@ -96,30 +96,58 @@
                     </Border>
                 </StackPanel>
 
-                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
+                <!-- Bouton Rejouer (mode normal : en haut) -->
+                <Border x:Name="BordureBtnRejouer"
+            Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+            CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
                     <Viewbox>
-                        <Button x:Name="btn_Rejouer" Background="Transparent" OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
+                        <Button x:Name="btn_Rejouer" Background="Transparent"
+                    OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="Rejouer" Foreground="White" Margin="5" FontSize="10"/>
+                                    <TextBlock x:Name="TxtRejouer" Text="Rejouer"
+                                   Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
                     </Viewbox>
                 </Border>
 
-                <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
+                <Border x:Name="BordureBtnContinuer"
+                    Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
+                    CornerRadius="10" Background="#20114a"
+                    Margin="30,0,30,0"
+                    VerticalAlignment="Center"
+                    Visibility="Collapsed">
                     <Viewbox>
-                        <Button x:Name="BtnMenu" Background="Transparent" OverridesDefaultStyle="True" Click="BtnMenu_Click">
+                        <Button Background="Transparent"
+                    OverridesDefaultStyle="True" Click="btn_Rejouer_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Text="Retourner au menu" Foreground="White" Margin="5" FontSize="10"/>
+                                    <TextBlock Text="Continuer"
+                               Foreground="White" Margin="5" FontSize="10"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
                     </Viewbox>
                 </Border>
 
+                <!-- Bouton Menu -->
+                <Border x:Name="BordureBtnMenu"
+            Grid.Row="2" Grid.Column="2"
+            CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
+                    <Viewbox>
+                        <Button x:Name="BtnMenu" Background="Transparent"
+                    OverridesDefaultStyle="True" Click="BtnMenu_Click">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Text="Retourner au menu"
+                                   Foreground="White" Margin="5" FontSize="10"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
             </Grid>
         </Grid>
     </Border>

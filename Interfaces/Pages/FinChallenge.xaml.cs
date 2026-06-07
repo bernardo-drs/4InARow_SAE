@@ -61,6 +61,7 @@ namespace Interfaces.Pages
         {
             ConfigurationJeu.ScoreJoueur1 = 0;
             ConfigurationJeu.ScoreJoueur2 = 0;
+            PageService.PopUp(null);
             PageService.Navigate("Accueil");
         }
     }
