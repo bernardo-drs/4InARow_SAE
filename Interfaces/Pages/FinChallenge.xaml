@@ -29,7 +29,7 @@
             </Viewbox>
 
             <!-- Texte -->
-            <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10">
+            <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10" Tag="#201A43">
                 <Viewbox>
                     <TextBlock Foreground="White" Margin="5">
                         <Run x:Name="RunVainqueur" Text="..."/>
@@ -100,7 +100,7 @@
                     </Border>
                 </StackPanel>
 
-                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,14">
+                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,14" Tag="#201A43">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="True" Click="BtnRejouer_Click">
                             <Button.Template>
@@ -112,7 +112,7 @@
                     </Viewbox>
                 </Border>
 
-                <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,0">
+                <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#20114a" Margin="0,0,6,0" Tag="#201A43">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="True" Click="BtnMenu_Click">
                             <Button.Template>

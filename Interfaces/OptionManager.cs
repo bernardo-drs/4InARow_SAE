@@ -141,7 +141,13 @@ namespace Interfaces
         {
             if (Application.Current.MainWindow == null) return;
 
-            AppliquerCouleurBoutonsRecursif(Application.Current.MainWindow, contraste);
+            Application.Current.Dispatcher.BeginInvoke(
+                System.Windows.Threading.DispatcherPriority.Render,
+                new Action(() =>
+                {
+                    AppliquerCouleurBoutonsRecursif(Application.Current.MainWindow, contraste);
+                })
+            );
         }
 
         private void AppliquerCouleurBoutonsRecursif(DependencyObject parent, double contraste)
@@ -156,6 +162,7 @@ namespace Interfaces
                     string couleur = contraste == 1 ? tag : "#FF0000";
                     border.Background = new SolidColorBrush(
                         (Color)ColorConverter.ConvertFromString(couleur));
+                    border.InvalidateVisual();
                 }
 
                 AppliquerCouleurBoutonsRecursif(child, contraste);

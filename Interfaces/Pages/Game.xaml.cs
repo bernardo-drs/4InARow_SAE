@@ -76,6 +76,9 @@ namespace Interfaces.Pages
             BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
 
             Game.OnReprendre += () => { if (_secondesRestantes > 0) _timer?.Start(); };
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void CreerGrille()

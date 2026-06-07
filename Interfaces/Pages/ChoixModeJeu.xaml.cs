@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Interfaces.Service;
 
 namespace Interfaces.Pages
 {
@@ -23,6 +24,9 @@ namespace Interfaces.Pages
         public ChoixModeJeu()
         {
             InitializeComponent();
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void btnChallenge_Button_Click(object sender, RoutedEventArgs e)

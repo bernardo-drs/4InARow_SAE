@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="19*"/>
             </Grid.ColumnDefinitions>
 
-            <Border x:Name="brdCroix" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" CornerRadius="10" Background="#20114A" BorderBrush="White" BorderThickness="0" Margin="5,5,5,5">
+            <Border x:Name="brdCroix" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" CornerRadius="10" Background="#20114A" Tag="#201A43" BorderBrush="White" BorderThickness="0" Margin="5,5,5,5">
                 <Viewbox>
                     <Button x:Name="btnCroix" Background="Transparent" OverridesDefaultStyle="True" Click="btnCroix_Click" >
                         <Button.Template>
@@ -66,7 +66,7 @@
                     <ColumnDefinition Width="98*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="brdClass" Grid.Column="1" CornerRadius="10" Background="#20114A" BorderBrush="White" BorderThickness="2">
+                <Border x:Name="brdClass" Grid.Column="1" CornerRadius="10" Background="#20114A" Tag="#201A43" BorderBrush="White" BorderThickness="2">
                     <Viewbox>
                         <Button x:Name="btnClassique" Background="Transparent" OverridesDefaultStyle="True" Click="btnClassique_Click">
                             <Button.Template>
@@ -78,7 +78,7 @@
                     </Viewbox>
                 </Border>
 
-                <Border x:Name="brdChall" Grid.Column="3" CornerRadius="10" Background="#20114A" BorderBrush="White" BorderThickness="0">
+                <Border x:Name="brdChall" Grid.Column="3" CornerRadius="10" Background="#20114A" Tag="#201A43" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btnChallenge" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="btnChallenge_Button_Click">
                             <Button.Template>
@@ -100,7 +100,7 @@
                     <ColumnDefinition Width="118*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786" BorderBrush="White" BorderThickness="0">
+                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786" Tag="#201A43" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn3V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn3V_Click">
                             <Button.Template>
@@ -112,7 +112,7 @@
                     </Viewbox>
                 </Border>
 
-                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786" BorderBrush="White" BorderThickness="0">
+                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786" Tag="#201A43" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn5V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn5V_Click">
                             <Button.Template>
@@ -132,7 +132,7 @@
                     <ColumnDefinition Width="64*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="1" CornerRadius="10" Background="#20114A">
+                <Border Grid.Column="1" CornerRadius="10" Background="#20114A" Tag="#201A43">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="Btn_LancementPartie">
                             <Button.Template>

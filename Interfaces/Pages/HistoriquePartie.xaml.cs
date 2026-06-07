@@ -24,6 +24,8 @@ namespace Interfaces.Pages
         {
             InitializeComponent();
 
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void OnLeavePage(object sender, RoutedEventArgs e)

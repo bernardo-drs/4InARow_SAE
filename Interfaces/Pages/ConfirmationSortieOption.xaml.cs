@@ -22,6 +22,9 @@ namespace Interfaces.Pages
         public ConfirmationSortieOption()
         {
             InitializeComponent();
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void OuiOptionQuitterButton_Click(object sender, RoutedEventArgs e)

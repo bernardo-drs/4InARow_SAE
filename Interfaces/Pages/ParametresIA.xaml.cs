@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Interfaces.Service;
 
 namespace Interfaces.Pages
 {
@@ -16,6 +17,9 @@ namespace Interfaces.Pages
             InitializeComponent();
             SelectDiff(BtnFacile);
             this.Loaded += ParametresIA_Loaded;
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void ParametresIA_Loaded(object sender, RoutedEventArgs e)

@@ -19,19 +19,34 @@ namespace Interfaces.Pages
     /// </summary>
     public partial class Quitter : Page
     {
-
         MainWindow window;
+
         public Quitter(MainWindow w)
         {
             InitializeComponent();
-
             window = w;
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
+        }
+
+      
+
+        // Utilitaire pour trouver tous les enfants d'un type donné
+        private static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
+        {
+            if (parent == null) yield break;
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                if (child is T t) yield return t;
+                foreach (var descendant in FindVisualChildren<T>(child))
+                    yield return descendant;
+            }
         }
 
         private void NonQuitterButton_Click(object sender, RoutedEventArgs e)
         {
             PageService.PopUp(null);
-
         }
 
         private void OuiQuitterButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +56,7 @@ namespace Interfaces.Pages
 
         private void OnMouseEnterButton(object sender, MouseEventArgs e)
         {
-           AnimationService.FadeColor(sender, 0.2, "In", null, null);
+            AnimationService.FadeColor(sender, 0.2, "In", null, null);
         }
 
         private void OnMouseLeaveButton(object sender, MouseEventArgs e)

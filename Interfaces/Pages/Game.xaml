@@ -39,7 +39,7 @@
 
         <!-- TIMER haut gauche -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
-                CornerRadius="10" Margin="5">
+                CornerRadius="10" Margin="5" Tag="#201A43">
             <Viewbox>
                 <TextBlock x:Name="TimerText" Text="- : --"
                            Foreground="White" FontFamily="Agency FB"
@@ -109,7 +109,7 @@
 
         <!-- BOUTON PAUSE haut droite -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="7"
-                CornerRadius="10" Margin="5">
+                CornerRadius="10" Margin="5" Tag="#201A43">
             <Button x:Name="BtnPause" Background="Transparent"
                     BorderThickness="0" OverridesDefaultStyle="True"
                     Tag="Game"
@@ -154,7 +154,7 @@
                 </Grid.RowDefinitions>
                 
                 <Viewbox Grid.Column="1" Grid.Row="1">
-                    <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="--"/>
+                    <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="--" Tag="#201A43"/>
                 </Viewbox>
                 <Ellipse x:Name="Player1Forme" Grid.Column="1" Grid.Row="3" Fill="Red"/>
             </Grid>
@@ -179,7 +179,7 @@
                 </Grid.RowDefinitions>
                 
                 <Viewbox Grid.Column="1" Grid.Row="1">
-                    <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="--"/>
+                    <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="--" Tag="#201A43"/>
                 </Viewbox>
                 <Ellipse x:Name="Player2Forme" Grid.Column="1" Grid.Row="3" Fill="Yellow"/>
             </Grid>
@@ -187,9 +187,9 @@
 
         <!-- MODE DE JEU bas droite -->
         <TextBlock x:Name="ModeJeuText" Text="Classique"
-                   Foreground="White" FontFamily="Agency FB" FontSize="{DynamicResource FontSize20}"
-                   Grid.Row="9" Grid.Column="7"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                   Foreground="White" FontFamily="Agency FB" FontSize="{DynamicResource FontSize30}"
+                   Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Tag="#201A43"/>
         
         
     </Grid>

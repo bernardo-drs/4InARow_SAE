@@ -47,6 +47,9 @@ namespace Interfaces.Pages
 
             PanelJoueur1.Visibility = Visibility.Visible;
             PanelJoueur2.Visibility = Visibility.Visible;
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void BtnRejouer_Click(object sender, RoutedEventArgs e)

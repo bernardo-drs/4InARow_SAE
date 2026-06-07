@@ -28,8 +28,8 @@
                     <ColumnDefinition Width="217*"/>
                     <ColumnDefinition Width="150*"/>
                 </Grid.ColumnDefinitions>
-                
-                <Border Background ="#201A43" Grid.Column="1" CornerRadius="5">
+
+                <Border Background ="#201A43" Tag="#201A43" Grid.Column="1" CornerRadius="5">
                     <Viewbox Margin="5">
                         <TextBlock Foreground="{DynamicResource ButtonTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize30}">
                             Options

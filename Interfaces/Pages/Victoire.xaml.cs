@@ -63,6 +63,8 @@ namespace Interfaces.Pages
             ConfigurationJeu.ScoreJoueur1 = 0;
             ConfigurationJeu.ScoreJoueur2 = 0;
 
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void btn_Rejouer_Click(object sender, RoutedEventArgs e)

@@ -22,6 +22,7 @@ namespace Interfaces.Pages
         {
             InitializeComponent();
             ChargerOptionsActuelles();
+
         }
 
         private void BtnAppliquerOptions_Click(object sender, RoutedEventArgs e)

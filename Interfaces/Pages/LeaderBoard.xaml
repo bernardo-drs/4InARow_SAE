@@ -71,7 +71,7 @@
 
             <!--Titre de l'onglet-->
 
-            <Border CornerRadius="12"  Grid.Row="1" Grid.Column="1" Background="#20114a" Grid.ColumnSpan="2" Margin="22,0,0,0">
+            <Border CornerRadius="12"  Grid.Row="1" Grid.Column="1" Background="#20114a" Grid.ColumnSpan="2" Margin="22,0,0,0" Tag="#201A43">
                 <TextBlock Text="Leaderboard" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource FontSize30}" Foreground="#ffffff" FontFamily="Agency FB"/>
             </Border>
 
@@ -155,7 +155,7 @@
 
                     <!--Début de l'affichage des joueurs-->
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -173,7 +173,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -191,7 +191,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -209,7 +209,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -227,7 +227,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -245,7 +245,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -263,7 +263,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -281,7 +281,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -299,7 +299,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>
@@ -317,7 +317,7 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="40">
+                    <Border CornerRadius="12" Margin="0,0,10,10" Background="#20114a" Height="60" Tag="#201A43">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53*"/>

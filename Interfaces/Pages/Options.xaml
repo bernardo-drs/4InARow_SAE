@@ -278,16 +278,14 @@
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="{DynamicResource AccentColor}" CornerRadius="10" Tag="#FAFAFA" Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
-                <Button x:Name="BtnAppliquer" Click="BtnAppliquerOptions_Click"
+            <Border x:Name="BtnAppliquerOptions" Margin="5,10,5,10" Background="{DynamicResource AccentColor}" CornerRadius="10"  Grid.Column="1" BorderBrush="Transparent" BorderThickness="2" MouseLeftButtonUp="BtnAppliquerOptions_Click">
+                <Button x:Name="BtnAppliquer" Click="BtnAppliquerOptions_Click" Tag="#201A43"
                         BorderThickness="0" OverridesDefaultStyle="True"
-                        Background="Transparent" Tag="Appliquer" MouseEnter="BtnAppliquer_MouseEnter" MouseLeave="BtnAppliquer_MouseLeave"
-                        >
+                        Background="Transparent" MouseEnter="BtnAppliquer_MouseEnter" MouseLeave="BtnAppliquer_MouseLeave">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize20}" Foreground="{DynamicResource ButtonTextColor}">
-                                    Appliquer les options
-                            </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize20}" Foreground="{DynamicResource ButtonTextColor}" Text="Appliquer les options"/>
+
                         </ControlTemplate>
                     </Button.Template>
                 </Button>

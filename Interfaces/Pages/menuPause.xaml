@@ -32,7 +32,7 @@
                     <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
 
-                <Border Background="#20114a" CornerRadius="10" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border Background="#20114a" CornerRadius="10" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tag="#201A43">
                     <Grid Background="Transparent">
                         <Viewbox Margin="8" Stretch="Uniform">
                             <TextBlock Text="MENU PAUSE" FontSize="{DynamicResource FontSize30}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -40,7 +40,7 @@
                     </Grid>
                 </Border>
 
-                <Border x:Name="ReprendreButtonHolder" Background="#20114a" CornerRadius="10" Tag="#20114a" Grid.Row="3" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
+                <Border x:Name="ReprendreButtonHolder" Background="#20114a"  CornerRadius="10" Tag="#201A43" Grid.Row="3" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
                     <Button x:Name="ReprendreButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Reprendre" Click="ReprendreClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -54,7 +54,7 @@
                     </Button>
                 </Border>
 
-                <Border x:Name="EnregistrerButtonHolder" Background="#20114a" CornerRadius="10" Tag="#20114a" Grid.Row="5" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
+                <Border x:Name="EnregistrerButtonHolder" Background="#20114a" CornerRadius="10" Tag="#201A43" Grid.Row="5" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
                     <Button x:Name="EnregistrerButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Enregistrer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -68,7 +68,7 @@
                     </Button>
                 </Border>
 
-                <Border x:Name="ArreterButtonHolder" Background="#20114a" CornerRadius="10" Tag="#20114a" Grid.Row="7" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
+                <Border x:Name="ArreterButtonHolder" Background="#20114a" CornerRadius="10" Tag="#201A43" Grid.Row="7" MouseEnter="OnMouseEnterButton" MouseLeave="OnMouseLeaveButton">
                     <Button x:Name="ArreterButton" BorderThickness="0" OverridesDefaultStyle="True" Background="Transparent" Tag="Arreter" Click="OnArreterClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -102,7 +102,7 @@
                     <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
 
-                <Border Background="#20114a" CornerRadius="10" Grid.Row="1" VerticalAlignment="Stretch">
+                <Border Background="#20114a" CornerRadius="10" Grid.Row="1" VerticalAlignment="Stretch" Tag="#201A43">
                     <Grid Background="Transparent">
                         <Viewbox Margin="8" Stretch="Uniform">
                             <TextBlock Text="QUITTER LA PARTIE" Foreground="White" HorizontalAlignment="Center"/>

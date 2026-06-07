@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
+using Interfaces.Service;
 
 namespace Interfaces.Pages
 {
@@ -13,6 +14,9 @@ namespace Interfaces.Pages
         {
             InitializeComponent();
             this.Loaded += ParametresJoueur2_Loaded;
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void ParametresJoueur2_Loaded(object sender, RoutedEventArgs e)

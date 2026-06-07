@@ -18,6 +18,9 @@ namespace Interfaces.Pages
             RightFrame.Content = new ParametresJoueur2();
             BtnTab2J.Style = (Style)FindResource("TabButtonActive");
             this.Loaded += Parametres_Loaded;
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void Parametres_Loaded(object sender, RoutedEventArgs e)

@@ -38,6 +38,9 @@ namespace Interfaces.Pages
         public ParametreJeu()
         {
             InitializeComponent();
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

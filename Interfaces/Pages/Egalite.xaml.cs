@@ -44,6 +44,9 @@ namespace Interfaces.Pages
                 BordureBtnContinuer.Visibility = Visibility.Visible;
 
             }
+
+            this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
+            this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
         private void BtnMenu_Click(object sender, RoutedEventArgs e)
