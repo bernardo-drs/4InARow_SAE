@@ -58,6 +58,7 @@ namespace Interfaces.Pages
             ConfigurationJeu.ScoreJoueur2 = 0;
             PageService.PopUp(null);
             PageService.Navigate("Accueil");
+            ConfigurationJeu.ModeDeJeu = "Classique";
         }
     }
 }
