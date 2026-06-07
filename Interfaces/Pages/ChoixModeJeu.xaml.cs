@@ -91,6 +91,8 @@ namespace Interfaces.Pages
                 return;
             }
 
+            ConfigurationJeu.VictoiresRequises = nbVictoires;
+
             Service.PageService.PopUp(null);
             Service.PageService.Navigate("Game");
         }

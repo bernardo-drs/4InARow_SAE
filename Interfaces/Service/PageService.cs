@@ -88,6 +88,9 @@ namespace Interfaces.Service
                 case "Egalite":
                     _window.popUpFrame.Content = new Egalite();
                     break;
+                case "FinChallenge":
+                    _window.popUpFrame.Content = new FinChallenge();
+                    break;
                 default:
                     _window.popUpFrame.Content = null;
                     break;

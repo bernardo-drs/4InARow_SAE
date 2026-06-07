@@ -52,8 +52,8 @@ namespace Interfaces.Pages
 
         private void BtnMenu_Click(object sender, RoutedEventArgs e)
         {
-            PageService.Navigate("Accueil");
             PageService.PopUp(null);
+            PageService.Navigate("Accueil");
 
             ConfigurationJeu.ScoreJoueur1 = 0;
             ConfigurationJeu.ScoreJoueur2 = 0;

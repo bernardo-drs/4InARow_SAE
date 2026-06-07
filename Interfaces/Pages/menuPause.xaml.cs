@@ -54,6 +54,8 @@ namespace Interfaces.Pages
 
         private void OnConfirmerArretClick(object sender, RoutedEventArgs e)
         {
+            ConfigurationJeu.ScoreJoueur1 = 0;
+            ConfigurationJeu.ScoreJoueur2 = 0;
             PageService.PopUp(null);
             PageService.Navigate("Accueil");
         }

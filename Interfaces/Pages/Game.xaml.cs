@@ -187,20 +187,43 @@ namespace Interfaces.Pages
                     return;
                 }
 
-                Victoire.NomGagnant = joueurActuel.GetNomJoueur();
-                Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
-
+                // Incrémenter le score UNE SEULE FOIS
                 if (joueurActuel == _partie.GetListeParticipant()[0])
                 {
                     ConfigurationJeu.ScoreJoueur1++;
                     ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+
+                    if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
+                        ConfigurationJeu.ScoreJoueur1 >= ConfigurationJeu.VictoiresRequises)
+                    {
+                        FinChallenge.NomVainqueur = ConfigurationJeu.NomJoueur1;
+                        FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur1;
+                        FinChallenge.NomPerdant = ConfigurationJeu.NomJoueur2;
+                        FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur2;
+                        PageService.PopUp("FinChallenge");
+                        return;
+                    }
                 }
                 else
                 {
                     ConfigurationJeu.ScoreJoueur2++;
                     ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+
+                    if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
+                        ConfigurationJeu.ScoreJoueur2 >= ConfigurationJeu.VictoiresRequises)
+                    {
+                        FinChallenge.NomVainqueur = ConfigurationJeu.NomJoueur2;
+                        FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur2;
+                        FinChallenge.NomPerdant = ConfigurationJeu.NomJoueur1;
+                        FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur1;
+                        PageService.PopUp("FinChallenge");
+                        return;
+                    }
                 }
 
+                // Afficher victoire et continuer
+                Victoire.NomGagnant = joueurActuel.GetNomJoueur();
+                Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
                 PageService.PopUp("Victoire");
                 return;
             }

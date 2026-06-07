@@ -14,6 +14,8 @@ namespace Interfaces
 
         public static string ModeDeJeu { get; set; } = "Classique";
 
+        public static int VictoiresRequises { get; set; } = 3;
+
         // Info des joueurs ou du bot Joueur 1 = information de la gauche ET Joueur 2 = information de la droite
         public static string NomJoueur1 { get; set; } = "Joueur 1";
         public static string NomJoueur2 { get; set; } = "Joueur 2";
