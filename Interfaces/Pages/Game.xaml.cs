@@ -36,7 +36,9 @@ namespace Interfaces.Pages
             Humain j1 = new Humain(1, ConfigurationJeu.NomJoueur1, ConfigurationJeu.CouleurJoueur1, "", "");
             Joueur j2;
             if (ConfigurationJeu.Joueur2EstBot)
-                j2 = new IntelligenceArtificielle(2, "IA", ConfigurationJeu.CouleurJoueur2, 4); // 4 = le niveau de difficulté
+            {
+                j2 = new IntelligenceArtificielle(2, "IA", ConfigurationJeu.CouleurJoueur2, ConfigurationJeu.NiveauIA);
+            }
             else
                 j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);

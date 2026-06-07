@@ -243,6 +243,18 @@ namespace Systeme.User
 
         public override int ChoisirCoup(Grille plateau, Partie jeu)
         {
+            Console.WriteLine($"niveauIA = {niveauIA}");
+            // Facile : joue aléatoirement
+            if (niveauIA == 1)
+            {
+                Random rng = new Random(Guid.NewGuid().GetHashCode());
+                List<int> colonnesDisponibles = new List<int>();
+                for (int c = 0; c < plateau.GetNBColonnes(); c++)
+                    if (plateau.GetPremiereLigneLibre(c) != -1)
+                        colonnesDisponibles.Add(c);
+                return colonnesDisponibles[rng.Next(colonnesDisponibles.Count)];
+            }
+
             int meilleurScore = int.MinValue;
             int meilleurColonne = 0;
             int profondeurMax = niveauIA;

@@ -163,6 +163,14 @@ namespace Interfaces.Pages
                 ConfigurationJeu.CouleurJoueur2 = string.IsNullOrEmpty(coulIA) ? "#FDD835" : coulIA;
                 ConfigurationJeu.Joueur2EstBot = true;
 
+                ConfigurationJeu.NiveauIA = pageIA.DifficulteSelectionnee switch
+                {
+                    "Facile" => 1,
+                    "Moyen" => 2,
+                    "Difficile" => 4,
+                    _ => 4
+                };
+
                 PageService.Navigate("ParametreJeu");
             }
         }
