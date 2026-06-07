@@ -17,17 +17,30 @@
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="62*"/>
-            <ColumnDefinition Width="143*"/>
-            <ColumnDefinition Width="391*"/>
             <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="391*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="65"/>
         </Grid.ColumnDefinitions>
 
         <!--Bouton retour en arrière-->
 
-        <Border x:Name="ExitHistorique" Background="#8176a8" CornerRadius="10" Grid.Row="0" Grid.RowSpan="2">
-            <Button x:Name="BtnRetour" Click="OnLeavePage" Background="Transparent">
-                <TextBlock Text="X" FontSize="{DynamicResource FontSize30}" Foreground="#ffffff" FontFamily="Arial Rounded MT Bold"></TextBlock>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"
+        Width="50" Height="50" CornerRadius="10"
+        Background="{DynamicResource AccentColor}"
+        Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
+            <Button x:Name="BtnRetour" Background="Transparent" BorderThickness="0"
+            FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
+            Content="✕" Cursor="Hand"
+            OverridesDefaultStyle="True"
+            Click="OnLeavePage">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
         </Border>
 
@@ -35,9 +48,9 @@
 
         <!--Fond bleu + colonne et ligne-->
 
-        <Border CornerRadius="15"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Background="#004aad"></Border>
+        <Border CornerRadius="15"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Background="#004aad"></Border>
 
-        <Grid Grid.Column="2" Grid.RowSpan="2" Grid.Row="1">
+        <Grid Grid.Column="1" Grid.RowSpan="2" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="19*"/>
                 <RowDefinition Height="35*"/>

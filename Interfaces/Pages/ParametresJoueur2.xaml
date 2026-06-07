@@ -103,14 +103,14 @@
 
             <TextBlock Grid.Row="0" 
                        Text="Informations du joueur 2"
-                       FontFamily="Baskerville Old Face"
+                       FontFamily="Agency FB"
                        Foreground="White" FontSize="{DynamicResource FontSize22}"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,15"/>
 
             <TextBlock Grid.Row="1"
                        Text="Nom"
-                       FontFamily="Baskerville Old Face"
+                       FontFamily="Agency FB"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="10,0,0,4"/>
 
@@ -138,7 +138,7 @@
                        Visibility="Hidden"/>
             <TextBlock Grid.Row="4"
                        Text="Nationalité"
-                       FontFamily="Baskerville Old Face"
+                       FontFamily="Agency FB"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="10,0,0,4"/>
 
@@ -167,7 +167,7 @@
 
             <TextBlock Grid.Row="7"
                        Text="Couleur des jetons"
-                       FontFamily="Baskerville Old Face"
+                       FontFamily="Agency FB"
                        Foreground="White" FontSize="{DynamicResource FontSize17}"
                        HorizontalAlignment="Left" Margin="10,0,0,8"/>
 

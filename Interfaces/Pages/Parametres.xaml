@@ -201,7 +201,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1" Text="Paramètres"
                            Foreground="White" FontSize="{DynamicResource FontSize35}"
-                           FontFamily="Georgia"
+                           FontFamily="Agency FB"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button Grid.Column="2" Style="{StaticResource CloseButton}"
                         VerticalAlignment="Center" Click="BtnClose_Click"/>
@@ -264,11 +264,11 @@
 
                     <StackPanel Margin="0,0,8,0">
                         <TextBlock Text="Informations du joueur 1"
-                                   FontFamily="Baskerville Old Face"
+                                   FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize22}"
                                    HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                        <TextBlock Text="Nom" FontFamily="Baskerville Old Face"
+                        <TextBlock Text="Nom" FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize17}"
                                    HorizontalAlignment="Left" Margin="20,0,0,6"/>
                         <Grid Margin="12,0,12,0">
@@ -289,7 +289,7 @@
                                    HorizontalAlignment="Left" Margin="14,2,0,4"
                                    Height="18" Visibility="Hidden"/>
 
-                        <TextBlock Text="Nationalité" FontFamily="Baskerville Old Face"
+                        <TextBlock Text="Nationalité" FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize17}"
                                    HorizontalAlignment="Left" Margin="20,0,0,6"/>
                         <Grid Margin="12,0,12,0">
@@ -310,7 +310,7 @@
                                    HorizontalAlignment="Left" Margin="14,2,0,4"
                                    Height="18" Visibility="Hidden"/>
 
-                        <TextBlock Text="Couleur des jetons" FontFamily="Baskerville Old Face"
+                        <TextBlock Text="Couleur des jetons" FontFamily="Agency FB"
                                    Foreground="White" FontSize="{DynamicResource FontSize17}"
                                    HorizontalAlignment="Left" Margin="20,0,0,10"/>
                         <Grid HorizontalAlignment="Center">
@@ -413,7 +413,8 @@
                         HorizontalAlignment="Center"
                         Tag="Parametres"
                         Click="BtnSave_Click"
-                        Foreground="White"/>
+                        Foreground="White"
+                        FontFamily="Agency FB"/>
             </Grid>
 
         </Grid>

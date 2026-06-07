@@ -95,13 +95,13 @@
 
             <TextBlock Grid.Row="0"
                        Text="Information du bot"
-                       FontFamily="Baskerville Old Face"
+                       FontFamily="Agency FB"
                        Foreground="White" FontSize="{DynamicResource FontSize22}"
                        TextAlignment="Center" Margin="0,-10,0,14"/>
 
             <StackPanel Grid.Row="1" Margin="0,0,0,16">
                 <TextBlock Text="Difficulté"
-                           FontFamily="Baskerville Old Face"
+                           FontFamily="Agency FB"
                            Foreground="White" FontSize="{DynamicResource FontSize17}" Margin="4,0,0,6"/>
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -131,7 +131,7 @@
 
             <StackPanel Grid.Row="2" VerticalAlignment="Top" Margin="0,4,0,0">
                 <TextBlock Text="Couleur des jetons"
-                           FontFamily="Baskerville Old Face"
+                           FontFamily="Agency FB"
                            Foreground="White" FontSize="{DynamicResource FontSize17}" Margin="4,0,0,6"/>
                 <Border Background="#4A4470" CornerRadius="12" Padding="8,6"
                         HorizontalAlignment="Center">

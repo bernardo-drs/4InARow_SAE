@@ -444,24 +444,24 @@
 
             </Grid>
 
-            <Border BorderBrush="White" Grid.Row="0" Grid.RowSpan="2" Grid.Column="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="5,5,5,5">
-
-                <Viewbox>
-                    <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_retour">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <TextBlock Foreground="White" FontFamily="Arial Rounded MT Bold">
-X
-                                </TextBlock>
-                            </ControlTemplate>
-                        </Button.Template>
-
-                    </Button>
-                </Viewbox>
-
-
+            <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"
+        Width="50" Height="50" CornerRadius="10"
+        Background="{DynamicResource AccentColor}"
+        Grid.Row="0" Grid.RowSpan="3" Grid.Column="6" Grid.ColumnSpan="2">
+                <Button Background="Transparent" BorderThickness="0"
+            FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
+            Content="✕" Cursor="Hand"
+            OverridesDefaultStyle="True"
+            Click="Button_retour">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Transparent">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </Border>
-
 
         </Grid>
     </Grid>
