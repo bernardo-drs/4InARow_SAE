@@ -27,6 +27,12 @@ namespace Interfaces.Pages
             InitializeComponent();
 
             window = w;
+
+            this.Loaded += (s, e) =>
+            {
+                var manager = new OptionManager();
+                manager.AppliquerCouleurBoutons(ConfigurationJeu.Contraste);
+            };
         }
 
         private void OnModeButtonClick (object sender, RoutedEventArgs e)
@@ -52,6 +58,25 @@ namespace Interfaces.Pages
         {
 
             AnimationService.FadeColor(sender, 0.2, "Out", null, null);
+        }
+
+        private void AppliquerContrasteAccueil(double contraste)
+        {
+            var boutons = new[] { PlayButtonHolder, OptionsButtonHolder, HistoriqueButtonHolder, LeaderboardButtonHolder, QuitterButtonHolder };
+
+            // Couleurs originales
+            var couleursOriginales = new[] { "#FAFAFA", "#d3cdff", "#a497ff", "#8573ff", "#5170FF" };
+
+            for (int i = 0; i < boutons.Length; i++)
+            {
+                string couleur = contraste == 1 ? couleursOriginales[i] : "#FF0000";
+
+                boutons[i].Background = new SolidColorBrush(
+                    (Color)ColorConverter.ConvertFromString(couleur));
+
+                // Met à jour le Tag pour que FadeColor utilise la bonne couleur
+                boutons[i].Tag = couleur;
+            }
         }
     }
 }

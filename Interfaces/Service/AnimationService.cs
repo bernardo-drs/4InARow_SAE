@@ -36,8 +36,16 @@ namespace Interfaces.Service
 
             if (border == null) return;
 
-            beginColor = (beginColor == null ? border.Tag.ToString() : beginColor);
-            endColor = (endColor == null ? "#808080": endColor);
+            if (ConfigurationJeu.Contraste != 1)
+                beginColor = "#FF0000";
+            else
+                beginColor = (beginColor == null ? border.Tag.ToString() : beginColor);
+
+            // Si contraste != 1, la couleur de fin est toujours rouge
+            if (ConfigurationJeu.Contraste != 1)
+                endColor = "#FF0000";
+            else
+                endColor = (endColor == null ? "#808080" : endColor);
 
 
             ColorAnimation fade = new ColorAnimation();

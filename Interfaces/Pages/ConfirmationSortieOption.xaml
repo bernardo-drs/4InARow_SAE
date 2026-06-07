@@ -31,7 +31,7 @@
                 
                 <Border Background ="#201A43" Grid.Column="1" CornerRadius="5">
                     <Viewbox Margin="5">
-                        <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize30}">
+                        <TextBlock Foreground="{DynamicResource ButtonTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize30}">
                             Options
                         </TextBlock>
                     </Viewbox>
@@ -46,7 +46,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <Viewbox Margin="5" Grid.Column="1">
-                    <TextBlock Foreground="#FAFAFA" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="{DynamicResource FontSize20}">
+                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="{DynamicResource FontSize20}">
                             Êtes-vous sur de vouloir quitter les options du jeu ?
                     </TextBlock>
                 </Viewbox>
@@ -87,7 +87,7 @@
 
                                         <TextBlock Text="Oui"
                                            FontSize="{DynamicResource FontSize20}"
-                                           Foreground="#FAFAFA"
+                                           Foreground="{DynamicResource ButtonTextColor}"
                                            FontStretch="Expanded"
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"/>
@@ -125,7 +125,7 @@
 
                                         <TextBlock Text="Non"
                                            FontSize="{DynamicResource FontSize20}"
-                                           Foreground="#FAFAFA"
+                                           Foreground="{DynamicResource ButtonTextColor}"
                                            FontStretch="Expanded"
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"/>

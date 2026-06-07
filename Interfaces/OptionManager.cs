@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Interfaces
@@ -87,21 +88,22 @@ namespace Interfaces
         // Contraste
         public void AppliquerContraste(double valeur)
         {
-            // Valeur 1 = normal, 2 = moyen, 3 = fort
-            var (bg, text, accent) = valeur switch
+            var (text, accent, buttonText) = valeur switch
             {
-                1 => ("#20114a", "#FFFFFF", "#7a6fb0"),
-                2 => ("#000000", "#FFFFFF", "#9988FF"),
-                3 => ("#000000", "#FFFF00", "#FF0000"),
-                _ => ("#20114a", "#FFFFFF", "#7a6fb0")
+                1 => ("#FFFFFF", "#7a6fb0", "#FFFFFF"),
+                2 => ("#FFFF00", "#7a6fb0", "#FFFF00"),
+                3 => ("#FFFF00", "#FF0000", "#FFFF00"),
+                _ => ("#FFFFFF", "#7a6fb0", "#FFFFFF")
             };
 
-            Application.Current.Resources["BackgroundColor"] = new SolidColorBrush(
-                (Color)ColorConverter.ConvertFromString(bg));
             Application.Current.Resources["TextColor"] = new SolidColorBrush(
                 (Color)ColorConverter.ConvertFromString(text));
             Application.Current.Resources["AccentColor"] = new SolidColorBrush(
                 (Color)ColorConverter.ConvertFromString(accent));
+            Application.Current.Resources["ButtonTextColor"] = new SolidColorBrush(
+                (Color)ColorConverter.ConvertFromString(buttonText));
+
+            AppliquerCouleurBoutons(valeur);
         }
 
         // Couleur de fond
@@ -125,6 +127,31 @@ namespace Interfaces
             ConfigurationJeu.CouleurFond = hex;
 
             return brush;
+        }
+
+        public void AppliquerCouleurBoutons(double contraste)
+        {
+            if (Application.Current.MainWindow == null) return;
+
+            AppliquerCouleurBoutonsRecursif(Application.Current.MainWindow, contraste);
+        }
+
+        private void AppliquerCouleurBoutonsRecursif(DependencyObject parent, double contraste)
+        {
+            int count = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < count; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+
+                if (child is Border border && border.Tag is string tag && tag.StartsWith("#"))
+                {
+                    string couleur = contraste == 1 ? tag : "#FF0000";
+                    border.Background = new SolidColorBrush(
+                        (Color)ColorConverter.ConvertFromString(couleur));
+                }
+
+                AppliquerCouleurBoutonsRecursif(child, contraste);
+            }
         }
 
         // Forme des Jetons
