@@ -57,6 +57,11 @@ namespace Interfaces.Pages
 
             }
 
+            this.Loaded += (s, e) => {Window.GetWindow(this).KeyDown += Game_KeyDown;};
+
+            this.Unloaded += (s, e) => {var win = Window.GetWindow(this);
+                if (win != null) win.KeyDown -= Game_KeyDown;};
+
             ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
             InitialiserJetons();
@@ -99,6 +104,15 @@ namespace Interfaces.Pages
                     vb.Child = SwitchForme(new SolidColorBrush(Color.FromRgb(0, 30, 80)));
                     vb.MouseLeftButtonDown += OnColonneCliquee;
 
+                    vb.MouseEnter += (s, e) =>
+                    {
+                        if (s is Viewbox v && v.Tag is int c)
+                        {
+                            _colonneSelectionnee = c;
+                            MettreAJourSurbrillanceColonne();
+                        }
+                    };
+
                     Grid.SetRow(vb, row);
                     Grid.SetColumn(vb, col);
                     GameGrid.Children.Add(vb);
@@ -134,6 +148,62 @@ namespace Interfaces.Pages
 
             if (sender is Viewbox vb && vb.Tag is int col)
                 JouerDansColonne(col);
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Ignore si c'est le tour de l'IA
+            if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
+                return;
+
+            int col = -1;
+
+            switch (e.Key)
+            {
+                case Key.Left:
+                    // Colonne précédente
+                    _colonneSelectionnee = Math.Max(0, _colonneSelectionnee - 1);
+                    MettreAJourSurbrillanceColonne();
+                    break;
+                case Key.Right:
+                    // Colonne suivante
+                    _colonneSelectionnee = Math.Min(_partie.GetPlateau().GetNBColonnes() - 1, _colonneSelectionnee + 1);
+                    MettreAJourSurbrillanceColonne();
+                    break;
+                case Key.Down:
+                case Key.Space:
+                    // Jouer dans la colonne sélectionnée
+                    JouerDansColonne(_colonneSelectionnee);
+                    break;
+            }
+        }
+        private int _colonneSelectionnee = 0;
+
+        private void MettreAJourSurbrillanceColonne()
+        {
+            foreach (UIElement child in GameGrid.Children)
+            {
+                if (child is Viewbox vb)
+                {
+                    int col = Grid.GetColumn(vb);
+                    int row = Grid.GetRow(vb);
+
+                    // Surbrillance uniquement la ligne du bas de la colonne sélectionnée
+                    if (col == _colonneSelectionnee && row == _partie.GetPlateau().GetPremiereLigneLibre(_colonneSelectionnee))
+                    {
+                        if (vb.Child is Shape shape && shape.Fill is SolidColorBrush brush)
+                        {
+                            if (brush.Color == Color.FromRgb(0, 30, 80))
+                                shape.Opacity = 0.5;
+                        }
+                    }
+                    else
+                    {
+                        if (vb.Child is Shape shape)
+                            shape.Opacity = 1;
+                    }
+                }
+            }
         }
 
         private void JouerDansColonne(int col)
@@ -187,7 +257,7 @@ namespace Interfaces.Pages
                     return;
                 }
 
-                // Incrémenter le score UNE SEULE FOIS
+                // Incrémenter le score 
                 if (joueurActuel == _partie.GetListeParticipant()[0])
                 {
                     ConfigurationJeu.ScoreJoueur1++;
