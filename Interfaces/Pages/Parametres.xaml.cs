@@ -150,9 +150,19 @@ namespace Interfaces.Pages
             // ══ CAS 2 : Joueur 2 est un bot ══
             else if (RightFrame.Content is ParametresIA pageIA)
             {
-                if (!valid) return;
+                ClearError(pageIA.ErrCoulIA, pageIA.IconErrCoulIA);
 
                 string coulIA = GetBgColor(pageIA.SelectedColorIA);
+
+                if (!string.IsNullOrEmpty(coulJ1) && !string.IsNullOrEmpty(coulIA)
+                    && coulJ1 == coulIA)
+                {
+                    ShowError(ErrCoulJ1, IconErrCoulJ1, "Les couleurs des jetons doivent être différentes");
+                    ShowError(pageIA.ErrCoulIA, pageIA.IconErrCoulIA, "Les couleurs des jetons doivent être différentes");
+                    valid = false;
+                }
+
+                if (!valid) return;
 
                 // Sauvegarde J1
                 ConfigurationJeu.NomJoueur1 = nomJ1;

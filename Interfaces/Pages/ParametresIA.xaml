@@ -130,22 +130,35 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" VerticalAlignment="Top" Margin="0,4,0,0">
-                <TextBlock Text="Couleur des jetons"
-                           FontFamily="Agency FB"
-                           Foreground="White" FontSize="{DynamicResource FontSize17}" Margin="4,0,0,6"/>
-                <Border Background="#4A4470" CornerRadius="12" Padding="8,6"
-                        HorizontalAlignment="Center">
-                    <UniformGrid Columns="4" Rows="2">
-                        <Button Style="{StaticResource ColorButton}" Background="#ff3131" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ff66c4" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#000000" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#5e17eb" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ffde59" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#7ed957" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ffffff" Tag="unselected" Click="ColorButton_Click"/>
-                        <Button Style="{StaticResource ColorButton}" Background="#ff751f" Tag="unselected" Click="ColorButton_Click"/>
-                    </UniformGrid>
-                </Border>
+                <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Background="#4A4470" CornerRadius="12" Padding="8,6">
+                        <UniformGrid Columns="4" Rows="2">
+                            <Button Style="{StaticResource ColorButton}" Background="#ff3131" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ff66c4" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#000000" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#5e17eb" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ffde59" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#7ed957" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ffffff" Tag="unselected" Click="ColorButton_Click"/>
+                            <Button Style="{StaticResource ColorButton}" Background="#ff751f" Tag="unselected" Click="ColorButton_Click"/>
+                        </UniformGrid>
+                    </Border>
+                    <TextBlock x:Name="IconErrCoulIA" x:FieldModifier="public"
+                               Grid.Column="1"
+                               Text="⚠" Foreground="#E53935"
+                               FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
+                               Margin="8,0,0,0" Visibility="Hidden"/>
+                </Grid>
+
+                <TextBlock x:Name="ErrCoulIA" x:FieldModifier="public"
+                           Foreground="#E53935" FontSize="12"
+                           FontFamily="Segoe UI" FontStyle="Italic"
+                           HorizontalAlignment="Center" Margin="0,4,0,0"
+                           Height="18" Visibility="Hidden"/>
             </StackPanel>
 
         </Grid>

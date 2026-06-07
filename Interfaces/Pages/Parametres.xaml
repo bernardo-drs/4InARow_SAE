@@ -212,14 +212,14 @@
 
                 <!-- Bouton fermer -->
                 <Border Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
-                    HorizontalAlignment="Right" VerticalAlignment="Top"
-                    Margin="0,5,5,0" Width="50" Height="50" CornerRadius="10"
-                    Background="{DynamicResource AccentColor}">
+        HorizontalAlignment="Right" VerticalAlignment="Top"
+        Margin="0,5,5,0" Width="50" Height="50" CornerRadius="10"
+        Background="{DynamicResource AccentColor}">
                     <Button Background="Transparent" BorderThickness="0"
-                            FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
-                            Content="✕" Cursor="Hand"
-                            OverridesDefaultStyle="True"
-                            Click="BtnClose_Click">
+                FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
+                Content="✕" Cursor="Hand"
+                OverridesDefaultStyle="True"
+                Click="BtnClose_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Background="Transparent">
