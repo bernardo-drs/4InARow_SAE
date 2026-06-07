@@ -28,6 +28,14 @@ namespace Interfaces
                 _ => 12.0
             };
 
+            Application.Current.Resources["FontSize14"] = valeur switch
+            {
+                1 => 8.0,   // 14 - 6
+                2 => 14.0,  // base
+                3 => 20.0,  // 14 + 6
+                _ => 14.0
+            };
+
             Application.Current.Resources["FontSize15"] = valeur switch
             {
                 1 => 9.0,   // 15 - 6
