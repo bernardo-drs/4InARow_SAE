@@ -195,16 +195,40 @@
             <!-- ── Titre ── -->
             <Grid Grid.Row="0" Margin="16,10,16,0" MinHeight="50">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1" Text="Paramètres"
-                           Foreground="White" FontSize="{DynamicResource FontSize35}"
-                           FontFamily="Agency FB"
-                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button Grid.Column="2" Style="{StaticResource CloseButton}"
-                        VerticalAlignment="Center" Click="BtnClose_Click"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Titre centré -->
+                <TextBlock Grid.Column="1" Grid.Row="0"
+               Text="Paramètres"
+               Foreground="White" FontSize="{DynamicResource FontSize35}"
+               FontFamily="Agency FB"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <!-- Bouton fermer -->
+                <Border Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                    Margin="0,5,5,0" Width="50" Height="50" CornerRadius="10"
+                    Background="{DynamicResource AccentColor}">
+                    <Button Background="Transparent" BorderThickness="0"
+                            FontSize="{DynamicResource FontSize22}" FontFamily="Agency FB"
+                            Content="✕" Cursor="Hand"
+                            OverridesDefaultStyle="True"
+                            Click="BtnClose_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
             </Grid>
 
             <!-- ── Corps ── -->
