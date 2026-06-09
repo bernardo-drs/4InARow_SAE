@@ -17,9 +17,10 @@ namespace Interfaces.Service
             foreach (var tb in FindVisualChildren<TextBlock>(page))
             {
                 if (tb.Tag?.ToString() == "Error")
-                {
                     continue;
-                }
+
+                if (tb.Tag?.ToString() == "NoContrast")
+                    continue;
 
                 if (contraste >= 2.0)
                     tb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD700"));

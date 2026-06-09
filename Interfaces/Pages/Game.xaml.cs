@@ -53,7 +53,12 @@ namespace Interfaces.Pages
                 ScoreJ2.Visibility = Visibility.Visible;
 
                 ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
+
+
                 ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+                ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
+
 
             }
 
@@ -215,6 +220,7 @@ namespace Interfaces.Pages
 
         private void JouerDansColonne(int col)
         {
+            BtnPause.IsEnabled = true;
             Joueur joueurActuel = _partie.GetParticipantActuel();
             Grille plateau = _partie.GetPlateau();
 
@@ -271,6 +277,8 @@ namespace Interfaces.Pages
                 {
                     ConfigurationJeu.ScoreJoueur1++;
                     ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                    ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
+
 
                     if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
                         ConfigurationJeu.ScoreJoueur1 >= ConfigurationJeu.VictoiresRequises)
@@ -281,6 +289,7 @@ namespace Interfaces.Pages
                         FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur2;
                         _dernierPopup = "FinChallenge";
                         BordureBtnResultat.Visibility = Visibility.Visible;
+                        BtnPause.IsEnabled = false;
                         PageService.PopUp("FinChallenge");
                         return;
                     }
@@ -289,6 +298,8 @@ namespace Interfaces.Pages
                 {
                     ConfigurationJeu.ScoreJoueur2++;
                     ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+                    ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
+
 
                     if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
                         ConfigurationJeu.ScoreJoueur2 >= ConfigurationJeu.VictoiresRequises)
@@ -299,6 +310,7 @@ namespace Interfaces.Pages
                         FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur1;
                         _dernierPopup = "FinChallenge";
                         BordureBtnResultat.Visibility = Visibility.Visible;
+                        BtnPause.IsEnabled = false;
                         PageService.PopUp("FinChallenge");
                         return;
                     }
@@ -309,6 +321,7 @@ namespace Interfaces.Pages
                 Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
                 _dernierPopup = "Victoire";
                 BordureBtnResultat.Visibility = Visibility.Visible;
+                BtnPause.IsEnabled = false;
                 PageService.PopUp("Victoire");
                 return;
             }
@@ -340,6 +353,7 @@ namespace Interfaces.Pages
 
             if (joueurActuel is IntelligenceArtificielle ia)
             {
+                BtnPause.IsEnabled = true;
                 // Petit délai pour que l'UI se mette à jour avant le coup de l'IA
                 DispatcherTimer timerIA = new DispatcherTimer();
                 timerIA.Interval = TimeSpan.FromMilliseconds(500);
@@ -487,5 +501,16 @@ namespace Interfaces.Pages
         {
             OnReprendre?.Invoke();
         }
+
+        private SolidColorBrush CouleurTexteScore(string couleurJeton)
+        {
+            var c = (Color)ColorConverter.ConvertFromString(couleurJeton);
+
+            double luminosite = (0.299 * c.R + 0.587 * c.G + 0.114 * c.B) / 255;
+            return luminosite > 0.5
+                ? new SolidColorBrush(Colors.Black)
+                : new SolidColorBrush(Colors.White);
+        }
+
     }
 }
