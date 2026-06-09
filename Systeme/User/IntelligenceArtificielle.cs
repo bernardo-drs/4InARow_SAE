@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using Systeme.Game;
 
@@ -142,31 +143,47 @@ namespace Systeme.User
                 }
             }
 
-            if (nbIA == 4)
-                return 10000;
-            else if (nbIA == 3 && nbVides == 1)
+            if (nbIA == 5)
+                return 100000;
+
+            // si la fenetre a 4 jetons de la couleur de l'IA, on ajoute 1000 au score
+            else if (nbIA == 4 && nbVides == 1)
+                score = score + 1000;
+
+            // si la fenetre a 3 jetons de la couleur de l'IA    
+            else if (nbIA == 3 && nbVides >= 1)
             {
                 for (j = 0; j < F; j++)
                 {
                     if (tabVide[j])
                     {
+                        // si la cellule vide est jouable directement alors on ajoute 100 points au score
                         if (CaseEstJouable(jeu, fenetre[j].GetX(), fenetre[j].GetY()))
                             score = score + 100;
                         else
+                            // si elle n'est pas jouable directement seulement 50 points
                             score = score + 50;
                     }
                 }
             }
-            else if (nbIA == 2 && nbVides == 2)
+            // si la fenetre a 2 jetons de la couleur de l'IA on ajoute 10 points au score
+            else if (nbIA == 2 && nbVides >= 2)
                 score = score + 10;
+
+            // s'il n'y a qu'un seul jeton IA on ajoute 1 point au score
             else if (nbIA == 1)
             {
                 score++;
             }
 
-            if (nbHumain == 4)
-                return -10000;
-            else if (nbHumain == 3 && nbVides == 1)
+            // la même logique est effectuée pour l'humain en sens inverse
+            if (nbHumain == 5)
+                return -100000;
+
+            else if (nbHumain == 4 && nbVides == 1)
+                score = score - 10000;
+
+            else if (nbHumain == 3 && nbVides >= 1)
             {
                 for (k = 0; k < F; k++)
                 {
@@ -179,7 +196,7 @@ namespace Systeme.User
                     }
                 }
             }
-            else if (nbHumain == 2 && nbVides == 2)
+            else if (nbHumain == 2 && nbVides >= 2)
                 score = score - 10;
             else if (nbHumain == 1)
             {
@@ -244,6 +261,7 @@ namespace Systeme.User
         public override int ChoisirCoup(Grille plateau, Partie jeu)
         {
             Console.WriteLine($"niveauIA = {niveauIA}");
+
             // Facile : joue aléatoirement
             if (niveauIA == 1)
             {
@@ -269,21 +287,29 @@ namespace Systeme.User
                     if (plateau.VerifierAlignement(this.GetCouleurJeton(), F))
                     {
                         plateau.GetCases()[ligneLibre, c].Vider();
+                        Console.WriteLine($"Colonne{c + 1} : VICTOIRE IMMEDIATE");
+                        Console.WriteLine($"Coup choisi : colonne {c + 1}");
                         return c;
                     }
 
                     int score = Minimax(profondeurMax - 1, false, int.MinValue, int.MaxValue, plateau, jeu);
-
                     plateau.GetCases()[ligneLibre, c].Vider();
+
+                    Console.WriteLine($"Colonne{c + 1} : {score}");
 
                     if (score > meilleurScore)
                     {
                         meilleurScore = score;
                         meilleurColonne = c;
                     }
-
+                }
+                else
+                {
+                    Console.WriteLine($"Colonne{c + 1} : pleine");
                 }
             }
+
+            Console.WriteLine($"Coup choisi : colonne {meilleurColonne + 1}");
             return meilleurColonne;
         }
     }
