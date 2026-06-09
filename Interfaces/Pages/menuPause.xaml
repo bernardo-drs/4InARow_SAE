@@ -34,8 +34,8 @@
 
                 <Border Background="#20114a" CornerRadius="10" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tag="#201A43">
                     <Grid Background="Transparent">
-                        <Viewbox Margin="8" Stretch="Uniform">
-                            <TextBlock Text="MENU PAUSE" FontSize="{DynamicResource FontSize30}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Viewbox Stretch="Uniform">
+                            <TextBlock Margin="8,8,8,8" Text="MENU PAUSE" FontSize="{DynamicResource FontSize30}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Viewbox>
                     </Grid>
                 </Border>
@@ -45,8 +45,8 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid Background="Transparent">
-                                    <Viewbox Margin="8" Stretch="Uniform">
-                                        <TextBlock Text="Reprendre la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Margin="8,8,8,8" Text="Reprendre la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Viewbox>
                                 </Grid>
                             </ControlTemplate>
@@ -59,8 +59,8 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid Background="Transparent">
-                                    <Viewbox Margin="8" Stretch="Uniform">
-                                        <TextBlock Text="Enregistrer la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Margin="8,8,8,8" Text="Enregistrer la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Viewbox>
                                 </Grid>
                             </ControlTemplate>
@@ -73,8 +73,8 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid Background="Transparent">
-                                    <Viewbox Margin="8" Stretch="Uniform">
-                                        <TextBlock Text="Arrêter la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Margin="8,8,8,8" Text="Arrêter la partie" FontSize="{DynamicResource FontSize15}" Foreground="White" FontStretch="Expanded" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Viewbox>
                                 </Grid>
                             </ControlTemplate>

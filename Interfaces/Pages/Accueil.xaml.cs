@@ -69,7 +69,7 @@ namespace Interfaces.Pages
 
             for (int i = 0; i < boutons.Length; i++)
             {
-                string couleur = contraste == 1 ? couleursOriginales[i] : "#000000";
+                string couleur = contraste >= 3.0 ? "#000000" : couleursOriginales[i];
 
                 boutons[i].Background = new SolidColorBrush(
                     (Color)ColorConverter.ConvertFromString(couleur));

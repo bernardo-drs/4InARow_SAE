@@ -46,14 +46,12 @@ namespace Interfaces.Service
                 if (beginColor == null)
                 {
                     // On vérifie ensuite si le Tag du border n'est pas vide pour éviter le crash
-                    if (border.Tag != null)
+                    if (beginColor == null)
                     {
-                        beginColor = border.Tag.ToString();
-                    }
-                    else
-                    {
-                        // Couleur de secours si le Tag est null (ex: blanc)
-                        beginColor = "#FFFFFF";
+                        if (border.Tag != null)
+                            beginColor = border.Tag.ToString();
+                        else
+                            beginColor = "#FFFFFF";
                     }
                 }
             }

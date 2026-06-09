@@ -161,9 +161,11 @@ namespace Interfaces
 
                 if (child is Border border && border.Tag is string tag && tag.StartsWith("#"))
                 {
-                    string couleur = contraste == 1 ? tag : "#000000";
+                    string couleur = contraste >= 3.0 ? "#000000" : tag;
                     border.Background = new SolidColorBrush(
                         (Color)ColorConverter.ConvertFromString(couleur));
+                    if (contraste >= 3.0)
+                        border.Tag = "#000000";
                     border.InvalidateVisual();
                 }
 
