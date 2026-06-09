@@ -125,7 +125,8 @@
                             Tag="unselected"
                             Content="Difficile"
                             ToolTip="😠"
-                            Click="DiffButton_Click"/>
+                            Click="DiffButton_Click"
+                            />
                 </StackPanel>
             </StackPanel>
 
@@ -151,14 +152,16 @@
                                Grid.Column="1"
                                Text="⚠" Foreground="#E53935"
                                FontSize="{DynamicResource FontSize17}" VerticalAlignment="Center"
-                               Margin="8,0,0,0" Visibility="Hidden"/>
+                               Margin="8,0,0,0" Visibility="Hidden"
+                               Tag="Error"/>
                 </Grid>
 
                 <TextBlock x:Name="ErrCoulIA" x:FieldModifier="public"
                            Foreground="#E53935" FontSize="12"
                            FontFamily="Segoe UI" FontStyle="Italic"
                            HorizontalAlignment="Center" Margin="0,4,0,0"
-                           Height="18" Visibility="Hidden"/>
+                           Height="18" Visibility="Hidden"
+                           Tag="Error"/>
             </StackPanel>
 
         </Grid>

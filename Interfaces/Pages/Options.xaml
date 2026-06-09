@@ -285,7 +285,7 @@
                         Background="Transparent" MouseEnter="BtnAppliquer_MouseEnter" MouseLeave="BtnAppliquer_MouseLeave">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize20}" Foreground="{DynamicResource ButtonTextColor}" Text="Appliquer les options"/>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{DynamicResource FontSize30}" Foreground="{DynamicResource ButtonTextColor}" Text="Appliquer les options"/>
 
                         </ControlTemplate>
                     </Button.Template>
