@@ -100,7 +100,7 @@
                     <ColumnDefinition Width="118*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786" Tag="#201A43" BorderBrush="White" BorderThickness="0">
+                <Border x:Name="brd3V" Grid.Column="1" CornerRadius="10" Background="#605786" Tag="#605786" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn3V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn3V_Click">
                             <Button.Template>
@@ -112,7 +112,7 @@
                     </Viewbox>
                 </Border>
 
-                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786" Tag="#201A43" BorderBrush="White" BorderThickness="0">
+                <Border x:Name="brd5V" Grid.Column="3" CornerRadius="10" Background="#605786" Tag="#605786" BorderBrush="White" BorderThickness="0">
                     <Viewbox>
                         <Button x:Name="btn5V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn5V_Click">
                             <Button.Template>
