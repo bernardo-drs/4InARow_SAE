@@ -75,7 +75,7 @@
                     <Border x:Name="BordureJ1"  Grid.Row="1" CornerRadius="0,0,8,8">
                         <Viewbox>
                             <TextBlock x:Name="ScoreJ1" Text="0" Background="Transparent"
-                                       Foreground="White" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                                        HorizontalAlignment="Center" Visibility="Collapsed" Tag="NoContrast"/>
                         </Viewbox>
                     </Border>
                 </Grid>
@@ -100,7 +100,7 @@
                     <Border x:Name="BordureJ2" Grid.Row="1" CornerRadius="0,0,8,8">
                         <Viewbox>
                             <TextBlock x:Name="ScoreJ2" Text="0" Background="Transparent"
-                                       Foreground="White" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                                        HorizontalAlignment="Center" Visibility="Collapsed" Tag="NoContrast"/>
                         </Viewbox>
                     </Border>
                 </Grid>

@@ -53,7 +53,12 @@ namespace Interfaces.Pages
                 ScoreJ2.Visibility = Visibility.Visible;
 
                 ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
+
+
                 ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+                ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
+
 
             }
 
@@ -267,6 +272,8 @@ namespace Interfaces.Pages
                 {
                     ConfigurationJeu.ScoreJoueur1++;
                     ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
+                    ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
+
 
                     if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
                         ConfigurationJeu.ScoreJoueur1 >= ConfigurationJeu.VictoiresRequises)
@@ -283,6 +290,8 @@ namespace Interfaces.Pages
                 {
                     ConfigurationJeu.ScoreJoueur2++;
                     ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
+                    ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
+
 
                     if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
                         ConfigurationJeu.ScoreJoueur2 >= ConfigurationJeu.VictoiresRequises)
@@ -471,6 +480,16 @@ namespace Interfaces.Pages
         public static void DemanderReprendre()
         {
             OnReprendre?.Invoke();
+        }
+
+        private SolidColorBrush CouleurTexteScore(string couleurJeton)
+        {
+            var c = (Color)ColorConverter.ConvertFromString(couleurJeton);
+
+            double luminosite = (0.299 * c.R + 0.587 * c.G + 0.114 * c.B) / 255;
+            return luminosite > 0.5
+                ? new SolidColorBrush(Colors.Black)
+                : new SolidColorBrush(Colors.White);
         }
 
     }
