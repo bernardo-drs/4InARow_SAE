@@ -23,7 +23,7 @@ namespace Interfaces
         public static string CouleurJoueur2 { get; set; } = "#FDD835"; // Jaune par défaut
         public static bool Joueur2EstBot { get; set; } = false;
 
-        public static int NiveauIA { get; set; } = 1; // Niveau du bot 1, 2, 4
+        public static int NiveauIA { get; set; } = 5; // Niveau du bot 1, 2, 4
 
         //Score des joueurs
         public static int ScoreJoueur1 { get; set; } = 0;
