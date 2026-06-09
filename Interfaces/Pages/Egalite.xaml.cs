@@ -64,11 +64,11 @@ namespace Interfaces.Pages
             PageService.PopUp(null);
             PageService.Navigate("Game");
 
-            if (ConfigurationJeu.ModeDeJeu == "Challenge")
-            {
-                //
-            }
+        }
 
+        private void revoir_grille_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.PopUp(null);
         }
     }
 }

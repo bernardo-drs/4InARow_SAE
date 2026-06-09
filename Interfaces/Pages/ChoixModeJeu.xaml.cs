@@ -25,6 +25,14 @@ namespace Interfaces.Pages
         {
             InitializeComponent();
 
+            btn3V.IsEnabled = false;
+            btn5V.IsEnabled = false;
+
+            var bc = new BrushConverter();
+            var couleurHexa = (Brush)bc.ConvertFrom("#605786");
+            brd3V.Background = couleurHexa;
+            brd5V.Background = couleurHexa;
+
             this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
             this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }

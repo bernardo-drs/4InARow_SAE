@@ -9,7 +9,7 @@ namespace Systeme.User
     public class IntelligenceArtificielle : Joueur
     {
         private int niveauIA;
-        private const int F = 4;
+        private int F;
 
         public IntelligenceArtificielle(int id, string pseudo, string couleurIA, int niveau) : base(id, pseudo, couleurIA)
         {
@@ -42,7 +42,7 @@ namespace Systeme.User
                         if (jeu.VerifierAlignement(couleurIA, F))
                         {
                             jeu.GetCases()[ligneLibre, c].Vider();
-                            return 10000 + profondeur;
+                            return 100000 + profondeur;
                         }
 
                         score = Minimax(profondeur - 1, false, alpha, beta, jeu, game);
@@ -73,7 +73,7 @@ namespace Systeme.User
                         if (jeu.VerifierAlignement(couleurHumain, F))
                         {
                             jeu.GetCases()[ligneLibre, c].Vider();
-                            return -10000 - profondeur;
+                            return -100000 - profondeur;
                         }
 
                         score = Minimax(profondeur - 1, true, alpha, beta, jeu, game);
@@ -218,39 +218,51 @@ namespace Systeme.User
             nlignes = jeu.GetNBLignes();
             ncolonnes = jeu.GetNBColonnes();
 
+            // evaluation de toutes les fenêtres horizontales
             for (i = 0; i < nlignes; i++)
             {
                 for (j = 0; j <= ncolonnes - F; j++)
                 {
-                    fenetre = [jeu.GetCases()[i, j], jeu.GetCases()[i, j + 1], jeu.GetCases()[i, j + 2], jeu.GetCases()[i, j + 3]];
-                    scoreTotal = scoreTotal + EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    fenetre = new Cellule[F];
+                    for (int k = 0; k < F; k++)
+                        fenetre[k] = jeu.GetCases()[i, j + k];
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
                 }
             }
 
+            // evaluation de toutes les fenêtres verticales
             for (j = 0; j < ncolonnes; j++)
             {
                 for (i = 0; i <= nlignes - F; i++)
                 {
-                    fenetre = [jeu.GetCases()[i, j], jeu.GetCases()[i + 1, j], jeu.GetCases()[i + 2, j], jeu.GetCases()[i + 3, j]];
-                    scoreTotal = scoreTotal + EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    fenetre = new Cellule[F];
+                    for (int k = 0; k < F; k++)
+                        fenetre[k] = jeu.GetCases()[i + k, j];
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
                 }
             }
 
+            // evaluation de toutes les fenêtres diagonales descendantes
             for (i = 0; i <= nlignes - F; i++)
             {
                 for (j = 0; j <= ncolonnes - F; j++)
                 {
-                    fenetre = [jeu.GetCases()[i, j], jeu.GetCases()[i + 1, j + 1], jeu.GetCases()[i + 2, j + 2], jeu.GetCases()[i + 3, j + 3]];
-                    scoreTotal = scoreTotal + EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    fenetre = new Cellule[F];
+                    for (int k = 0; k < F; k++)
+                        fenetre[k] = jeu.GetCases()[i + k, j + k];
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
                 }
             }
 
+            // evaluation de toutes les fenêtres diagonales ascendantes
             for (i = F - 1; i < nlignes; i++)
             {
-                for (j = 0; j <= ncolonnes - 4; j++)
+                for (j = 0; j <= ncolonnes - F; j++)
                 {
-                    fenetre = [jeu.GetCases()[i, j], jeu.GetCases()[i - 1, j + 1], jeu.GetCases()[i - 2, j + 2], jeu.GetCases()[i - 3, j + 3]];
-                    scoreTotal = scoreTotal + EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    fenetre = new Cellule[F];
+                    for (int k = 0; k < F; k++)
+                        fenetre[k] = jeu.GetCases()[i - k, j + k];
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
                 }
             }
 
@@ -260,7 +272,7 @@ namespace Systeme.User
 
         public override int ChoisirCoup(Grille plateau, Partie jeu)
         {
-            Console.WriteLine($"niveauIA = {niveauIA}");
+            F = jeu.GetNbJetonAAligner();
 
             // Facile : joue aléatoirement
             if (niveauIA == 1)

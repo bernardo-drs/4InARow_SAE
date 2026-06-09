@@ -191,7 +191,33 @@
                    Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="3"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Tag="#201A43"/>
         
-        
+        <!-- Revoir écran de fin de partie-->
+        <Border x:Name="BordureBtnResultat"
+        Visibility="Collapsed"
+        Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"
+        CornerRadius="10"
+        Background="#004aad"
+        Margin="8,4,8,4"
+        Cursor="Hand">
+            <Button Background="Transparent"
+            BorderThickness="0"
+            OverridesDefaultStyle="True"
+            Click="BtnRevoirResultat_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Viewbox>
+                            <TextBlock Text="🏆 Voir le résultat"
+                               Foreground="White"
+                               FontFamily="Agency FB"
+                               Margin="8,0,8,0"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
+
+
+
     </Grid>
     
 </Page>

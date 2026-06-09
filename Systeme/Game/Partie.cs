@@ -84,5 +84,10 @@ namespace Systeme.Game
         {
             return this.participantActuel;
         }
+
+        public int GetNbJetonAAligner()
+        {
+            return this.nbJetonAAligner;
+        }
     }
 }
