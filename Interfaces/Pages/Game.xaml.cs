@@ -211,6 +211,8 @@ namespace Interfaces.Pages
             }
         }
 
+        private string _dernierPopup = "";
+
         private void JouerDansColonne(int col)
         {
             Joueur joueurActuel = _partie.GetParticipantActuel();
@@ -258,6 +260,8 @@ namespace Interfaces.Pages
 
                 if (estNul)
                 {
+                    _dernierPopup = "Egalite";
+                    BordureBtnResultat.Visibility = Visibility.Visible;
                     PageService.PopUp("Egalite");
                     return;
                 }
@@ -275,6 +279,8 @@ namespace Interfaces.Pages
                         FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur1;
                         FinChallenge.NomPerdant = ConfigurationJeu.NomJoueur2;
                         FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur2;
+                        _dernierPopup = "FinChallenge";
+                        BordureBtnResultat.Visibility = Visibility.Visible;
                         PageService.PopUp("FinChallenge");
                         return;
                     }
@@ -291,14 +297,18 @@ namespace Interfaces.Pages
                         FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur2;
                         FinChallenge.NomPerdant = ConfigurationJeu.NomJoueur1;
                         FinChallenge.CouleurPerdant = ConfigurationJeu.CouleurJoueur1;
+                        _dernierPopup = "FinChallenge";
+                        BordureBtnResultat.Visibility = Visibility.Visible;
                         PageService.PopUp("FinChallenge");
                         return;
                     }
                 }
 
-                // Afficher victoire et continuer
+                // Afficher victoire
                 Victoire.NomGagnant = joueurActuel.GetNomJoueur();
                 Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
+                _dernierPopup = "Victoire";
+                BordureBtnResultat.Visibility = Visibility.Visible;
                 PageService.PopUp("Victoire");
                 return;
             }
@@ -317,6 +327,11 @@ namespace Interfaces.Pages
 
             // Si c'est au tour de l'IA, jouer automatiquement
             JouerIA();
+        }
+
+        private void BtnRevoirResultat_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.PopUp(_dernierPopup);
         }
 
         private void JouerIA()
@@ -472,6 +487,5 @@ namespace Interfaces.Pages
         {
             OnReprendre?.Invoke();
         }
-
     }
 }

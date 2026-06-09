@@ -179,8 +179,8 @@ namespace Interfaces.Pages
                 ConfigurationJeu.NiveauIA = pageIA.DifficulteSelectionnee switch
                 {
                     "Facile" => 1,
-                    "Moyen" => 2,
-                    "Difficile" => 4,
+                    "Moyen" => 4,
+                    "Difficile" => 7,
                     _ => 4
                 };
 

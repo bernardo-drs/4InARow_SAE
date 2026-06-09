@@ -68,5 +68,10 @@ namespace Interfaces.Pages
             PageService.Navigate("Accueil");
             ConfigurationJeu.ModeDeJeu = "Classique";
         }
+
+        private void revoir_grille_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.PopUp(null);
+        }
     }
 }
