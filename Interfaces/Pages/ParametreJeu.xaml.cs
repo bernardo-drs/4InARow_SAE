@@ -30,7 +30,6 @@ namespace Interfaces.Pages
         int colonne2;
         int colonne3;
 
-        // -1 pour dire que l'utilisateur n'a encore rien choisit
         int row1 = -1;
         int row2 = -1;
         int row3 = -1;
@@ -59,7 +58,6 @@ namespace Interfaces.Pages
 
             if (sender is Border b)
             {
-                // Recherche sécurisée de la Grid parente
                 Grid? g = TrouverParentGrid(b);
                 if (g == null) return;
 
@@ -79,7 +77,6 @@ namespace Interfaces.Pages
 
                 int row = Grid.GetRow(b);
 
-                // supression la bordure que si ce n'est pas le bouton actif de la colonne
                 if (colonne == 1)
                 {
                     if (row != row1)
@@ -106,11 +103,9 @@ namespace Interfaces.Pages
         {
             if (!(sender is Button bouton)) return;
 
-            // Recherche sécurisée de la Border parente du bouton 
             Border? b = TrouverParentBorder(bouton);
             if (b == null) return;
 
-            // Recherche sécurisée de la Grid parente
             Grid? g = TrouverParentGrid(b);
             if (g == null) return;
 
@@ -180,7 +175,6 @@ namespace Interfaces.Pages
                 return;
             }
 
-            // Conversion des index de lignes XAML en valeurs réelles de jeu
             int largeur = 7;
             int hauteur = 6;
             if (row1 == 0) { largeur = 4; hauteur = 4; }
@@ -190,7 +184,6 @@ namespace Interfaces.Pages
             else if (row1 == 8) { largeur = 8; hauteur = 8; }
             else if (row1 == 10) { largeur = 10; hauteur = 10; }
 
-            // row2 correspond aux lignes de ta Grid du milieu : 3 jetons (Row 2), 4 jetons (Row 5), 5 jetons (Row 7)
             int jetons = 4;
             if (row2 == 3) jetons = 3;
             else if (row2 == 5) jetons = 4;
@@ -217,10 +210,6 @@ namespace Interfaces.Pages
 
             PageService.PopUp("ChoixModeJeu");
         }
-
-        // ==========================================
-        // MÉTHODES OUTILS POUR ÉVITER LES CRASHES
-        // ==========================================
 
         private Grid? TrouverParentGrid(DependencyObject enfant)
         {

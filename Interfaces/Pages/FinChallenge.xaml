@@ -23,7 +23,6 @@
                 <ColumnDefinition Width="37*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Couronne -->
             <Viewbox Grid.Column="1" Grid.Row="0">
                 <Image Source="/Images/Icon_couronne.png"/>
             </Viewbox>
@@ -53,7 +52,6 @@
                 </Border>
             </Grid>
 
-            <!-- Texte -->
             <Border Grid.Column="1" Grid.Row="1" Background="#20114a" CornerRadius="10" Tag="#201A43">
                 <Viewbox>
                     <TextBlock Foreground="White" Margin="5">
@@ -67,7 +65,6 @@
                 </Viewbox>
             </Border>
 
-            <!-- Boutons -->
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="42*"/>
@@ -83,7 +80,6 @@
                     <ColumnDefinition Width="91*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Joueur 1 (gauche) -->
                 <StackPanel x:Name="PanelJoueur1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
                             Visibility="Collapsed" VerticalAlignment="Center" Margin="0,0,5,0">
                     <Viewbox Height="30">
@@ -104,7 +100,6 @@
                     </Border>
                 </StackPanel>
 
-                <!-- Joueur 2 (droite) -->
                 <StackPanel x:Name="PanelJoueur2" Grid.Row="0" Grid.Column="4" Grid.RowSpan="3"
                             Visibility="Collapsed" VerticalAlignment="Center" Margin="5,0,0,0">
                     <Viewbox Height="30">

@@ -25,7 +25,6 @@ namespace Interfaces.Pages
 
         private void Parametres_Loaded(object sender, RoutedEventArgs e)
         {
-            // Sélectionne rouge par défaut pour J1
             foreach (Button btn in FindVisualChildren<Button>(PaletteJ1))
             {
                 if (GetBgColor(btn) == "#ff3131")
@@ -76,7 +75,6 @@ namespace Interfaces.Pages
         {
             bool valid = true;
 
-            // Réinitialiser erreurs J1
             ClearError(ErrNomJ1, IconErrNomJ1);
             ClearError(ErrNatJ1, IconErrNatJ1);
             ClearError(ErrCoulJ1, IconErrCoulJ1);
@@ -97,7 +95,6 @@ namespace Interfaces.Pages
                 valid = false;
             }
 
-            // ══ CAS 1 : Joueur 2 est un humain ══
             if (RightFrame.Content is ParametresJoueur2 pageJ2)
             {
                 ClearError(pageJ2.ErrNomJ2, pageJ2.IconErrNomJ2);
@@ -138,11 +135,9 @@ namespace Interfaces.Pages
 
                 if (!valid) return;
 
-                // Sauvegarde J1
                 ConfigurationJeu.NomJoueur1 = nomJ1;
                 ConfigurationJeu.CouleurJoueur1 = coulJ1;
 
-                // Sauvegarde J2 humain
                 ConfigurationJeu.NomJoueur2 = nomJ2;
                 ConfigurationJeu.CouleurJoueur2 = coulJ2;
                 ConfigurationJeu.Joueur2EstBot = false;
@@ -150,7 +145,6 @@ namespace Interfaces.Pages
                 PageService.Navigate("ParametreJeu");
             }
 
-            // ══ CAS 2 : Joueur 2 est un bot ══
             else if (RightFrame.Content is ParametresIA pageIA)
             {
                 ClearError(pageIA.ErrCoulIA, pageIA.IconErrCoulIA);
@@ -167,11 +161,9 @@ namespace Interfaces.Pages
 
                 if (!valid) return;
 
-                // Sauvegarde J1
                 ConfigurationJeu.NomJoueur1 = nomJ1;
                 ConfigurationJeu.CouleurJoueur1 = coulJ1;
 
-                // Sauvegarde bot
                 ConfigurationJeu.NomJoueur2 = "Bot";
                 ConfigurationJeu.CouleurJoueur2 = string.IsNullOrEmpty(coulIA) ? "#FDD835" : coulIA;
                 ConfigurationJeu.Joueur2EstBot = true;
@@ -211,7 +203,7 @@ namespace Interfaces.Pages
             if (btn?.Background is SolidColorBrush brush)
             {
                 Color c = brush.Color;
-                return $"#{c.R:X2}{c.G:X2}{c.B:X2}".ToLower(); // retourne #ff3131 au lieu de #FFFF3131
+                return $"#{c.R:X2}{c.G:X2}{c.B:X2}".ToLower(); 
             }
             return "";
         }

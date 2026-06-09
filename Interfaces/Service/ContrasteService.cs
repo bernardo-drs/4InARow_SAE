@@ -13,7 +13,6 @@ namespace Interfaces.Service
         {
             double contraste = ConfigurationJeu.Contraste;
 
-            // Textes en jaune si contraste >= 2
             foreach (var tb in FindVisualChildren<TextBlock>(page))
             {
                 if (tb.Tag?.ToString() == "Error")
@@ -28,7 +27,6 @@ namespace Interfaces.Service
                     tb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FAFAFA"));
             }
 
-            // Boutons (Border avec Tag) en rouge si contraste >= 3
             if (contraste >= 3.0)
             {
                 foreach (var border in FindVisualChildren<Border>(page))

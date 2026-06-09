@@ -21,7 +21,6 @@ namespace Interfaces.Pages
 
         private void ParametresJoueur2_Loaded(object sender, RoutedEventArgs e)
         {
-            // Sélectionne jaune par défaut pour J2
             foreach (Button btn in FindVisualChildren<Button>(this))
             {
                 if (GetBgColor(btn) == "#ffde59")
@@ -46,7 +45,7 @@ namespace Interfaces.Pages
             if (btn?.Background is SolidColorBrush brush)
             {
                 Color c = brush.Color;
-                return $"#{c.R:X2}{c.G:X2}{c.B:X2}".ToLower(); // retourne #ff3131 au lieu de #FFFF3131
+                return $"#{c.R:X2}{c.G:X2}{c.B:X2}".ToLower();
             }
             return "";
         }

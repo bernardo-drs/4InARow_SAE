@@ -146,37 +146,30 @@ namespace Systeme.User
             if (nbIA == 5)
                 return 100000;
 
-            // si la fenetre a 4 jetons de la couleur de l'IA, on ajoute 1000 au score
             else if (nbIA == 4 && nbVides == 1)
                 score = score + 1000;
 
-            // si la fenetre a 3 jetons de la couleur de l'IA    
             else if (nbIA == 3 && nbVides >= 1)
             {
                 for (j = 0; j < F; j++)
                 {
                     if (tabVide[j])
                     {
-                        // si la cellule vide est jouable directement alors on ajoute 100 points au score
                         if (CaseEstJouable(jeu, fenetre[j].GetX(), fenetre[j].GetY()))
                             score = score + 100;
                         else
-                            // si elle n'est pas jouable directement seulement 50 points
                             score = score + 50;
                     }
                 }
             }
-            // si la fenetre a 2 jetons de la couleur de l'IA on ajoute 10 points au score
             else if (nbIA == 2 && nbVides >= 2)
                 score = score + 10;
 
-            // s'il n'y a qu'un seul jeton IA on ajoute 1 point au score
             else if (nbIA == 1)
             {
                 score++;
             }
 
-            // la même logique est effectuée pour l'humain en sens inverse
             if (nbHumain == 5)
                 return -100000;
 
@@ -218,7 +211,6 @@ namespace Systeme.User
             nlignes = jeu.GetNBLignes();
             ncolonnes = jeu.GetNBColonnes();
 
-            // evaluation de toutes les fenêtres horizontales
             for (i = 0; i < nlignes; i++)
             {
                 for (j = 0; j <= ncolonnes - F; j++)
@@ -230,7 +222,6 @@ namespace Systeme.User
                 }
             }
 
-            // evaluation de toutes les fenêtres verticales
             for (j = 0; j < ncolonnes; j++)
             {
                 for (i = 0; i <= nlignes - F; i++)
@@ -242,7 +233,6 @@ namespace Systeme.User
                 }
             }
 
-            // evaluation de toutes les fenêtres diagonales descendantes
             for (i = 0; i <= nlignes - F; i++)
             {
                 for (j = 0; j <= ncolonnes - F; j++)
@@ -254,7 +244,6 @@ namespace Systeme.User
                 }
             }
 
-            // evaluation de toutes les fenêtres diagonales ascendantes
             for (i = F - 1; i < nlignes; i++)
             {
                 for (j = 0; j <= ncolonnes - F; j++)
@@ -274,7 +263,6 @@ namespace Systeme.User
         {
             F = jeu.GetNbJetonAAligner();
 
-            // Facile : joue aléatoirement
             if (niveauIA == 1)
             {
                 Random rng = new Random(Guid.NewGuid().GetHashCode());

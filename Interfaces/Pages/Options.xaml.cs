@@ -28,19 +28,16 @@ namespace Interfaces.Pages
         private void BtnAppliquerOptions_Click(object sender, RoutedEventArgs e)
         {
 
-            // Récupère les valeurs sélectionnées par l'utilisateur
             string forme = GetFormeCochee();
             string? couleur = GetCouleurCochee() ?? "CouleurBleuFonce";
             double tailleTexte = SliderTailleTexte.Value;
             double contraste = SliderContraste.Value;
 
-            // Sauvegarde tout dans la classe globale ConfigurationJeu
             ConfigurationJeu.FormeJeton = forme;
             ConfigurationJeu.CouleurFond = couleur;
             ConfigurationJeu.TailleTexte = tailleTexte;
             ConfigurationJeu.Contraste = contraste;
 
-            // Applique l'effet 
             _manager.AppliquerFormeJeton(forme);
             _manager.AppliquerTailleTexte(tailleTexte);
             _manager.AppliquerContraste(contraste);
@@ -109,13 +106,11 @@ namespace Interfaces.Pages
             SliderTailleTexte.Value = ConfigurationJeu.TailleTexte;
             SliderContraste.Value = ConfigurationJeu.Contraste;
 
-            // Recocher la bonne forme
             FormeRond.IsChecked = ConfigurationJeu.FormeJeton == "Rond";
             FormeCarré.IsChecked = ConfigurationJeu.FormeJeton == "Carré";
             FormeEtoile.IsChecked = ConfigurationJeu.FormeJeton == "Etoile";
             FormeTriangle.IsChecked = ConfigurationJeu.FormeJeton == "Triangle";
 
-            // Recocher la bonne couleur
             CouleurBleuFonce.IsChecked = ConfigurationJeu.CouleurFond == "#20114a";
             CouleurMauve.IsChecked = ConfigurationJeu.CouleurFond == "#81608a";
             CouleurVert.IsChecked = ConfigurationJeu.CouleurFond == "#01773e";

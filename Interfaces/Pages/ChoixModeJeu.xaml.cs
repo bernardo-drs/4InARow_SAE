@@ -19,7 +19,7 @@ namespace Interfaces.Pages
     /// </summary>
     public partial class ChoixModeJeu : Page
     {
-        private bool modeChallenge = false; // mode de jeu classique par défaut
+        private bool modeChallenge = false;
         private int nbVictoires = 0;
         public ChoixModeJeu()
         {
@@ -96,7 +96,6 @@ namespace Interfaces.Pages
 
         private void Btn_LancementPartie(object sender, RoutedEventArgs e)
         {
-            // Si mode challenge sans avoir choisi 3V ou 5V -> erreur
             if (modeChallenge && nbVictoires == 0)
             {
                 MessageBox.Show("Veuillez choisir 3 ou 5 victoires pour le mode Challenge.", "Erreur");

@@ -127,9 +127,7 @@
                                                    VerticalAlignment="Center"/>
 
                                     </Viewbox>
-
                                 </Grid>
-
                             </ControlTemplate>
                         </Button.Template>
                     </Button>

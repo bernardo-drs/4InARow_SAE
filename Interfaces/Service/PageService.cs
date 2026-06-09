@@ -33,12 +33,6 @@ namespace Interfaces.Service
         public static void Navigate(string? PageName)
         {
 
-            /*
-             string PageName nom de la page que vous voulez afficher
-
-            Change la page afficher sur la fenêtre
-             */
-
             switch(PageName)
             {
                 case "Accueil":

@@ -41,8 +41,6 @@
             </Grid.RowDefinitions>
 
 
-            <!--Bouton Jouer-->
-
             <Border x:Name="PlayButtonHolder"
                 Background="#FAFAFA"
                 CornerRadius="10"
@@ -83,8 +81,6 @@
                 </Button>
             </Border>
 
-            <!--Bouton Options-->
-
             <Border x:Name="OptionsButtonHolder"
                 Background="#d3cdff"
                 CornerRadius="10"
@@ -123,7 +119,6 @@
                     </Button.Template>
                 </Button>
             </Border>
-            <!--Bouton Historique-->
 
             <Border x:Name="HistoriqueButtonHolder"
                 Background="#a497ff"
@@ -165,9 +160,6 @@
             </Border>
 
 
-
-            <!--Bouton Leaderboard-->
-
             <Border x:Name="LeaderboardButtonHolder"
                 Background="#8573ff"
                 CornerRadius="10"
@@ -207,8 +199,6 @@
                 </Button>
             </Border>
 
-
-            <!--Bouton Quitter-->
 
             <Border x:Name="QuitterButtonHolder"
                 Background="#5170FF"

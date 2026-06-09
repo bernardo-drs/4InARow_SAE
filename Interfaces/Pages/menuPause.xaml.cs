@@ -40,7 +40,7 @@ namespace Interfaces.Pages
         private void ReprendreClick(object sender, RoutedEventArgs e)
         {
             PageService.PopUp(null);
-            Game.DemanderReprendre();  // Pour ne pas que le timer se rénitialise
+            Game.DemanderReprendre(); 
         }
 
         private void OnArreterClick(object sender, RoutedEventArgs e)

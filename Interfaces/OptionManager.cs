@@ -9,91 +9,89 @@ namespace Interfaces
 {
     public class OptionManager
     {
-        // Taille du texte
         public void AppliquerTailleTexte(double valeur)
         {
             Application.Current.Resources["FontSize10"] = valeur switch
             {
-                1 => 4.0,   // 10 - 6
-                2 => 10.0,  // base
-                3 => 16.0,  // 10 + 6
+                1 => 4.0,
+                2 => 10.0,
+                3 => 16.0,
                 _ => 10.0
             };
 
             Application.Current.Resources["FontSize12"] = valeur switch
             {
-                1 => 6.0,   // 12 - 6
-                2 => 12.0,  // base
-                3 => 18.0,  // 12 + 6
+                1 => 6.0,
+                2 => 12.0,
+                3 => 18.0,
                 _ => 12.0
             };
 
             Application.Current.Resources["FontSize14"] = valeur switch
             {
-                1 => 8.0,   // 14 - 6
-                2 => 14.0,  // base
-                3 => 20.0,  // 14 + 6
+                1 => 8.0,
+                2 => 14.0,
+                3 => 20.0,
                 _ => 14.0
             };
 
             Application.Current.Resources["FontSize15"] = valeur switch
             {
-                1 => 9.0,   // 15 - 6
-                2 => 15.0,  // base
-                3 => 21.0,  // 15 + 6
+                1 => 9.0,
+                2 => 15.0,
+                3 => 21.0, 
                 _ => 15.0
             };
 
             Application.Current.Resources["FontSize17"] = valeur switch
             {
-                1 => 11.0,  // 17 - 6
-                2 => 17.0,  // base
-                3 => 23.0,  // 17 + 6
+                1 => 11.0,
+                2 => 17.0, 
+                3 => 23.0,
                 _ => 17.0
             };
 
             Application.Current.Resources["FontSize20"] = valeur switch
             {
-                1 => 14.0,  // 20 - 6
-                2 => 20.0,  // base
-                3 => 26.0,  // 20 + 6
+                1 => 14.0,  
+                2 => 20.0,
+                3 => 26.0, 
                 _ => 20.0
             };
 
             Application.Current.Resources["FontSize22"] = valeur switch
             {
-                1 => 16.0,  // 22 - 6
-                2 => 22.0,  // base
-                3 => 28.0,  // 22 + 6
+                1 => 16.0, 
+                2 => 22.0,
+                3 => 28.0, 
                 _ => 22.0
             };
 
             Application.Current.Resources["FontSize30"] = valeur switch
             {
-                1 => 24.0,  // 30 - 6
-                2 => 30.0,  // base
-                3 => 36.0,  // 30 + 6
+                1 => 24.0, 
+                2 => 30.0, 
+                3 => 36.0, 
                 _ => 30.0
             };
 
             Application.Current.Resources["FontSize35"] = valeur switch
             {
-                1 => 29.0,  // 35 - 6
-                2 => 35.0,  // base
-                3 => 41.0,  // 35 + 6
+                1 => 29.0, 
+                2 => 35.0, 
+                3 => 41.0, 
                 _ => 35.0
             };
 
             Application.Current.Resources["FontSize47"] = valeur switch
             {
-                1 => 37.0,  // 47 - 10
-                2 => 47.0,  // base
-                3 => 57.0,  // 47 + 10
+                1 => 37.0, 
+                2 => 47.0,
+                3 => 57.0, 
                 _ => 47.0
             };
         }
 
-        // Contraste
         public void AppliquerContraste(double valeur)
         {
             var (text, accent, buttonText, buttonText2) = valeur switch
@@ -116,7 +114,6 @@ namespace Interfaces
             AppliquerCouleurBoutons(valeur);
         }
 
-        // Couleur de fond
         public SolidColorBrush? AppliquerCouleurFond(string nomCouleur)
         {
             string hex = nomCouleur switch
@@ -133,7 +130,6 @@ namespace Interfaces
             var brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(hex));
             Application.Current.Resources["BackgroundColor"] = brush;
 
-            // Sauvegarde le hex dans ConfigurationJeu
             ConfigurationJeu.CouleurFond = hex;
 
             return brush;
@@ -173,10 +169,8 @@ namespace Interfaces
             }
         }
 
-        // Forme des Jetons
         public void AppliquerFormeJeton(string forme)
         {
-            // Stocke la forme — utilisée par la grille de jeu pour dessiner les jetons
             ConfigurationJeu.FormeJeton = forme;
         }
     }

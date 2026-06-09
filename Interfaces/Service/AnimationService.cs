@@ -15,20 +15,6 @@ namespace Interfaces.Service
         public static void FadeColor(object? sender, double duration, string mode, string? beginColor, string? endColor)
         {
 
-            /*
-             * 
-            sender -> object Conversible en type Border
-            double duration -> temp de l'animation en secondes
-            string mode -> In ou Out
-            string beginColor -> couleur de début d'animation si nul couleur mise dans le tag de la border
-            string endColor -> couleur de fin d'animation si nul couleur mise dans le tag de la border
-
-            penser à mettre les couleur dans le bon sens
-
-            si mode = In couleur1 = debut couleur2 = fin
-            si mode = Out couleur1 = fin couleur2 = debut
-
-            */
 
             if (sender == null) return;
 
@@ -42,10 +28,8 @@ namespace Interfaces.Service
             }
             else
             {
-                // On vérifie d'abord si beginColor n'a pas déjà une valeur
                 if (beginColor == null)
                 {
-                    // On vérifie ensuite si le Tag du border n'est pas vide pour éviter le crash
                     if (beginColor == null)
                     {
                         if (border.Tag != null)
@@ -56,7 +40,6 @@ namespace Interfaces.Service
                 }
             }
 
-            // Si contraste = 3, la couleur de fin est toujours rouge
             if (ConfigurationJeu.Contraste == 3.0)
                 endColor = "#000000";
             else
@@ -65,7 +48,6 @@ namespace Interfaces.Service
 
             ColorAnimation fade = new ColorAnimation();
 
-            //Debug.WriteLine($"Begin : {beginColor}, End : {endColor}");
 
             try
             {

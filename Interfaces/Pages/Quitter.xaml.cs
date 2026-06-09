@@ -29,9 +29,6 @@ namespace Interfaces.Pages
             this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
         }
 
-      
-
-        // Utilitaire pour trouver tous les enfants d'un type donné
         private static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
         {
             if (parent == null) yield break;

@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ParametreJeu" Background="{DynamicResource BackgroundColor}" FontFamily="Agency FB">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="98*"/>
@@ -181,17 +181,10 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
-
-
-
                 </Grid>
-
             </Grid>
 
             <Grid Grid.Column="3" Grid.Row="4">
@@ -231,15 +224,11 @@
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
-
-
                 </Border>
 
                 <Border BorderBrush="White" Grid.Row="5" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
-
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
@@ -249,15 +238,11 @@
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
-
-
                 </Border>
 
                 <Border BorderBrush="White" Grid.Row="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
-
                     <Viewbox>
                         <Button x:Name="btn5J" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
@@ -267,11 +252,8 @@
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
-
-
                 </Border>
 
                 <Border BorderBrush="White" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="1,0,0,12" Grid.RowSpan="2">
@@ -285,15 +267,9 @@
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
-
                         </Button>
                     </Viewbox>
-
-
                 </Border>
-
-
-
             </Grid>
 
             <Grid Grid.Row="4" Grid.Column="5">
@@ -343,11 +319,8 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
 
                     <Border BorderBrush="White" Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
@@ -361,11 +334,8 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
 
                     <Border BorderBrush="White" Grid.Row="4" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
@@ -379,11 +349,8 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
 
                     <Border BorderBrush="White" Grid.Row="6" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
@@ -397,11 +364,8 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
 
                     <Border BorderBrush="White" Grid.Row="8" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
@@ -415,11 +379,8 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
 
                     <Border BorderBrush="White" Grid.Row="10" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave">
@@ -433,15 +394,10 @@
                                         </TextBlock>
                                     </ControlTemplate>
                                 </Button.Template>
-
                             </Button>
                         </Viewbox>
-
-
                     </Border>
-
                 </Grid>
-
             </Grid>
 
             <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"
@@ -463,8 +419,6 @@
                     </Button.Template>
                 </Button>
             </Border>
-
         </Grid>
     </Grid>
-
 </Page>

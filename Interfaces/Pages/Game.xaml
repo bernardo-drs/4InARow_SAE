@@ -23,7 +23,7 @@
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="24*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="53*"/>
@@ -37,7 +37,6 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
 
-        <!-- TIMER haut gauche -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="1"
                 CornerRadius="10" Margin="5">
             <Viewbox>
@@ -47,7 +46,6 @@
             </Viewbox>
         </Border>
 
-        <!-- Icône de joueur juste au dessis de la grille -->
         <Grid Grid.Row="1" Grid.Column="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -56,12 +54,11 @@
 
             </Grid.ColumnDefinitions>
 
-            <!-- JOUEUR 1 -->
             <Border x:Name="BrdJoueur1" Background="#004aad"
                     Grid.Column="0"
                     CornerRadius="10" Margin="5"
                     BorderBrush="White" BorderThickness="3">
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="70*"/>
@@ -71,7 +68,7 @@
                         Source="/Images/Icon_Human.png" 
                         Margin="8,3,8,0" 
                         Stretch="Uniform"/>
-                    
+
                     <Border x:Name="BordureJ1"  Grid.Row="1" CornerRadius="0,0,8,8">
                         <Viewbox>
                             <TextBlock x:Name="ScoreJ1" Text="0" Background="Transparent"
@@ -81,7 +78,6 @@
                 </Grid>
             </Border>
 
-            <!-- JOUEUR 2 -->
             <Border x:Name="BrdJoueur2" Background="#004aad"
                     Grid.Column="2"
                     CornerRadius="10" Margin="5"
@@ -91,12 +87,12 @@
                         <RowDefinition Height="70*"/>
                         <RowDefinition Height="30*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Image Grid.Row="0" 
                            Source="/Images/Icon_Human.png" 
                            Margin="8,3,8,0" 
                            Stretch="Uniform"/>
-                    
+
                     <Border x:Name="BordureJ2" Grid.Row="1" CornerRadius="0,0,8,8">
                         <Viewbox>
                             <TextBlock x:Name="ScoreJ2" Text="0" Background="Transparent"
@@ -107,7 +103,6 @@
             </Border>
         </Grid>
 
-        <!-- BOUTON PAUSE haut droite -->
         <Border Background="#004aad" Grid.Row="1" Grid.Column="7"
                 CornerRadius="10" Margin="5">
             <Button x:Name="BtnPause" Background="Transparent"
@@ -125,17 +120,14 @@
             </Button>
         </Border>
 
-        <!-- GRILLE DE JEU -->
         <Border Background="#004aad" Grid.RowSpan="5" Grid.Row="4"
                 Grid.Column="4" CornerRadius="10" Margin="0,0,0,33">
             <Grid x:Name="GameGrid" Margin="10"/>
         </Border>
 
-        <!-- Pied de la grille -->
         <Border Background="#004aad" Grid.RowSpan="3" Grid.Row="7" Grid.Column="3"/>
         <Border Background="#004aad" Grid.RowSpan="3" Grid.Row="7" Grid.Column="5"/>
 
-        <!-- JETONS RESTANTS JOUEUR 1 (gauche) -->
         <Border Background="#004aad" Grid.Row="4" Grid.Column="1"
                 CornerRadius="6" Margin="0,48,0,0" Grid.RowSpan="2">
             <Grid>
@@ -144,7 +136,7 @@
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="57*"/>
@@ -152,7 +144,7 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
-                
+
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock x:Name="JetonsJ1" Foreground="#FAFAFA" Text="--" Tag="#201A43"/>
                 </Viewbox>
@@ -160,7 +152,6 @@
             </Grid>
         </Border>
 
-        <!-- JETONS RESTANTS JOUEUR 2 (droite) -->
         <Border Background="#004aad" Grid.Row="4" Grid.Column="7"
                 CornerRadius="6" Margin="0,48,0,0" Grid.RowSpan="2">
             <Grid>
@@ -169,7 +160,7 @@
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="57*"/>
@@ -177,7 +168,7 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
-                
+
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock x:Name="JetonsJ2" Foreground="#FAFAFA" Text="--" Tag="#201A43"/>
                 </Viewbox>
@@ -185,13 +176,11 @@
             </Grid>
         </Border>
 
-        <!-- MODE DE JEU bas droite -->
         <TextBlock x:Name="ModeJeuText" Text="Classique"
                    Foreground="White" FontFamily="Agency FB" FontSize="{DynamicResource FontSize30}"
                    Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="3"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Tag="#201A43"/>
-        
-        <!-- Revoir écran de fin de partie-->
+
         <Border x:Name="BordureBtnResultat"
         Visibility="Collapsed"
         Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"
@@ -215,9 +204,5 @@
                 </Button.Template>
             </Button>
         </Border>
-
-
-
     </Grid>
-    
 </Page>

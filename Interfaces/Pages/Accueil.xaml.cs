@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Interfaces.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour Accueil.xaml
-    /// </summary>
+
     public partial class Accueil : Page
     {
 
@@ -64,7 +62,6 @@ namespace Interfaces.Pages
         {
             var boutons = new[] { PlayButtonHolder, OptionsButtonHolder, HistoriqueButtonHolder, LeaderboardButtonHolder, QuitterButtonHolder };
 
-            // Couleurs originales
             var couleursOriginales = new[] { "#FAFAFA", "#d3cdff", "#a497ff", "#8573ff", "#5170FF" };
 
             for (int i = 0; i < boutons.Length; i++)
@@ -74,7 +71,6 @@ namespace Interfaces.Pages
                 boutons[i].Background = new SolidColorBrush(
                     (Color)ColorConverter.ConvertFromString(couleur));
 
-                // Met à jour le Tag pour que FadeColor utilise la bonne couleur
                 boutons[i].Tag = couleur;
             }
         }

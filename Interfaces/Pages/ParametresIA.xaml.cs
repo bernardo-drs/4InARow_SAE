@@ -24,7 +24,6 @@ namespace Interfaces.Pages
 
         private void ParametresIA_Loaded(object sender, RoutedEventArgs e)
         {
-            // Sélectionne jaune par défaut pour l'IA
             foreach (Button btn in FindVisualChildren<Button>(this))
             {
                 if (GetBgColor(btn) == "#ffde59")

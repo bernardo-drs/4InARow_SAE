@@ -130,10 +130,8 @@ namespace Interfaces.Pages
 
         private void InitialiserJetons()
         {
-            // Le nombre de jetons = nombre total de cases / 2
             int totalCases = ConfigurationJeu.LargeurGrille * ConfigurationJeu.HauteurGrille;
 
-            // Correction ici : ajout des parenthèses et du double "=="
             if (totalCases % 2 == 0)
             {
                 _jetonsJ1 = totalCases / 2;
@@ -150,7 +148,6 @@ namespace Interfaces.Pages
 
         private void OnColonneCliquee(object sender, MouseButtonEventArgs e)
         {
-            // Pour ne pas pouvoir appuyer lors du tout de l'IA
             if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
                 return;
 
@@ -160,9 +157,7 @@ namespace Interfaces.Pages
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
-            // Si il y a un Popup le clavier deviens inutilisable
             if (PageService.PopUpOuverte) return;
-            // Ignore si c'est le tour de l'IA
             if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
                 return;
 
@@ -171,19 +166,16 @@ namespace Interfaces.Pages
             switch (e.Key)
             {
                 case Key.Left:
-                    // Colonne précédente
                     _colonneSelectionnee = Math.Max(0, _colonneSelectionnee - 1);
                     MettreAJourSurbrillanceColonne();
                     e.Handled = true;
                     break;
                 case Key.Right:
-                    // Colonne suivante
                     _colonneSelectionnee = Math.Min(_partie.GetPlateau().GetNBColonnes() - 1, _colonneSelectionnee + 1);
                     MettreAJourSurbrillanceColonne();
                     break;
                 case Key.Down:
                 case Key.Space:
-                    // Jouer dans la colonne sélectionnée
                     JouerDansColonne(_colonneSelectionnee);
                     e.Handled = true;
                     break;
@@ -200,7 +192,6 @@ namespace Interfaces.Pages
                     int col = Grid.GetColumn(vb);
                     int row = Grid.GetRow(vb);
 
-                    // Surbrillance uniquement la ligne du bas de la colonne sélectionnée
                     if (col == _colonneSelectionnee && row == _partie.GetPlateau().GetPremiereLigneLibre(_colonneSelectionnee))
                     {
                         if (vb.Child is Shape shape && shape.Fill is SolidColorBrush brush)
@@ -232,7 +223,6 @@ namespace Interfaces.Pages
             Jeton jeton = new Jeton(joueurActuel.GetCouleurJeton(), ConfigurationJeu.FormeJeton);
             plateau.PlacerJeton(col, jeton);
 
-            // Mettre à jour l'UI
             SolidColorBrush couleur = new SolidColorBrush(
                 (Color)ColorConverter.ConvertFromString(joueurActuel.GetCouleurJeton()));
 
@@ -246,7 +236,6 @@ namespace Interfaces.Pages
                 }
             }
 
-            // Mettre à jour les jetons
             if (joueurActuel == _partie.GetListeParticipant()[0])
             {
                 _jetonsJ1--;
@@ -258,7 +247,6 @@ namespace Interfaces.Pages
                 JetonsJ2.Text = _jetonsJ2.ToString();
             }
 
-            // Vérifier fin de partie
             if (_partie.VerifierFin())
             {
                 _timer?.Stop();
@@ -274,7 +262,6 @@ namespace Interfaces.Pages
                     return;
                 }
 
-                // Incrémenter le score 
                 if (joueurActuel == _partie.GetListeParticipant()[0])
                 {
                     ConfigurationJeu.ScoreJoueur1++;
@@ -318,7 +305,6 @@ namespace Interfaces.Pages
                     }
                 }
 
-                // Afficher victoire
                 Victoire.NomGagnant = joueurActuel.GetNomJoueur();
                 Victoire.CouleurGagnant = joueurActuel.GetCouleurJeton();
                 _dernierPopup = "Victoire";
@@ -328,11 +314,9 @@ namespace Interfaces.Pages
                 return;
             }
 
-            // Changer de joueur
             _partie.ChangerTour();
             MettreAJourSurbrillance();
 
-            // Réinitialiser le timer pour le joueur suivant
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             if (_secondesRestantes > 0)
             {
@@ -340,7 +324,6 @@ namespace Interfaces.Pages
                 StartTimer();
             }
 
-            // Si c'est au tour de l'IA, jouer automatiquement
             JouerIA();
         }
 
@@ -356,7 +339,6 @@ namespace Interfaces.Pages
             if (joueurActuel is IntelligenceArtificielle ia)
             {
                 BtnPause.IsEnabled = true;
-                // Petit délai pour que l'UI se mette à jour avant le coup de l'IA
                 DispatcherTimer timerIA = new DispatcherTimer();
                 timerIA.Interval = TimeSpan.FromMilliseconds(500);
                 timerIA.Tick += (s, e) =>
@@ -441,13 +423,12 @@ namespace Interfaces.Pages
                 "30s" => 30,
                 "1m" => 60,
                 "2m" => 120,
-                "Aucune" => 0  // "Aucune" = le timer reste à 0
+                "Aucune" => 0 
             };
         }
 
         private void StartTimer()
         {
-            // Si aucune limite
             if (_secondesRestantes <= 0)
             {
                 TimerText.Text = "0 : 00";
@@ -477,7 +458,6 @@ namespace Interfaces.Pages
             Grille plateau = _partie.GetPlateau();
             int largeur = plateau.GetNBColonnes();
 
-            // Trouver toutes les colonnes non pleines
             List<int> colonnesDisponibles = new List<int>();
             for (int col = 0; col < largeur; col++)
             {
@@ -485,9 +465,8 @@ namespace Interfaces.Pages
                     colonnesDisponibles.Add(col);
             }
 
-            if (colonnesDisponibles.Count == 0) return; // Grille pleine
+            if (colonnesDisponibles.Count == 0) return; 
 
-            // Choisir une colonne aléatoire
             Random rng = new Random();
             int colAleatoire = colonnesDisponibles[rng.Next(colonnesDisponibles.Count)];
 
