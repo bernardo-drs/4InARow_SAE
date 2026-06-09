@@ -71,7 +71,7 @@
                         <Button x:Name="btnClassique" Background="Transparent" OverridesDefaultStyle="True" Click="btnClassique_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}">Classique</TextBlock>
+                                    <TextBlock Margin="2,0,2,0" Foreground="{DynamicResource ButtonTextColor}">Classique</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -83,7 +83,7 @@
                         <Button x:Name="btnChallenge" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="btnChallenge_Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}">Challenge</TextBlock>
+                                    <TextBlock Margin="2,0,2,0" Foreground="{DynamicResource ButtonTextColor}">Challenge</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -105,7 +105,7 @@
                         <Button x:Name="btn3V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn3V_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}">3 victoires</TextBlock>
+                                    <TextBlock Margin="2,0,2,0" Foreground="{DynamicResource ButtonTextColor}">3 victoires</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -117,7 +117,7 @@
                         <Button x:Name="btn5V" Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" IsEnabled="False" Click="btn5V_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}">5 victoires</TextBlock>
+                                    <TextBlock Margin="2,0,2,0" Foreground="{DynamicResource ButtonTextColor}">5 victoires</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -137,7 +137,7 @@
                         <Button Background="Transparent" OverridesDefaultStyle="True" BorderThickness="0" Click="Btn_LancementPartie">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}">Lancement de la partie</TextBlock>
+                                    <TextBlock Margin="3,0,3,0" Foreground="{DynamicResource ButtonTextColor}">Lancement de la partie</TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
