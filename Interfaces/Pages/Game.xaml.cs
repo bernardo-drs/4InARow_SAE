@@ -174,6 +174,7 @@ namespace Interfaces.Pages
                     // Colonne précédente
                     _colonneSelectionnee = Math.Max(0, _colonneSelectionnee - 1);
                     MettreAJourSurbrillanceColonne();
+                    e.Handled = true;
                     break;
                 case Key.Right:
                     // Colonne suivante
@@ -184,6 +185,7 @@ namespace Interfaces.Pages
                 case Key.Space:
                     // Jouer dans la colonne sélectionnée
                     JouerDansColonne(_colonneSelectionnee);
+                    e.Handled = true;
                     break;
             }
         }
@@ -360,6 +362,8 @@ namespace Interfaces.Pages
                 timerIA.Tick += (s, e) =>
                 {
                     timerIA.Stop();
+                    if (_partie.VerifierFin()) return; 
+                    if (!(_partie.GetParticipantActuel() is IntelligenceArtificielle)) return;
                     int colIA = ia.ChoisirCoup(_partie.GetPlateau(), _partie);
                     JouerDansColonne(colIA);
                 };
