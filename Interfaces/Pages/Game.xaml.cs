@@ -18,16 +18,17 @@ using Systeme.User;
 
 namespace Interfaces.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour Game.xaml
-    /// </summary>
     public partial class Game : Page
     {
         private DispatcherTimer _timer;
         private int _secondesRestantes;
-        private Partie _partie;          
+        private Partie _partie;
         private int _jetonsJ1;
         private int _jetonsJ2;
+        private int _colonneSelectionnee = 0;
+        private string _dernierPopup = "";
+
+        public static event Action OnReprendre;
 
         public Game()
         {
@@ -36,54 +37,44 @@ namespace Interfaces.Pages
             Humain j1 = new Humain(1, ConfigurationJeu.NomJoueur1, ConfigurationJeu.CouleurJoueur1, "", "");
             Joueur j2;
             if (ConfigurationJeu.Joueur2EstBot)
-            {
                 j2 = new IntelligenceArtificielle(2, "IA", ConfigurationJeu.CouleurJoueur2, ConfigurationJeu.NiveauIA);
-            }
             else
                 j2 = new Humain(2, ConfigurationJeu.NomJoueur2, ConfigurationJeu.CouleurJoueur2, "", "");
+
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
             _partie.DemarrerPartie();
 
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
 
+            ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
+
             if (ConfigurationJeu.ModeDeJeu == "Challenge")
             {
                 ScoreJ1.Visibility = Visibility.Visible;
                 ScoreJ2.Visibility = Visibility.Visible;
-
                 ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
                 ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
-
-
                 ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
                 ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
-
-
             }
 
-            this.Loaded += (s, e) => {Window.GetWindow(this).KeyDown += Game_KeyDown;};
-
-            this.Unloaded += (s, e) => {var win = Window.GetWindow(this);
-                if (win != null) win.KeyDown -= Game_KeyDown;};
-
-            ModeJeuText.Text = ConfigurationJeu.ModeDeJeu;
             CreerGrille();
             InitialiserJetons();
 
             Player1Forme.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
             Player2Forme.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
-
             BordureJ1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur1));
             BordureJ2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(ConfigurationJeu.CouleurJoueur2));
-
             BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.White);
             BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
 
-            Game.OnReprendre += () => { if (_secondesRestantes > 0) _timer?.Start(); };
-
+            this.Loaded += (s, e) => { Window.GetWindow(this).KeyDown += Game_KeyDown; };
+            this.Unloaded += (s, e) => { var win = Window.GetWindow(this); if (win != null) win.KeyDown -= Game_KeyDown; };
             this.Loaded += (s, e) => ContrasteService.AppliquerContraste(this);
             this.IsVisibleChanged += (s, e) => ContrasteService.AppliquerContraste(this);
+
+            Game.OnReprendre += () => { if (_secondesRestantes > 0) _timer?.Start(); };
         }
 
         private void CreerGrille()
@@ -111,7 +102,6 @@ namespace Interfaces.Pages
                     };
                     vb.Child = SwitchForme(new SolidColorBrush(Color.FromRgb(0, 30, 80)));
                     vb.MouseLeftButtonDown += OnColonneCliquee;
-
                     vb.MouseEnter += (s, e) =>
                     {
                         if (s is Viewbox v && v.Tag is int c)
@@ -120,7 +110,6 @@ namespace Interfaces.Pages
                             MettreAJourSurbrillanceColonne();
                         }
                     };
-
                     Grid.SetRow(vb, row);
                     Grid.SetColumn(vb, col);
                     GameGrid.Children.Add(vb);
@@ -146,42 +135,50 @@ namespace Interfaces.Pages
             JetonsJ2.Text = _jetonsJ2.ToString();
         }
 
-        private void OnColonneCliquee(object sender, MouseButtonEventArgs e)
+        private Shape SwitchForme(SolidColorBrush couleur)
         {
-            if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
-                return;
-
-            if (sender is Viewbox vb && vb.Tag is int col)
-                JouerDansColonne(col);
-        }
-
-        private void Game_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (PageService.PopUpOuverte) return;
-            if (_partie.GetParticipantActuel() is IntelligenceArtificielle)
-                return;
-
-            int col = -1;
-
-            switch (e.Key)
+            switch (ConfigurationJeu.FormeJeton)
             {
-                case Key.Left:
-                    _colonneSelectionnee = Math.Max(0, _colonneSelectionnee - 1);
-                    MettreAJourSurbrillanceColonne();
-                    e.Handled = true;
-                    break;
-                case Key.Right:
-                    _colonneSelectionnee = Math.Min(_partie.GetPlateau().GetNBColonnes() - 1, _colonneSelectionnee + 1);
-                    MettreAJourSurbrillanceColonne();
-                    break;
-                case Key.Down:
-                case Key.Space:
-                    JouerDansColonne(_colonneSelectionnee);
-                    e.Handled = true;
-                    break;
+                case "Carré":
+                    return new Rectangle { Fill = couleur, Width = 50, Height = 50, RadiusX = 4, RadiusY = 4 };
+                case "Etoile":
+                    return new Path
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50,
+                        Stretch = Stretch.Uniform,
+                        Data = Geometry.Parse("M 50,5 L 61,35 L 95,35 L 68,57 L 79,91 L 50,70 L 21,91 L 32,57 L 5,35 L 39,35 Z")
+                    };
+                case "Triangle":
+                    return new Path
+                    {
+                        Fill = couleur,
+                        Width = 50,
+                        Height = 50,
+                        Stretch = Stretch.Uniform,
+                        Data = Geometry.Parse("M 50,5 L 95,90 L 5,90 Z")
+                    };
+                default:
+                    return new Ellipse { Fill = couleur, Width = 50, Height = 50 };
             }
         }
-        private int _colonneSelectionnee = 0;
+
+        private void MettreAJourSurbrillance()
+        {
+            Joueur actuel = _partie.GetParticipantActuel();
+
+            if (actuel == _partie.GetListeParticipant()[0])
+            {
+                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.White);
+                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
+            }
+            else
+            {
+                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.White);
+            }
+        }
 
         private void MettreAJourSurbrillanceColonne()
         {
@@ -195,10 +192,8 @@ namespace Interfaces.Pages
                     if (col == _colonneSelectionnee && row == _partie.GetPlateau().GetPremiereLigneLibre(_colonneSelectionnee))
                     {
                         if (vb.Child is Shape shape && shape.Fill is SolidColorBrush brush)
-                        {
                             if (brush.Color == Color.FromRgb(0, 30, 80))
                                 shape.Opacity = 0.5;
-                        }
                     }
                     else
                     {
@@ -209,7 +204,57 @@ namespace Interfaces.Pages
             }
         }
 
-        private string _dernierPopup = "";
+        private SolidColorBrush CouleurTexteScore(string couleurJeton)
+        {
+            var c = (Color)ColorConverter.ConvertFromString(couleurJeton);
+            double luminosite = (0.299 * c.R + 0.587 * c.G + 0.114 * c.B) / 255;
+            return luminosite > 0.5
+                ? new SolidColorBrush(Colors.Black)
+                : new SolidColorBrush(Colors.White);
+        }
+
+        private void OnColonneCliquee(object sender, MouseButtonEventArgs e)
+        {
+            if (_partie.GetParticipantActuel() is IntelligenceArtificielle) return;
+            if (sender is Viewbox vb && vb.Tag is int col)
+                JouerDansColonne(col);
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (PageService.PopUpOuverte) return;
+            if (_partie.GetParticipantActuel() is IntelligenceArtificielle) return;
+
+            switch (e.Key)
+            {
+                case Key.Left:
+                    _colonneSelectionnee = Math.Max(0, _colonneSelectionnee - 1);
+                    MettreAJourSurbrillanceColonne();
+                    e.Handled = true;
+                    break;
+                case Key.Right:
+                    _colonneSelectionnee = Math.Min(_partie.GetPlateau().GetNBColonnes() - 1, _colonneSelectionnee + 1);
+                    MettreAJourSurbrillanceColonne();
+                    e.Handled = true;
+                    break;
+                case Key.Down:
+                case Key.Space:
+                    JouerDansColonne(_colonneSelectionnee);
+                    e.Handled = true;
+                    break;
+            }
+        }
+
+        private void BtnPause_Click(object sender, RoutedEventArgs e)
+        {
+            _timer?.Stop();
+            PageService.PopUp("MenuPause");
+        }
+
+        private void BtnRevoirResultat_Click(object sender, RoutedEventArgs e)
+        {
+            PageService.PopUp(_dernierPopup);
+        }
 
         private void JouerDansColonne(int col)
         {
@@ -223,13 +268,11 @@ namespace Interfaces.Pages
             Jeton jeton = new Jeton(joueurActuel.GetCouleurJeton(), ConfigurationJeu.FormeJeton);
             plateau.PlacerJeton(col, jeton);
 
-            SolidColorBrush couleur = new SolidColorBrush(
-                (Color)ColorConverter.ConvertFromString(joueurActuel.GetCouleurJeton()));
+            SolidColorBrush couleur = new SolidColorBrush((Color)ColorConverter.ConvertFromString(joueurActuel.GetCouleurJeton()));
 
             foreach (UIElement child in GameGrid.Children)
             {
-                if (Grid.GetRow(child) == ligneLibre && Grid.GetColumn(child) == col
-                    && child is Viewbox vbCible)
+                if (Grid.GetRow(child) == ligneLibre && Grid.GetColumn(child) == col && child is Viewbox vbCible)
                 {
                     vbCible.Child = SwitchForme(couleur);
                     break;
@@ -251,8 +294,7 @@ namespace Interfaces.Pages
             {
                 _timer?.Stop();
                 Grille p = _partie.GetPlateau();
-                bool estNul = p.GrilleEstPleine() && !p.VerifierAlignement(
-                    joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner);
+                bool estNul = p.GrilleEstPleine() && !p.VerifierAlignement(joueurActuel.GetCouleurJeton(), ConfigurationJeu.JetonsPourGagner);
 
                 if (estNul)
                 {
@@ -268,9 +310,7 @@ namespace Interfaces.Pages
                     ScoreJ1.Text = ConfigurationJeu.ScoreJoueur1.ToString();
                     ScoreJ1.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur1);
 
-
-                    if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
-                        ConfigurationJeu.ScoreJoueur1 >= ConfigurationJeu.VictoiresRequises)
+                    if (ConfigurationJeu.ModeDeJeu == "Challenge" && ConfigurationJeu.ScoreJoueur1 >= ConfigurationJeu.VictoiresRequises)
                     {
                         FinChallenge.NomVainqueur = ConfigurationJeu.NomJoueur1;
                         FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur1;
@@ -289,9 +329,7 @@ namespace Interfaces.Pages
                     ScoreJ2.Text = ConfigurationJeu.ScoreJoueur2.ToString();
                     ScoreJ2.Foreground = CouleurTexteScore(ConfigurationJeu.CouleurJoueur2);
 
-
-                    if (ConfigurationJeu.ModeDeJeu == "Challenge" &&
-                        ConfigurationJeu.ScoreJoueur2 >= ConfigurationJeu.VictoiresRequises)
+                    if (ConfigurationJeu.ModeDeJeu == "Challenge" && ConfigurationJeu.ScoreJoueur2 >= ConfigurationJeu.VictoiresRequises)
                     {
                         FinChallenge.NomVainqueur = ConfigurationJeu.NomJoueur2;
                         FinChallenge.CouleurVainqueur = ConfigurationJeu.CouleurJoueur2;
@@ -327,11 +365,6 @@ namespace Interfaces.Pages
             JouerIA();
         }
 
-        private void BtnRevoirResultat_Click(object sender, RoutedEventArgs e)
-        {
-            PageService.PopUp(_dernierPopup);
-        }
-
         private void JouerIA()
         {
             Joueur joueurActuel = _partie.GetParticipantActuel();
@@ -344,73 +377,12 @@ namespace Interfaces.Pages
                 timerIA.Tick += (s, e) =>
                 {
                     timerIA.Stop();
-                    if (_partie.VerifierFin()) return; 
+                    if (_partie.VerifierFin()) return;
                     if (!(_partie.GetParticipantActuel() is IntelligenceArtificielle)) return;
                     int colIA = ia.ChoisirCoup(_partie.GetPlateau(), _partie);
                     JouerDansColonne(colIA);
                 };
                 timerIA.Start();
-            }
-        }
-
-
-        private void MettreAJourSurbrillance()
-        {
-            Joueur actuel = _partie.GetParticipantActuel();
-
-            if (actuel == _partie.GetListeParticipant()[0])
-            {
-                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.White);
-                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.Transparent);
-            }
-            else
-            {
-                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.White);
-            }
-        }
-
-        private Shape SwitchForme(SolidColorBrush couleur)
-        {
-            switch (ConfigurationJeu.FormeJeton)
-            {
-                case "Carré":
-                    return new Rectangle
-                    {
-                        Fill = couleur,
-                        Width = 50,
-                        Height = 50,
-                        RadiusX = 4,
-                        RadiusY = 4
-                    };
-
-                case "Etoile":
-                    return new Path
-                    {
-                        Fill = couleur,
-                        Width = 50,
-                        Height = 50,
-                        Stretch = Stretch.Uniform,
-                        Data = Geometry.Parse("M 50,5 L 61,35 L 95,35 L 68,57 L 79,91 L 50,70 L 21,91 L 32,57 L 5,35 L 39,35 Z")
-                    };
-
-                case "Triangle":
-                    return new Path
-                    {
-                        Fill = couleur,
-                        Width = 50,
-                        Height = 50,
-                        Stretch = Stretch.Uniform,
-                        Data = Geometry.Parse("M 50,5 L 95,90 L 5,90 Z")
-                    };
-
-                default: // "Rond"
-                    return new Ellipse
-                    {
-                        Fill = couleur,
-                        Width = 50,
-                        Height = 50
-                    };
             }
         }
 
@@ -423,7 +395,7 @@ namespace Interfaces.Pages
                 "30s" => 30,
                 "1m" => 60,
                 "2m" => 120,
-                "Aucune" => 0 
+                "Aucune" => 0
             };
         }
 
@@ -455,6 +427,8 @@ namespace Interfaces.Pages
 
         private void PlacerJetonAleatoire()
         {
+            if (_partie.GetParticipantActuel() is IntelligenceArtificielle) return;
+
             Grille plateau = _partie.GetPlateau();
             int largeur = plateau.GetNBColonnes();
 
@@ -465,35 +439,16 @@ namespace Interfaces.Pages
                     colonnesDisponibles.Add(col);
             }
 
-            if (colonnesDisponibles.Count == 0) return; 
+            if (colonnesDisponibles.Count == 0) return;
 
             Random rng = new Random();
             int colAleatoire = colonnesDisponibles[rng.Next(colonnesDisponibles.Count)];
-
             JouerDansColonne(colAleatoire);
-        }
-
-        public static event Action OnReprendre;
-        private void BtnPause_Click(object sender, RoutedEventArgs e)
-        {
-            _timer?.Stop();
-            PageService.PopUp("MenuPause");
         }
 
         public static void DemanderReprendre()
         {
             OnReprendre?.Invoke();
         }
-
-        private SolidColorBrush CouleurTexteScore(string couleurJeton)
-        {
-            var c = (Color)ColorConverter.ConvertFromString(couleurJeton);
-
-            double luminosite = (0.299 * c.R + 0.587 * c.G + 0.114 * c.B) / 255;
-            return luminosite > 0.5
-                ? new SolidColorBrush(Colors.Black)
-                : new SolidColorBrush(Colors.White);
-        }
-
     }
 }
