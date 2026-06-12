@@ -223,6 +223,7 @@ namespace Interfaces.Pages
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
             if (PageService.PopUpOuverte) return;
+            if (_partie.VerifierFin()) return;
             if (_partie.GetParticipantActuel() is IntelligenceArtificielle) return;
 
             switch (e.Key)
