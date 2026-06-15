@@ -18,15 +18,16 @@ namespace Systeme.User
 
         public int Minimax(int profondeur, bool estMax, int alpha, int beta, Grille jeu, Partie game)
         {
+            string couleurIA = this.GetCouleurJeton();
+            string couleurHumain = game.GetListeParticipant()[0].GetCouleurJeton() == couleurIA
+                ? game.GetListeParticipant()[1].GetCouleurJeton()
+                : game.GetListeParticipant()[0].GetCouleurJeton();
+
             int meilleurScore;
             int score;
-            string couleurHumain = game.GetListeParticipant()[0].GetCouleurJeton();
-            string couleurIA = game.GetListeParticipant()[1].GetCouleurJeton();
 
             if (profondeur == 0 || jeu.GrilleEstPleine())
-            {
                 return heuristique(jeu, game);
-            }
 
             if (estMax)
             {
@@ -47,14 +48,11 @@ namespace Systeme.User
 
                         score = Minimax(profondeur - 1, false, alpha, beta, jeu, game);
                         meilleurScore = Math.Max(meilleurScore, score);
-
                         jeu.GetCases()[ligneLibre, c].Vider();
 
                         alpha = Math.Max(alpha, meilleurScore);
                         if (beta <= alpha)
-                        {
                             break;
-                        }
                     }
                 }
                 return meilleurScore;
@@ -78,19 +76,15 @@ namespace Systeme.User
 
                         score = Minimax(profondeur - 1, true, alpha, beta, jeu, game);
                         meilleurScore = Math.Min(meilleurScore, score);
-
                         jeu.GetCases()[ligneLibre, c].Vider();
 
                         beta = Math.Min(beta, meilleurScore);
                         if (beta <= alpha)
-                        {
                             break;
-                        }
                     }
                 }
                 return meilleurScore;
             }
-
         }
 
         public int compter(Cellule[] fenetre, string couleur)
@@ -201,13 +195,15 @@ namespace Systeme.User
 
         public int heuristique(Grille jeu, Partie game)
         {
+            string couleurIA = this.GetCouleurJeton();
+            string couleurHumain = game.GetListeParticipant()[0].GetCouleurJeton() == couleurIA
+                ? game.GetListeParticipant()[1].GetCouleurJeton()
+                : game.GetListeParticipant()[0].GetCouleurJeton();
+
             int i, j, nlignes, ncolonnes, scoreTotal;
-            string couleur1, couleur2;
             Cellule[] fenetre;
 
             scoreTotal = 0;
-            couleur1 = game.GetListeParticipant()[0].GetCouleurJeton();
-            couleur2 = game.GetListeParticipant()[1].GetCouleurJeton();
             nlignes = jeu.GetNBLignes();
             ncolonnes = jeu.GetNBColonnes();
 
@@ -218,7 +214,7 @@ namespace Systeme.User
                     fenetre = new Cellule[F];
                     for (int k = 0; k < F; k++)
                         fenetre[k] = jeu.GetCases()[i, j + k];
-                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleurHumain, couleurIA);
                 }
             }
 
@@ -229,7 +225,7 @@ namespace Systeme.User
                     fenetre = new Cellule[F];
                     for (int k = 0; k < F; k++)
                         fenetre[k] = jeu.GetCases()[i + k, j];
-                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleurHumain, couleurIA);
                 }
             }
 
@@ -240,7 +236,7 @@ namespace Systeme.User
                     fenetre = new Cellule[F];
                     for (int k = 0; k < F; k++)
                         fenetre[k] = jeu.GetCases()[i + k, j + k];
-                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleurHumain, couleurIA);
                 }
             }
 
@@ -251,12 +247,11 @@ namespace Systeme.User
                     fenetre = new Cellule[F];
                     for (int k = 0; k < F; k++)
                         fenetre[k] = jeu.GetCases()[i - k, j + k];
-                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleur1, couleur2);
+                    scoreTotal += EvaluerFenetre(jeu, fenetre, couleurHumain, couleurIA);
                 }
             }
 
             return scoreTotal;
-
         }
 
         public override int ChoisirCoup(Grille plateau, Partie jeu)

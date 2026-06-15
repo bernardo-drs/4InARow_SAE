@@ -190,16 +190,18 @@
             <Grid Grid.Column="3" Grid.Row="4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="11*"/>
-                    <RowDefinition Height="38*"/>
-                    <RowDefinition Height="20*"/>
-                    <RowDefinition Height="42*"/>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="42*"/>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="42*"/>
-                    <RowDefinition Height="89*"/>
+                    <RowDefinition Height="39*"/>
+                    <RowDefinition Height="21*"/>
                     <RowDefinition Height="43*"/>
-                    <RowDefinition Height="12*"/>
+                    <RowDefinition Height="18*"/>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="18*"/>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="18*"/>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="21*"/>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="41*"/>
@@ -207,20 +209,19 @@
                     <ColumnDefinition Width="41*"/>
                 </Grid.ColumnDefinitions>
 
-                <Viewbox Margin="30,11,30,11" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <Viewbox Margin="30,0,30,11" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
                     <TextBlock Foreground="White" FontSize="1">
-                    Jetons à aligner
+            Jetons à aligner
                     </TextBlock>
                 </Viewbox>
 
-                <Border BorderBrush="White" Grid.Row="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
-
+                <Border BorderBrush="White" Grid.Row="3" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.ColumnSpan="2" Margin="0,0,42,18" Grid.RowSpan="2">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
-                                    3 jetons
+                            3 jetons
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
@@ -228,13 +229,13 @@
                     </Viewbox>
                 </Border>
 
-                <Border BorderBrush="White" Grid.Row="5" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
+                <Border BorderBrush="White" Grid.Row="5" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.ColumnSpan="2" Margin="0,0,42,17" Grid.RowSpan="2">
                     <Viewbox>
                         <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
-    4 jetons
+                            4 jetons
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
@@ -242,13 +243,13 @@
                     </Viewbox>
                 </Border>
 
-                <Border BorderBrush="White" Grid.Row="7" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.Column="1">
+                <Border BorderBrush="White" Grid.Row="6" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Grid.ColumnSpan="2" Margin="0,17,42,0" Grid.RowSpan="2">
                     <Viewbox>
                         <Button x:Name="btn5J" Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2">
-    5 jetons
+                            5 jetons
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>
@@ -256,14 +257,37 @@
                     </Viewbox>
                 </Border>
 
-                <Border BorderBrush="White" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="1,0,0,12" Grid.RowSpan="2">
+                <Border BorderBrush="White" Grid.Row="8" Grid.Column="0" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="0,18,122,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Viewbox>
+                        <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click" Tag="JoueurCommence">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2" Text="J1"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
 
+                <Border BorderBrush="White" Grid.Row="8" Grid.Column="1" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="122,18,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Viewbox>
+                        <Button Background="Transparent" OverridesDefaultStyle="False" Click="Button_Click" Tag="JoueurCommence">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="2" Text="J2"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                </Border>
+
+                <Border BorderBrush="White" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="20" Background="#8176A8" MouseEnter="Border_MouseEnter" Tag="#8176A8" MouseLeave="Border_MouseLeave" Margin="1,21,0,12" Grid.RowSpan="2">
                     <Viewbox>
                         <Button x:Name="btnApplique" Background="Transparent" OverridesDefaultStyle="False" Click="btnApplique_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <TextBlock Foreground="{DynamicResource ButtonTextColor}" Margin="4">
-    Appliquer les paramètres
+                            Appliquer les paramètres
                                     </TextBlock>
                                 </ControlTemplate>
                             </Button.Template>

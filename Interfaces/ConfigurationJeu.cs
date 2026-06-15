@@ -11,6 +11,8 @@ namespace Interfaces
         public static int JetonsPourGagner { get; set; } = 4;
         public static string LimiteTemps { get; set; } = "Aucune";
 
+        public static int JoueurQuiCommence { get; set; } = 1;
+
         public static string ModeDeJeu { get; set; } = "Classique";
 
         public static int VictoiresRequises { get; set; } = 3;

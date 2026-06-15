@@ -44,6 +44,14 @@ namespace Interfaces.Pages
             _partie = new Partie(j1, j2, ConfigurationJeu.JetonsPourGagner, ConfigurationJeu.HauteurGrille, ConfigurationJeu.LargeurGrille);
             _partie.DemarrerPartie();
 
+            if (ConfigurationJeu.JoueurQuiCommence == 2)
+            {
+                _partie.ChangerTour();
+                BrdJoueur1.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                BrdJoueur2.BorderBrush = new SolidColorBrush(Colors.White);
+                JouerIA();
+            }
+
             _secondesRestantes = ConvertirLimiteTemps(ConfigurationJeu.LimiteTemps);
             StartTimer();
 

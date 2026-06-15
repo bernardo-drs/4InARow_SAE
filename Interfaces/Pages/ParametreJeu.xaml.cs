@@ -15,9 +15,6 @@ using Interfaces;
 
 namespace Interfaces.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour ParametreJeu.xaml
-    /// </summary>
     public partial class ParametreJeu : Page
     {
         bool click = false;
@@ -25,6 +22,7 @@ namespace Interfaces.Pages
         Border? active1 = null;
         Border? active2 = null;
         Border? active3 = null;
+        Border? active4 = null;
 
         int colonne1;
         int colonne2;
@@ -33,6 +31,7 @@ namespace Interfaces.Pages
         int row1 = -1;
         int row2 = -1;
         int row3 = -1;
+        int row4 = -1;
 
         public ParametreJeu()
         {
@@ -47,9 +46,7 @@ namespace Interfaces.Pages
             AnimationService.FadeColor(sender, 0.3, "In", null, null);
 
             if (sender is Border b)
-            {
                 b.BorderThickness = new Thickness(2);
-            }
         }
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
@@ -66,13 +63,9 @@ namespace Interfaces.Pages
                 if (colonne == 0)
                 {
                     if (g.Parent is Grid gp)
-                    {
                         colonne = Grid.GetColumn(gp);
-                    }
                     else
-                    {
                         colonne = Grid.GetColumn(b);
-                    }
                 }
 
                 int row = Grid.GetRow(b);
@@ -84,8 +77,19 @@ namespace Interfaces.Pages
                 }
                 else if (colonne == 3)
                 {
-                    if (row != row2)
-                        b.BorderThickness = new Thickness(0);
+                    int rowB = Grid.GetRow(b);
+                    bool estJoueurCommence = (rowB == row4 && b == active4) || rowB == 9;
+
+                    if (estJoueurCommence)
+                    {
+                        if (b != active4)
+                            b.BorderThickness = new Thickness(0);
+                    }
+                    else
+                    {
+                        if (rowB != row2)
+                            b.BorderThickness = new Thickness(0);
+                    }
                 }
                 else if (colonne == 5)
                 {
@@ -114,13 +118,9 @@ namespace Interfaces.Pages
             if (colonne == 0)
             {
                 if (g.Parent is Grid gp)
-                {
                     colonne = Grid.GetColumn(gp);
-                }
                 else
-                {
                     colonne = Grid.GetColumn(b);
-                }
             }
 
             if (colonne == 1)
@@ -129,26 +129,38 @@ namespace Interfaces.Pages
                     active1.BorderThickness = new Thickness(0);
 
                 b.BorderThickness = new Thickness(2);
-
                 colonne1 = colonne;
                 row1 = Grid.GetRow(b);
                 active1 = b;
-
                 click = true;
             }
 
             if (colonne == 3)
             {
-                if (active2 != null)
-                    active2.BorderThickness = new Thickness(0);
+                int rowB = Grid.GetRow(b);
+                bool estJoueurCommence = bouton.Tag?.ToString() == "JoueurCommence";
 
-                b.BorderThickness = new Thickness(2);
+                if (estJoueurCommence)
+                {
+                    if (active4 != null)
+                        active4.BorderThickness = new Thickness(0);
 
-                colonne2 = colonne;
-                row2 = Grid.GetRow(b);
-                active2 = b;
+                    b.BorderThickness = new Thickness(2);
+                    row4 = rowB;
+                    active4 = b;
+                    click = true;
+                }
+                else
+                {
+                    if (active2 != null)
+                        active2.BorderThickness = new Thickness(0);
 
-                click = true;
+                    b.BorderThickness = new Thickness(2);
+                    colonne2 = colonne;
+                    row2 = rowB;
+                    active2 = b;
+                    click = true;
+                }
             }
 
             if (colonne == 5)
@@ -157,21 +169,18 @@ namespace Interfaces.Pages
                     active3.BorderThickness = new Thickness(0);
 
                 b.BorderThickness = new Thickness(2);
-
                 colonne3 = colonne;
                 row3 = Grid.GetRow(b);
                 active3 = b;
-
                 click = true;
             }
         }
 
         private void btnApplique_Click(object sender, RoutedEventArgs e)
         {
-
-            if (row1 == -1 || row2 == -1 || row3 == -1)
+            if (row1 == -1 || row2 == -1 || row3 == -1 || row4 == -1)
             {
-                MessageBox.Show("Veuillez sélectionner une option dans chaque catégorie (Taille, Jetons et Temps) avant de commencer !", "Paramètres incomplets");
+                MessageBox.Show("Veuillez sélectionner une option dans chaque catégorie (Taille, Jetons, Temps et Joueur qui commence) avant de commencer !", "Paramètres incomplets");
                 return;
             }
 
@@ -179,7 +188,7 @@ namespace Interfaces.Pages
             int hauteur = 6;
             if (row1 == 0) { largeur = 4; hauteur = 4; }
             else if (row1 == 2) { largeur = 5; hauteur = 5; }
-            else if (row1 == 4) { largeur = 7; hauteur = 6; } 
+            else if (row1 == 4) { largeur = 7; hauteur = 6; }
             else if (row1 == 6) { largeur = 7; hauteur = 8; }
             else if (row1 == 8) { largeur = 8; hauteur = 8; }
             else if (row1 == 10) { largeur = 10; hauteur = 10; }
@@ -203,10 +212,13 @@ namespace Interfaces.Pages
             else if (row3 == 8) temps = "1m";
             else if (row3 == 10) temps = "2m";
 
-            Interfaces.ConfigurationJeu.LargeurGrille = largeur;
-            Interfaces.ConfigurationJeu.HauteurGrille = hauteur;
-            Interfaces.ConfigurationJeu.JetonsPourGagner = jetons;
-            Interfaces.ConfigurationJeu.LimiteTemps = temps;
+            if (active4 != null)
+                ConfigurationJeu.JoueurQuiCommence = (Grid.GetColumn(active4) == 0) ? 1 : 2;
+
+            ConfigurationJeu.LargeurGrille = largeur;
+            ConfigurationJeu.HauteurGrille = hauteur;
+            ConfigurationJeu.JetonsPourGagner = jetons;
+            ConfigurationJeu.LimiteTemps = temps;
 
             PageService.PopUp("ChoixModeJeu");
         }
@@ -215,9 +227,7 @@ namespace Interfaces.Pages
         {
             DependencyObject parent = VisualTreeHelper.GetParent(enfant) ?? (enfant is FrameworkElement fe ? fe.Parent : null);
             while (parent != null && !(parent is Grid))
-            {
                 parent = VisualTreeHelper.GetParent(parent) ?? (parent is FrameworkElement pfe ? pfe.Parent : null);
-            }
             return parent as Grid;
         }
 
@@ -225,9 +235,7 @@ namespace Interfaces.Pages
         {
             DependencyObject parent = VisualTreeHelper.GetParent(enfant) ?? (enfant is FrameworkElement fe ? fe.Parent : null);
             while (parent != null && !(parent is Border))
-            {
                 parent = VisualTreeHelper.GetParent(parent) ?? (parent is FrameworkElement pfe ? pfe.Parent : null);
-            }
             return parent as Border;
         }
 
